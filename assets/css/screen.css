@@ -1094,3 +1094,59 @@ iframe {
     max-width: 100%;
   }
 }
+
+/* パスワード保護エリアのスタイル */
+#password-protection {
+  background: #f8f9fa;
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+  max-width: 500px;
+  margin: 40px auto;
+}
+
+#password-protection p {
+  color: #495057;
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+#page-password {
+  width: 100%;
+  max-width: 300px;
+  padding: 12px 15px;
+  border: 2px solid #e9ecef;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  margin-bottom: 15px;
+}
+
+#page-password:focus {
+  border-color: #00ab6b;
+  box-shadow: 0 0 0 3px rgba(0, 171, 107, 0.1);
+  outline: none;
+}
+
+#password-protection button {
+  background: #00ab6b;
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#password-protection button:hover {
+  background: #008f59;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 171, 107, 0.2);
+}
+
+#password-protection button:active {
+  transform: translateY(0);
+}

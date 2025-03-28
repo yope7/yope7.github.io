@@ -43,18 +43,53 @@ post_class: post-template
 
             <!-- Post Content -->
             <div class="article-post">
-                <!-- Toc if any -->
-                {% if page.toc %}
-                    {% if page.beforetoc %}
-                        <p><em>{{page.beforetoc}}</em></p>
-                    {% endif %}
-                    <div class="toc mt-4 mb-4 lead">
-                        <h3 class="font-weight-bold">Summary</h3>
-                        {% include toc.html html=content %}
-                    </div>
+                {% if page.protected %}
+                <div id="password-protection" style="text-align: center; margin: 20px 0;">
+                    <p>このページはパスワードで保護されています</p>
+                    <input type="password" id="page-password" placeholder="パスワードを入力してください" style="margin: 10px 0;">
+                    <button onclick="checkPassword()" style="display: block; margin: 0 auto;">閲覧する</button>
+                </div>
+                <div id="protected-content" style="display: none;">
+                    {{ content }}
+                </div>
+                <script>
+                    function checkPassword() {
+                        var password = document.getElementById('page-password').value;
+                        if (password === "{{ page.password }}") {
+                            document.getElementById('password-protection').style.display = 'none';
+                            document.getElementById('protected-content').style.display = 'block';
+                        } else {
+                            alert('パスワードが間違っています');
+                        }
+                    }
+
+                    function showCustomAlert(message) {
+                        const alert = document.createElement('div');
+                        alert.style.cssText = `
+                            position: fixed;
+                            top: 20px;
+                            left: 50%;
+                            transform: translateX(-50%);
+                            background: #ff4757;
+                            color: white;
+                            padding: 15px 30px;
+                            border-radius: 8px;
+                            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+                            z-index: 1000;
+                            animation: slideDown 0.3s ease;
+                        `;
+                        alert.textContent = message;
+                        document.body.appendChild(alert);
+                        
+                        setTimeout(() => {
+                            alert.style.animation = 'slideUp 0.3s ease';
+                            setTimeout(() => alert.remove(), 300);
+                        }, 2000);
+                    }
+                </script>
+                {% else %}
+                {{ content }}
                 {% endif %}
-                <!-- End Toc -->
-                {{content}}
             </div>
 
             <!-- Rating -->
