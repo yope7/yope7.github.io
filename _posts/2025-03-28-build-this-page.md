@@ -11,7 +11,7 @@ hidden: false
 protected: false
 ---
 
-本ブログは，Ruby と Jekyll（ジキル）を用いて構築され，Github Pages でホスティングされています．
+本ブログは，Ruby と Jekyll（ジキル）を用いて構築され，Github Pages でホスティングされています
 
 基本的には[このページ](https://qiita.com/madoreenu/items/b47833bf785562c77819)を参考にブログを作成しました．
 
