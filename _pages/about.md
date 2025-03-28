@@ -1,26 +1,275 @@
 ---
 layout: page
-title: 私について
+title: About Me
 permalink: /about
-comments: true
+comments: false
 ---
 
-<div class="row justify-content-between">
-<div class="pr-5">
+<div class="language-switch text-right mb-4">
+    <button id="jp-btn" class="btn btn-sm btn-outline-primary active">日本語</button>
+    <button id="en-btn" class="btn btn-sm btn-outline-primary">English</button>
+</div>
 
-<p>こんにちは！大阪大学大学院情報科学研究科　野口祥生です．</p>
+<!-- 日本語コンテンツ -->
+<div id="jp-content" class="language-content active">
+    <div class="row justify-content-between">
+        <div class="col-md-8 pr-5">
+            <h2 class="mb-4">自己紹介</h2>
+            <p>
+                こんにちは！大阪大学大学院情報科学研究科 野口祥生です。
+                M2の学生です
+            </p>
 
-<p>このページは現在作成中です．</p>
+            <img class="shadow-lg rounded mb-5" src="{{site.baseurl}}/assets/images/cycling.jpeg" alt="プロフィール写真" />
 
-<p class="mb-5"><img class="shadow-lg" src="{{site.baseurl}}/assets/images/cycling.jpeg" alt="jekyll template mediumish" /></p>
-<h4>Documentation</h4>
+            <h2 class="mb-4">研究分野</h2>
+            <ul>
+                <li>高性能計算（HPC）</li>
+                <li>ジョブスケジューリング</li>
+                <li>強化学習</li>
+                <li>多目的最適化</li>
+            </ul>
 
-<p>Please, read the docs <a href="https://bootstrapstarter.com/bootstrap-templates/template-mediumish-bootstrap-jekyll/">here</a>.</p>
+            <h2 class="mb-4">研究実績</h2>
+            <div class="publications mb-5">
+                <h4>論文</h4>
+                <ul class="list-unstyled">
+                    <li class="mb-3">
+                        <strong>タイトル1</strong><br>
+                        著者名<br>
+                        ジャーナル名, 2024
+                    </li>
+                    <!-- 他の論文を追加 -->
+                </ul>
+            </div>
 
-<h4>Questions or bug reports?</h4>
+            <h2 class="mb-4">経歴</h2>
+            <div class="timeline mb-5">
+                <div class="timeline-item">
+                    <div class="timeline-date">April 2024 - Present</div>
+                    <div class="timeline-content">
+                        <h4>Graduate School of Information Science and Technology, Osaka University</h4>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2020年4月 - 2024年3月</div>
+                    <div class="timeline-content">
+                        <h4>大阪大学　工学部電子情報工学科</h4>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2017年4月 - 2020年3月</div>
+                    <div class="timeline-content">
+                        <h4>私立　須磨学園高等学校</h4>
+                    </div>
+                </div>
 
-<p>Head over to our <a href="https://github.com/wowthemesnet/mediumish-theme-jekyll">Github repository</a>!</p>
+            </div>
+
+            <h2 class="mb-4">成果物</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <img src="{{site.baseurl}}/assets/images/project1.jpg" alt="プロジェクト1" />
+                    <h4>プロジェクト1</h4>
+                    <p>プロジェクトの説明文をここに記載します。</p>
+                    <a href="#" class="btn btn-primary">詳細を見る</a>
+                </div>
+                <!-- 他のプロジェクトを追加 -->
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="sticky-top sticky-top-80">
+                <h5>連絡先</h5>
+                <p>
+                    <i class="fas fa-envelope"></i> メール: yoshiki.noguchi@example.com<br>
+                    <i class="fab fa-github"></i> GitHub: <a href="https://github.com/yourusername">@yourusername</a><br>
+                    <i class="fab fa-twitter"></i> Twitter: <a href="https://twitter.com/yourusername">@yourusername</a>
+                </p>
+            </div>
+        </div>
+
+    </div>
 
 </div>
 
+<!-- 英語コンテンツ -->
+<div id="en-content" class="language-content">
+    <div class="row justify-content-between">
+        <div class="col-md-8 pr-5">
+            <h2 class="mb-4">Introduction</h2>
+            <p>
+                Hello! I'm Yoshiki Noguchi, a Master's student at the Graduate School of Information Science and Technology, Osaka University.
+            </p>
+
+            <img class="shadow-lg rounded mb-5" src="{{site.baseurl}}/assets/images/cycling.jpeg" alt="Profile Photo" />
+
+            <h2 class="mb-4">Research Fields</h2>
+            <ul>
+                <li>High-Performance Computing (HPC)</li>
+                <li>Parallel and Distributed Processing</li>
+                <li>Cloud Computing</li>
+            </ul>
+
+            <h2 class="mb-4">Research Achievements</h2>
+            <div class="publications mb-5">
+                <h4>Papers</h4>
+                <ul class="list-unstyled">
+                    <li class="mb-3">
+                        <strong>Title 1</strong><br>
+                        Authors<br>
+                        Journal Name, 2024
+                    </li>
+                </ul>
+            </div>
+            <h2 class="mb-4">Experience</h2>
+            <div class="timeline mb-5">
+                <div class="timeline-item">
+                    <div class="timeline-date">April 2024 - Present</div>
+                    <div class="timeline-content">
+                        <h4>Graduate School of Information Science and Technology, Osaka University</h4>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2020年4月 - 2024年3月</div>
+                    <div class="timeline-content">
+                        <h4>大阪大学　工学部電子情報工学科</h4>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2017年4月 - 2020年3月</div>
+                    <div class="timeline-content">
+                        <h4>私立　須磨学園高等学校</h4>
+                    </div>
+                </div>
+
+            </div>
+
+            <h2 class="mb-4">成果物</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <img src="{{site.baseurl}}/assets/images/project1.jpg" alt="プロジェクト1" />
+                    <h4>プロジェクト1</h4>
+                    <p>プロジェクトの説明文をここに記載します。</p>
+                    <a href="#" class="btn btn-primary">詳細を見る</a>
+                </div>
+                <!-- 他のプロジェクトを追加 -->
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="sticky-top sticky-top-80">
+                <h5>Contact</h5>
+                <p>
+                    <i class="fas fa-envelope"></i> Email: yoshiki.noguchi@example.com<br>
+                    <i class="fab fa-github"></i> GitHub: <a href="https://github.com/yourusername">@yourusername</a><br>
+                    <i class="fab fa-twitter"></i> Twitter: <a href="https://twitter.com/yourusername">@yourusername</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
 </div>
+
+<style>
+.language-switch {
+    margin-bottom: 2rem;
+}
+
+.language-content {
+    display: none;
+}
+
+.language-content.active {
+    display: block;
+}
+
+.btn-outline-primary {
+    color: #00ab6b;
+    border-color: #00ab6b;
+}
+
+.btn-outline-primary:hover,
+.btn-outline-primary.active {
+    background-color: #00ab6b;
+    border-color: #00ab6b;
+    color: white;
+}
+
+.skill-item {
+    margin-bottom: 1rem;
+}
+
+.progress {
+    height: 0.5rem;
+    background-color: #e9ecef;
+}
+
+.progress-bar {
+    background-color: #00ab6b;
+}
+
+.timeline-item {
+    position: relative;
+    padding-left: 2rem;
+    margin-bottom: 2rem;
+    border-left: 2px solid #00ab6b;
+}
+
+.timeline-date {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.project-card {
+    border: 1px solid #eee;
+    border-radius: 8px;
+    padding: 1rem;
+    transition: transform 0.2s;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+}
+
+.project-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+}
+
+@media (max-width: 768px) {
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .timeline-item {
+        padding-left: 1rem;
+    }
+}
+</style>
+
+<script>
+document.getElementById('jp-btn').addEventListener('click', function() {
+    document.getElementById('jp-content').classList.add('active');
+    document.getElementById('en-content').classList.remove('active');
+    this.classList.add('active');
+    document.getElementById('en-btn').classList.remove('active');
+});
+
+document.getElementById('en-btn').addEventListener('click', function() {
+    document.getElementById('en-content').classList.add('active');
+    document.getElementById('jp-content').classList.remove('active');
+    this.classList.add('active');
+    document.getElementById('jp-btn').classList.remove('active');
+});
+</script>

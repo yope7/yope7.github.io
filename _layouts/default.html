@@ -186,5 +186,31 @@
       src="//{{site.disqus}}.disqus.com/count.js"
     ></script>
     {% endif %}
+
+    <script>
+      // スクロールアニメーション
+      document.addEventListener("DOMContentLoaded", function () {
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+              }
+            });
+          },
+          {
+            threshold: 0.1,
+          }
+        );
+
+        // アニメーションを適用する要素
+        document
+          .querySelectorAll(".project-card, .timeline-item, h2, .publications")
+          .forEach((elem) => {
+            elem.classList.add("animate-on-scroll");
+            observer.observe(elem);
+          });
+      });
+    </script>
   </body>
 </html>
