@@ -8,8 +8,7 @@ image: assets/images/0329/jekyll.png
 description: "本サイトのビルド方法をまとめます．"
 featured: true
 hidden: false
-protected: true
-password: "1234567"
+protected: false
 ---
 
 本ブログは，Ruby と Jekyll（ジキル）を用いて構築され，Github Pages でホスティングされています．
