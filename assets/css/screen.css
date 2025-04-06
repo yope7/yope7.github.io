@@ -1340,3 +1340,41 @@ iframe {
     }
   }
 }
+
+.code-container {
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+.copy-button {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background: #00ab6b;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 5px 10px;
+  font-size: 12px;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+}
+.copy-button:hover {
+  opacity: 1;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}

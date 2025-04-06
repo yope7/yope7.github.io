@@ -9,3 +9,56 @@ layout: default
 
   <div class="article-post">{{content}}</div>
 </section>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    // ページ内のすべてのpreタグ（コードブロックを含む）を取得
+    const codeBlocks = document.querySelectorAll("pre code");
+
+    // 各コードブロックにコピーボタンを追加
+    codeBlocks.forEach(function (codeBlock) {
+      // コンテナを作成して相対位置に設定
+      const container = document.createElement("div");
+      container.style.position = "relative";
+
+      // コピーボタンを作成
+      const copyButton = document.createElement("button");
+      copyButton.innerHTML = '<i class="fas fa-copy"></i>'; // Font Awesomeのコピーアイコン
+      copyButton.className = "copy-button";
+      copyButton.style.position = "absolute";
+      copyButton.style.top = "5px";
+      copyButton.style.right = "5px";
+      copyButton.style.background = "#00ab6b";
+      copyButton.style.color = "white";
+      copyButton.style.border = "none";
+      copyButton.style.borderRadius = "3px";
+      copyButton.style.padding = "4px 8px";
+      copyButton.style.cursor = "pointer";
+
+      // コピーボタンのクリックイベントを設定
+      copyButton.addEventListener("click", function () {
+        const code = codeBlock.textContent;
+        navigator.clipboard
+          .writeText(code)
+          .then(function () {
+            // コピー成功時のフィードバック
+            const originalText = copyButton.innerHTML;
+            copyButton.innerHTML = "コピーしました！";
+            setTimeout(function () {
+              copyButton.innerHTML = originalText;
+            }, 2000);
+          })
+          .catch(function (err) {
+            console.error("コピーに失敗しました:", err);
+          });
+      });
+
+      // コードブロックの親要素（pre）を取得して、コンテナに置き換える
+      const pre = codeBlock.parentNode;
+      const parent = pre.parentNode;
+      container.appendChild(pre);
+      container.appendChild(copyButton);
+      parent.appendChild(container);
+    });
+  });
+</script>
