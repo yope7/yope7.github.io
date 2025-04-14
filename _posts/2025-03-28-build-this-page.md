@@ -6,7 +6,7 @@ categories: [Tech]
 tags: [Ruby, Jekyll]
 image: assets/images/0329/jekyll.png
 description: "本サイトのビルド方法をまとめます．"
-featured: true
+featured: false
 hidden: false
 protected: false
 ---
