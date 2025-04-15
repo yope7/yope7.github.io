@@ -11,8 +11,11 @@ permalink: /blog
     <h2><span>Featured</span></h2>
   </div>
   <div class="row">
-    {% for post in site.posts %} {% if post.featured == true %} {% include
-    featuredbox.html %} {% endif %} {% endfor %}
+    {% for post in site.posts %}
+      {% if post.featured == true and post.hidden != true %}
+        {% include featuredbox.html %}
+      {% endif %}
+    {% endfor %}
   </div>
 </section>
 
@@ -37,13 +40,15 @@ permalink: /blog
 
   <div class="row listrecent">
     {% for post in site.posts %}
-    <div
-      class="postbox-container"
-      data-categories="{% for category in post.categories %}{{ category | downcase }} {% endfor %}"
-      data-tags="{% for tag in post.tags %}{{ tag | downcase }} {% endfor %}"
-    >
-      {% include postbox.html %}
-    </div>
+      {% if post.hidden != true %}
+        <div
+          class="postbox-container"
+          data-categories="{% for category in post.categories %}{{ category | downcase }} {% endfor %}"
+          data-tags="{% for tag in post.tags %}{{ tag | downcase }} {% endfor %}"
+        >
+          {% include postbox.html %}
+        </div>
+      {% endif %}
     {% endfor %}
   </div>
 
