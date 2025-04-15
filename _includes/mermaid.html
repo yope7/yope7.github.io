@@ -1,0 +1,50 @@
+<script
+  type="text/javascript"
+  src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"
+></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: "default",
+      securityLevel: "loose",
+      flowchart: {
+        useMaxWidth: true,
+        htmlLabels: true,
+      },
+    });
+
+    // Mermaidの図表に対して処理
+    document.querySelectorAll(".language-mermaid").forEach(function (element) {
+      // コンテナを作成
+      const container = document.createElement("div");
+      container.className = "mermaid-container";
+      container.style.textAlign = "center";
+      container.style.margin = "1.5rem 0";
+
+      // mermaid表示用のdivを作成
+      const mermaidDiv = document.createElement("div");
+      mermaidDiv.className = "mermaid";
+      mermaidDiv.innerHTML = element.textContent;
+
+      // 元のpre要素を置き換え
+      container.appendChild(mermaidDiv);
+      element.parentNode.replaceWith(container);
+    });
+
+    // Mermaidを再実行
+    mermaid.init(".mermaid");
+  });
+</script>
+
+<style>
+  .mermaid {
+    background: white;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    max-width: 100%;
+    margin: 0 auto;
+    overflow-x: auto;
+  }
+</style>

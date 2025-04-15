@@ -1,0 +1,5 @@
+<span class="reading-time" title="読了時間">
+  {% assign characters = content | strip_html | strip_newlines | size %} {% if
+  characters < 800 %} 1分で読めます {% else %} 約{{ characters | divided_by: 400
+  | round }}分で読めます {% endif %}
+</span>

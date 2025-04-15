@@ -6,24 +6,32 @@ post_class: post-template
 ---
 
 {% include mathjax.html %}
+{% include mermaid.html %}
 
 <!-- Begin Article
 ================================================== -->
 <div class="container">
     <div class="row">
-
-
         <!-- Post -->
         {% assign author = site.authors[page.author] %}
 
         <div class="flex-first flex-md-unordered">
             <div class="mainheading">
-
-
                 <!-- Post Title -->
                 <h1 class="posttitle">{{ page.title }}</h1>
 
+                <div class="meta-info">
+                    {% include reading-time.html %}
+                </div>
             </div>
+
+            {% assign words = content | number_of_words %}
+            {% if words > 360 %}
+            <div class="toc-container">
+                <div class="toc-header">目次</div>
+                {% include toc.html html=content h_min=2 h_max=3 %}
+            </div>
+            {% endif %}
 
             <!-- Adsense if enabled from _config.yml (change your pub id and slot) -->
             {% if site.adsense == "enabled" %}
