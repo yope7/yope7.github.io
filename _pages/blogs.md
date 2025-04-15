@@ -47,15 +47,6 @@ permalink: /blog
     {% endfor %}
   </div>
 
-  <!-- Pagination
-================================================== -->
-  <div class="bottompagination">
-    <div class="pointerup"><i class="fa fa-caret-up"></i></div>
-    <span class="navigation" role="navigation">
-      {% include pagination.html %}
-    </span>
-  </div>
-
   <script>
     document.querySelectorAll(".filter-btn").forEach((button) => {
       button.addEventListener("click", () => {

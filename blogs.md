@@ -36,7 +36,7 @@ permalink: /blog
   </div>
 
   <div class="row listrecent">
-    {% for post in paginator.posts %}
+    {% for post in site.posts %}
     <div
       class="postbox-container"
       data-categories="{% for category in post.categories %}{{ category | downcase }} {% endfor %}"
@@ -45,15 +45,6 @@ permalink: /blog
       {% include postbox.html %}
     </div>
     {% endfor %}
-  </div>
-
-  <!-- Pagination
-================================================== -->
-  <div class="bottompagination">
-    <div class="pointerup"><i class="fa fa-caret-up"></i></div>
-    <span class="navigation" role="navigation">
-      {% include pagination.html %}
-    </span>
   </div>
 
   <script>

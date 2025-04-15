@@ -103,15 +103,9 @@
           <!-- Begin Menu -->
 
           <ul class="navbar-nav ml-auto">
-            {% if page.url == "/" %}
-            <li class="nav-item active">
+            <li class="nav-item {% if page.url == "/" %}active{% endif %}">
               <a class="nav-link" href="{{ site.baseurl }}/">About Me</a>
             </li>
-            {% else %}
-            <li class="nav-item">
-              <a class="nav-link" href="{{ site.baseurl }}/">About Me</a>
-            </li>
-            {% endif %}
 
             <li class="nav-item">
               <a class="nav-link" href="{{ site.baseurl }}/blog">Blog</a>
