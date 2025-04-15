@@ -33,6 +33,7 @@
   margin-bottom: 0;
   transition: all 0.3s ease;
   position: relative;
+  cursor: pointer;
 }
 
 .slim-card:hover {
@@ -52,6 +53,7 @@
   color: #333;
   text-decoration: none;
   transition: color 0.2s ease;
+  pointer-events: none;
 }
 
 .slim-card-title a:hover {
@@ -176,4 +178,16 @@
 .toc-container a:hover {
   color: #00ab6b;
   text-decoration: none;
+}
+
+.listfeaturedtag {
+  cursor: pointer;
+}
+
+.listfeaturedtag a {
+  pointer-events: none;
+}
+
+.listfeaturedtag .post-read-more a {
+  pointer-events: auto;
 }

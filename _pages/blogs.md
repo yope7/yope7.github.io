@@ -36,7 +36,7 @@ permalink: /blog
   </div>
 
   <div class="row listrecent">
-    {% for post in paginator.posts %}
+    {% for post in site.posts %}
     <div
       class="postbox-container"
       data-categories="{% for category in post.categories %}{{ category | downcase }} {% endfor %}"
