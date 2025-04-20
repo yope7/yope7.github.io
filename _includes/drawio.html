@@ -1,0 +1,210 @@
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    // Base64エンコード関数（Unicode対応）
+    function safeBase64Encode(str) {
+      return btoa(
+        encodeURIComponent(str).replace(
+          /%([0-9A-F]{2})/g,
+          function (match, p1) {
+            return String.fromCharCode("0x" + p1);
+          }
+        )
+      );
+    }
+
+    // Base64エンコードされたSVGプレースホルダー
+    const placeholderSvg = safeBase64Encode(
+      '<svg xmlns="http://www.w3.org/2000/svg" width="400" height="200"><rect width="100%" height="100%" fill="#f5f5f5"/><text x="50%" y="50%" font-family="Arial" font-size="20" text-anchor="middle">Draw.io図（編集ボタンで編集）</text></svg>'
+    );
+
+    // .language-drawioクラスを持つコードブロックを処理
+    document.querySelectorAll(".language-drawio").forEach(function (element) {
+      // コンテナを作成
+      const container = document.createElement("div");
+      container.className = "drawio-container";
+      container.style.textAlign = "center";
+      container.style.margin = "1.5rem 0";
+
+      // XMLデータを取得
+      const diagramData = element.textContent.trim();
+
+      // 図表示用のimgタグ
+      const img = document.createElement("img");
+      img.className = "drawio-image";
+      img.style.maxWidth = "100%";
+      img.style.border = "1px solid #ddd";
+      img.style.borderRadius = "5px";
+
+      // XML保存用の要素
+      const xmlHolder = document.createElement("textarea");
+      xmlHolder.style.display = "none";
+      xmlHolder.className = "drawio-xml-data";
+      xmlHolder.value = diagramData;
+
+      // ボタンコンテナ
+      const buttonContainer = document.createElement("div");
+      buttonContainer.style.marginTop = "10px";
+
+      // 編集ボタン
+      const editButton = document.createElement("button");
+      editButton.textContent = "Draw.ioで編集";
+      editButton.className = "drawio-edit-button";
+      editButton.style.margin = "5px";
+      editButton.style.padding = "5px 15px";
+
+      // コピーボタン
+      const copyButton = document.createElement("button");
+      copyButton.textContent = "XMLをコピー";
+      copyButton.className = "drawio-copy-button";
+      copyButton.style.margin = "5px";
+      copyButton.style.padding = "5px 15px";
+
+      // ダウンロードボタン
+      const downloadButton = document.createElement("button");
+      downloadButton.textContent = "XMLをダウンロード";
+      downloadButton.className = "drawio-download-button";
+      downloadButton.style.margin = "5px";
+      downloadButton.style.padding = "5px 15px";
+
+      buttonContainer.appendChild(editButton);
+      buttonContainer.appendChild(copyButton);
+      buttonContainer.appendChild(downloadButton);
+
+      // 元のpre要素を置き換え
+      container.appendChild(img);
+      container.appendChild(buttonContainer);
+      container.appendChild(xmlHolder);
+      element.parentNode.replaceWith(container);
+
+      try {
+        // XMLからSVG画像を生成
+        const parser = new DOMParser();
+        const xmlDoc = parser.parseFromString(diagramData, "text/xml");
+
+        // Draw.ioのXMLからmxfile要素をチェック
+        const mxfileElements = xmlDoc.getElementsByTagName("mxfile");
+
+        if (mxfileElements.length > 0) {
+          // mxfileが存在する場合は、Draw.ioのプレビューURLを使用
+          const encodedDiagram = safeBase64Encode(diagramData);
+          const previewUrl = `https://viewer.diagrams.net/?highlight=0000ff&layers=1&edit=_blank#R${encodedDiagram}`;
+
+          // Draw.ioプレビューの画像を設定
+          // CORSの問題を回避するため、プレースホルダー画像を表示
+          img.src = `data:image/svg+xml;base64,${placeholderSvg}`;
+          img.alt = "Draw.io図 (XMLをコピーして編集してください)";
+
+          // 注意書きを追加
+          const noteEl = document.createElement("p");
+          noteEl.textContent =
+            "※セキュリティ上の制約により図のプレビューは表示できません。編集ボタンを使用してDraw.ioで開いてください。";
+          noteEl.style.color = "#555";
+          noteEl.style.fontSize = "12px";
+          container.insertBefore(noteEl, buttonContainer);
+        } else {
+          // Draw.ioのファイルではない場合はプレースホルダー
+          img.src = `data:image/svg+xml;base64,${placeholderSvg}`;
+        }
+      } catch (e) {
+        // エラーが発生した場合はプレースホルダー
+        img.src = `data:image/svg+xml;base64,${placeholderSvg}`;
+        console.error("図の解析エラー:", e);
+      }
+
+      // 編集ボタンにイベントリスナーを追加
+      editButton.addEventListener("click", function () {
+        window.open("https://app.diagrams.net/?src=about", "_blank");
+        setTimeout(() => {
+          alert(
+            "XMLデータをコピーしました。Draw.ioで「ファイル > 開く > XML形式から...」を選択して貼り付けてください。"
+          );
+          navigator.clipboard.writeText(diagramData);
+        }, 1000);
+      });
+
+      // コピーボタンにイベントリスナーを追加
+      copyButton.addEventListener("click", function () {
+        navigator.clipboard.writeText(diagramData).then(
+          function () {
+            alert(
+              "XMLデータをコピーしました。Draw.ioで「ファイル > 開く > XML形式から...」を選択して貼り付けてください。"
+            );
+          },
+          function () {
+            alert(
+              "コピーに失敗しました。下の表示されたXMLを手動でコピーしてください。"
+            );
+            xmlHolder.style.display = "block";
+            xmlHolder.style.width = "100%";
+            xmlHolder.style.height = "200px";
+          }
+        );
+      });
+
+      // ダウンロードボタンにイベントリスナーを追加
+      downloadButton.addEventListener("click", function () {
+        const blob = new Blob([diagramData], { type: "application/xml" });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = "diagram.drawio";
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+      });
+    });
+  });
+</script>
+
+<style>
+  .drawio-container {
+    background: white;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    max-width: 100%;
+    margin: 1.5rem auto;
+  }
+
+  .drawio-image {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .drawio-edit-button {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  .drawio-edit-button:hover {
+    background-color: #45a049;
+  }
+
+  .drawio-copy-button {
+    background-color: #2196f3;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  .drawio-copy-button:hover {
+    background-color: #0b7dda;
+  }
+
+  .drawio-download-button {
+    background-color: #ff9800;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  .drawio-download-button:hover {
+    background-color: #e68a00;
+  }
+</style>
