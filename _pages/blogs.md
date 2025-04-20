@@ -11,7 +11,7 @@ permalink: /blog
     <h2><span>Featured</span></h2>
   </div>
   <div class="row">
-    {% for post in site.posts %} {% if post.featured == true %} {% include
+    {% for post in site.posts %} {% if post.featured == true and post.hidden != true %} {% include
     featuredbox.html %} {% endif %} {% endfor %}
   </div>
 </section>
@@ -26,17 +26,27 @@ permalink: /blog
   <div class="filter-buttons">
     <button class="filter-btn active" data-filter="all">All</button>
     {% for category in site.categories %}
-    <button
-      class="filter-btn"
-      data-filter="category-{{ category[0] | downcase | replace: ' ','-' }}"
-    >
-      {{ category[0] }}
-    </button>
+      {% assign has_visible_posts = false %}
+      {% for post in category[1] %}
+        {% if post.hidden != true %}
+          {% assign has_visible_posts = true %}
+          {% break %}
+        {% endif %}
+      {% endfor %}
+      {% if has_visible_posts %}
+        <button
+          class="filter-btn"
+          data-filter="category-{{ category[0] | downcase | replace: ' ','-' }}"
+        >
+          {{ category[0] }}
+        </button>
+      {% endif %}
     {% endfor %}
   </div>
 
   <div class="row listrecent">
     {% for post in site.posts %}
+    {% if post.hidden != true %}
     <div
       class="postbox-container"
       data-categories="{% for category in post.categories %}{{ category | downcase }} {% endfor %}"
@@ -44,6 +54,7 @@ permalink: /blog
     >
       {% include postbox.html %}
     </div>
+    {% endif %}
     {% endfor %}
   </div>
 
