@@ -1,4 +1,4 @@
 #start command
-bundle exec jekyll serve --baseurl "/my_blog"
+bundle exec jekyll serve --baseurl ""
 #build command
 bundle exec jekyll build
