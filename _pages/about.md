@@ -35,9 +35,7 @@ comments: false
                 <h4>論文</h4>
                 <ul class="list-unstyled">
                     <li class="mb-3">
-                        <strong>タイトル1</strong><br>
-                        著者名<br>
-                        ジャーナル名, 2024
+                        <strong>Coming soon</strong><br>
                     </li>
                     <!-- 他の論文を追加 -->
                 </ul>
@@ -46,9 +44,9 @@ comments: false
             <h2 class="mb-4">経歴</h2>
             <div class="timeline mb-5">
                 <div class="timeline-item">
-                    <div class="timeline-date">April 2024 - Present</div>
+                    <div class="timeline-date">2024年4月 - 現在</div>
                     <div class="timeline-content">
-                        <h4>Graduate School of Information Science and Technology, Osaka University</h4>
+                        <h4>大阪大学　大学院情報科学研究科　卒業見込み</h4>
                     </div>
                 </div>
                 <div class="timeline-item">
@@ -71,7 +69,7 @@ comments: false
                 <div class="project-card">
                     <img src="{{site.baseurl}}/assets/images/project1.jpg" alt="プロジェクト1" />
                     <h4>プロジェクト1</h4>
-                    <p>プロジェクトの説明文をここに記載します。</p>
+                    <p>Coming soon</p>
                     <a href="#" class="btn btn-primary">詳細を見る</a>
                 </div>
                 <!-- 他のプロジェクトを追加 -->
@@ -82,9 +80,8 @@ comments: false
             <div class="sticky-top sticky-top-80">
                 <h5>連絡先</h5>
                 <p>
-                    <i class="fas fa-envelope"></i> メール: yoshiki.noguchi@example.com<br>
-                    <i class="fab fa-github"></i> GitHub: <a href="https://github.com/yourusername">@yourusername</a><br>
-                    <i class="fab fa-twitter"></i> Twitter: <a href="https://twitter.com/yourusername">@yourusername</a>
+                    <i class="fas fa-envelope"></i> メール: yoshiki.noguchi0920!gmail.com<br>
+                    <i class="fab fa-github"></i> GitHub: <a href="https://github.com/yope7">@yope7</a><br>
                 </p>
             </div>
         </div>
@@ -116,9 +113,7 @@ comments: false
                 <h4>Papers</h4>
                 <ul class="list-unstyled">
                     <li class="mb-3">
-                        <strong>Title 1</strong><br>
-                        Authors<br>
-                        Journal Name, 2024
+                        <strong>Coming soon</strong><br>
                     </li>
                 </ul>
             </div>
@@ -131,15 +126,15 @@ comments: false
                     </div>
                 </div>
                 <div class="timeline-item">
-                    <div class="timeline-date">2020年4月 - 2024年3月</div>
+                    <div class="timeline-date">April 2020 - March 2024</div>
                     <div class="timeline-content">
-                        <h4>大阪大学　工学部電子情報工学科</h4>
+                        <h4>Osaka University</h4>
                     </div>
                 </div>
                 <div class="timeline-item">
-                    <div class="timeline-date">2017年4月 - 2020年3月</div>
+                    <div class="timeline-date">April 2017 - March 2020</div>
                     <div class="timeline-content">
-                        <h4>私立　須磨学園高等学校</h4>
+                        <h4>Suma Gakuen High School</h4>
                     </div>
                 </div>
 
@@ -149,8 +144,8 @@ comments: false
             <div class="projects-grid">
                 <div class="project-card">
                     <img src="{{site.baseurl}}/assets/images/project1.jpg" alt="プロジェクト1" />
-                    <h4>プロジェクト1</h4>
-                    <p>プロジェクトの説明文をここに記載します。</p>
+                    <h4>Coming soon</h4>
+                    <p>Coming soon</p>
                     <a href="#" class="btn btn-primary">詳細を見る</a>
                 </div>
                 <!-- 他のプロジェクトを追加 -->
@@ -161,9 +156,8 @@ comments: false
             <div class="sticky-top sticky-top-80">
                 <h5>Contact</h5>
                 <p>
-                    <i class="fas fa-envelope"></i> Email: yoshiki.noguchi@example.com<br>
-                    <i class="fab fa-github"></i> GitHub: <a href="https://github.com/yourusername">@yourusername</a><br>
-                    <i class="fab fa-twitter"></i> Twitter: <a href="https://twitter.com/yourusername">@yourusername</a>
+                    <i class="fas fa-envelope"></i> Email: yoshiki.noguchi0920!gmail.com<br>
+                    <i class="fab fa-github"></i> GitHub: <a href="https://github.com/yope7">@yope7</a><br>
                 </p>
             </div>
         </div>
