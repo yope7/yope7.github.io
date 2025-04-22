@@ -26,6 +26,12 @@ post_class: post-template
                 </div>
             </div>
 
+            {% if page.wip %}
+            <div class="wip-warning" style="background-color: #fff3cd; color: #856404; padding: 15px; border-radius: 5px; margin-bottom: 20px; border-left: 5px solid #ffeeba;">
+                <strong>⚠️ 注意:</strong> この記事はまだ作成中（Work In Progress）です。
+            </div>
+            {% endif %}
+
             {% assign words = content | number_of_words %}
             {% if words > 360 %}
             <div class="toc-container">
