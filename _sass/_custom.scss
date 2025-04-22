@@ -1,0 +1,61 @@
+// 吹き出しスタイル
+.bubble {
+  position: relative;
+  padding: 15px;
+  margin: 1em 0 3em;
+  border: 5px solid #5a8f00;
+  color: #333;
+  background: #fff;
+  border-radius: 10px;
+}
+
+.bubble:before {
+  content: "";
+  position: absolute;
+  bottom: -20px;
+  left: 20px;
+  border-width: 20px 20px 0;
+  border-style: solid;
+  border-color: #5a8f00 transparent;
+}
+
+.bubble:after {
+  content: "";
+  position: absolute;
+  bottom: -13px;
+  left: 27px;
+  border-width: 13px 13px 0;
+  border-style: solid;
+  border-color: #fff transparent;
+}
+
+// 右側の吹き出し
+.bubble-right {
+  position: relative;
+  padding: 15px;
+  margin: 1em 0 3em;
+  border: 5px solid #5a8f00;
+  color: #333;
+  background: #fff;
+  border-radius: 10px;
+}
+
+.bubble-right:before {
+  content: "";
+  position: absolute;
+  bottom: -20px;
+  right: 20px;
+  border-width: 20px 20px 0;
+  border-style: solid;
+  border-color: #5a8f00 transparent;
+}
+
+.bubble-right:after {
+  content: "";
+  position: absolute;
+  bottom: -13px;
+  right: 27px;
+  border-width: 13px 13px 0;
+  border-style: solid;
+  border-color: #fff transparent;
+}
