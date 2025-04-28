@@ -1,17 +1,11 @@
 ---
 layout: post
-title: "title"
+title: "Attention is All You Need"
 author: Yoshiki
 categories: [category]
 image: assets/images/10.jpg
 featured: false
 hidden: true
-wip: true
 ---
 
-# タイトル
-
-## サブタイトル
-
-- リスト 1
-- リスト 2
+かの有名な Attention の論文を読みました．
