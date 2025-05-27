@@ -6,6 +6,7 @@ categories: [Research]
 image: assets/images/10.jpg
 featured: false
 hidden: false
+wip: false
 ---
 
 # 時間予測に特化したジョブスケジューラの研究

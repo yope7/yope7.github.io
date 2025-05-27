@@ -1,14 +1,15 @@
 ---
 layout: post
-title: "効率的なパレート解の探索"
+title: "A novel algorithm for fast representation of a Pareto front with adaptive resolution: application to multi-objective optimization of a chemical reactor"
 author: Yoshiki
 categories: [Research]
 image: assets/images/10.jpg
 featured: false
 hidden: false
+wip: false
 ---
 
-A novel algorithm for fast representation of a Pareto front with adaptive resolution: application to multi-objective optimization of a chemical reactor
+効率的なパレート解の探索
 
 ## 前提：トレードオフについて
 

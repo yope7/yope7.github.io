@@ -2,11 +2,11 @@
 layout: post
 title: "RL-StarCraft"
 author: Yoshiki
-categories: [category]
+categories: [Research]
 image: assets/images/10.jpg
 featured: false
 hidden: false
-wip: true
+wip: false
 ---
 
 # 強化学習で StarCraft をクリア(トップランク到達)する＠Nature 誌

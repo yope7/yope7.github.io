@@ -5,6 +5,10 @@ permalink: /about
 comments: false
 ---
 
+<div class="text-center mb-4">
+    <a href="{{ site.baseurl }}/blog" class="btn btn-lg btn-outline-primary">ブログ一覧を見る</a>
+</div>
+
 <div class="language-switch text-right mb-4">
     <button id="jp-btn" class="btn btn-sm btn-outline-primary active">日本語</button>
     <button id="en-btn" class="btn btn-sm btn-outline-primary">English</button>

@@ -399,10 +399,10 @@ span.post-read-more a:hover {
 }
 
 .article-post {
-  font-family: Merriweather;
+  word-break: break-word;
+  overflow-wrap: break-word;
   font-size: 1.1rem;
-  line-height: 1.84;
-  color: rgba(0, 0, 0, 0.8);
+  line-height: 1.8;
 }
 
 blockquote {
@@ -912,6 +912,44 @@ iframe {
     flex: 0 0 100%;
     max-width: 100%;
   }
+
+  .article-post {
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+
+  .article-post img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .article-post pre {
+    overflow-x: auto;
+    font-size: 0.85rem;
+    padding: 5px;
+  }
+
+  .article-post table {
+    display: block;
+    overflow-x: auto;
+    width: 100%;
+  }
+
+  .article-post blockquote {
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+  }
+
+  .toc-container {
+    padding: 0.75rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .mainheading h1.posttitle {
+    font-size: 1.75rem;
+    line-height: 1.3;
+    margin-top: 0.5rem;
+  }
 }
 
 .card .img-fluid {
@@ -1382,4 +1420,215 @@ iframe {
 /* ページネーションの矢印アイコンを大きく */
 .pagination .page-link i.fa {
   font-size: 3rem;
+}
+
+/* レスポンシブ対応のための追加スタイル */
+.embed-responsive {
+  position: relative;
+  display: block;
+  width: 100%;
+  padding: 0;
+  overflow: hidden;
+}
+
+.embed-responsive::before {
+  content: "";
+  display: block;
+  padding-top: 56.25%; /* 16:9 アスペクト比 */
+}
+
+.embed-responsive iframe,
+.embed-responsive embed,
+.embed-responsive object,
+.embed-responsive video {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* コードブロックのレスポンシブ対応 */
+.highlight {
+  margin-bottom: 1.5rem;
+  overflow-x: auto;
+  border-radius: 4px;
+}
+
+.highlight pre {
+  margin-bottom: 0;
+  padding: 1rem;
+}
+
+@media (max-width: 576px) {
+  .container {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .article-post h1 {
+    font-size: 1.75rem;
+  }
+
+  .article-post h2 {
+    font-size: 1.5rem;
+  }
+
+  .article-post h3 {
+    font-size: 1.25rem;
+  }
+
+  .article-post li {
+    margin-bottom: 0.5rem;
+  }
+
+  .featured-image {
+    margin-bottom: 1rem;
+  }
+}
+
+/* ナビゲーションのレスポンシブ対応改善 */
+@media (max-width: 767px) {
+  .PageNavigation {
+    flex-direction: column;
+  }
+
+  .PageNavigation .prev,
+  .PageNavigation .next {
+    text-align: center;
+    margin-bottom: 0.5rem;
+  }
+
+  .bottompagination span.navigation {
+    padding: 0.5rem 0;
+  }
+
+  .after-post-tags,
+  .after-post-cats {
+    text-align: center;
+  }
+
+  .after-post-tags ul.tags,
+  .after-post-cats ul.tags {
+    justify-content: center;
+  }
+}
+
+/* 関連記事のレスポンシブ対応 */
+@media (max-width: 991px) {
+  .listrelated .card {
+    margin-bottom: 1.5rem;
+  }
+
+  .listrelated .maxthumb {
+    height: auto;
+    padding-bottom: 56.25%;
+  }
+}
+
+/* モバイルでの目次の表示改善 */
+@media (max-width: 576px) {
+  .toc-container ul {
+    padding-left: 1rem;
+  }
+
+  .toc-container li {
+    margin-bottom: 0.25rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* WIPバッジのスタイル */
+.wip-badge {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 193, 7, 0.9) 0%,
+    rgba(255, 152, 0, 0.9) 100%
+  );
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 0.3rem 0.7rem;
+  border-radius: 0 0 0 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 2;
+  transform-origin: top right;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.slim-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.wip-badge::before {
+  content: "✏️";
+  margin-right: 4px;
+  font-size: 0.85rem;
+}
+
+/* WIPリボンスタイル（代替デザイン） */
+.wip-ribbon {
+  width: 120px;
+  height: 120px;
+  overflow: hidden;
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.wip-ribbon-content {
+  position: absolute;
+  transform: rotate(45deg);
+  top: 26px;
+  right: -25px;
+  width: 150px;
+  background: linear-gradient(135deg, #ff9800 0%, #ff5722 100%);
+  color: white;
+  text-align: center;
+  font-size: 0.75rem;
+  font-weight: bold;
+  padding: 5px 0;
+  box-shadow: 0 3px 10px -5px rgba(0, 0, 0, 0.5);
+}
+
+/* WIPバッジとリボンのモバイル対応 */
+@media (max-width: 767px) {
+  .wip-badge {
+    font-size: 0.65rem;
+    padding: 0.25rem 0.6rem;
+  }
+
+  .wip-ribbon {
+    width: 100px;
+    height: 100px;
+  }
+
+  .wip-ribbon-content {
+    top: 20px;
+    right: -25px;
+    width: 120px;
+    font-size: 0.7rem;
+  }
 }

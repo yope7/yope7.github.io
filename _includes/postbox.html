@@ -5,6 +5,9 @@
   class="slim-card"
   onclick="window.location.href='{{ site.baseurl }}{{ post.url }}'"
 >
+  {% if post.wip %}
+  <div class="wip-badge">Work in Progress</div>
+  {% endif %}
   <div class="slim-card-content">
     <h3 class="slim-card-title">
       <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
