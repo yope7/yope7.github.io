@@ -2,6 +2,7 @@
 layout: page
 title: Blogs
 permalink: /blog
+hide_toc: true
 ---
 
 <!-- Featured
