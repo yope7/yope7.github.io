@@ -3,6 +3,7 @@ layout: page
 title: About Me
 permalink: /about
 comments: false
+hide_toc: true
 ---
 
 <div class="text-center mb-4">
@@ -45,6 +46,31 @@ comments: false
                 </ul>
             </div>
 
+            <h2 class="mb-4">研究活動実績</h2>
+            <div class="activities mb-5">
+                <div class="row">
+                    <div class="col-md-6 mb-4">
+                        <div class="activity-card">
+                            <div class="activity-date">2024/10/12</div>
+                            <h4>PRAGMA40</h4>
+                            <ul class="activity-details">
+                                <li>Student Committeeを務める</li>
+                                <li>ポスタープレゼンテーション：「Proposal for a Scheduling Method in Cloud Bursting (CB) Environments Considering User Opportunity Fairness」</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                        <div class="activity-card">
+                            <div class="activity-date">2024/11/23</div>
+                            <h4>SC24</h4>
+                            <ul class="activity-details">
+                                <li>大学の展示ブースにて、組織および自分の研究活動についてのポスター展示を行う</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <h2 class="mb-4">経歴</h2>
             <div class="timeline mb-5">
                 <div class="timeline-item">
@@ -85,7 +111,7 @@ comments: false
                 <h5>連絡先</h5>
                 <p>
                     <i class="fas fa-envelope"></i> メール: yoshiki.noguchi0920!gmail.com<br>
-                    <i class="fab fa-github"></i> GitHub: <a href="https://github.com/yope7">@yope7</a><br>
+                    <i class="fab fa-github"></i> GitHub: <a href="">整備中</a><br>
                 </p>
             </div>
         </div>
@@ -121,6 +147,32 @@ comments: false
                     </li>
                 </ul>
             </div>
+
+            <h2 class="mb-4">Research Activities</h2>
+            <div class="activities mb-5">
+                <div class="row">
+                    <div class="col-md-6 mb-4">
+                        <div class="activity-card">
+                            <div class="activity-date">October 12, 2024</div>
+                            <h4>PRAGMA40</h4>
+                            <ul class="activity-details">
+                                <li>Served as a Student Committee member</li>
+                                <li>Poster Presentation: "Proposal for a Scheduling Method in Cloud Bursting (CB) Environments Considering User Opportunity Fairness"</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                        <div class="activity-card">
+                            <div class="activity-date">November 23, 2024</div>
+                            <h4>SC24</h4>
+                            <ul class="activity-details">
+                                <li>Presented research activities at the university exhibition booth with poster presentations about organizational and personal research</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <h2 class="mb-4">Experience</h2>
             <div class="timeline mb-5">
                 <div class="timeline-item">
@@ -161,7 +213,7 @@ comments: false
                 <h5>Contact</h5>
                 <p>
                     <i class="fas fa-envelope"></i> Email: yoshiki.noguchi0920!gmail.com<br>
-                    <i class="fab fa-github"></i> GitHub: <a href="https://github.com/yope7">@yope7</a><br>
+                    <i class="fab fa-github"></i> GitHub: <a href="">整備中</a><br>
                 </p>
             </div>
         </div>
@@ -243,6 +295,55 @@ comments: false
     object-fit: cover;
     border-radius: 4px;
     margin-bottom: 1rem;
+}
+
+/* 研究活動カードのスタイル */
+.activity-card {
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 1.25rem;
+    height: 100%;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+    position: relative;
+    background: #fff;
+    overflow: hidden;
+}
+
+.activity-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    border-color: #00ab6b;
+}
+
+.activity-date {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: #00ab6b;
+    color: white;
+    padding: 0.3rem 0.75rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    border-bottom-left-radius: 8px;
+}
+
+.activity-card h4 {
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+    color: #333;
+    font-weight: 600;
+}
+
+.activity-details {
+    padding-left: 1.25rem;
+    margin-bottom: 0;
+}
+
+.activity-details li {
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+    color: #555;
 }
 
 @media (max-width: 768px) {

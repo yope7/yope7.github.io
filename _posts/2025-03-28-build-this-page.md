@@ -2,11 +2,10 @@
 layout: post
 title: "Build This Page"
 author: Yoshiki
-categories: [Tech]
-tags: [Ruby, Jekyll]
+categories: [Tech, Blog]
 image: assets/images/0329/jekyll.png
 description: "本サイトのビルド方法をまとめます．"
-featured: false
+featured: true
 hidden: false
 protected: false
 ---
@@ -78,7 +77,7 @@ bundle install
 
 により，必要な gem をインストールします．
 
-**しかし，大抵パッケージの依存関係でエラーが出ます！**
+**しかし，大抵パッケージの依存関係でエラーが出ます**
 
 ### 5. Gemfile.lock の修正
 
@@ -97,6 +96,8 @@ Gemfile.lock を修正します．(ここがいちばんの躓きポイント)
 + BUNDLED WITH
 + 2.6.6
 ```
+
+> 結局は依存関係の解消
 
 ### 6. ビルド
 

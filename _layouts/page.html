@@ -7,6 +7,14 @@ layout: default
     <h2><span>{{ page.title }}</span></h2>
   </div>
 
+  {% unless page.hide_toc %} {% assign words = content | number_of_words %} {%
+  if words > 20 %}
+  <div class="toc-container">
+    <div class="toc-header">目次</div>
+    {% include toc.html html=content h_min=2 h_max=3 %}
+  </div>
+  {% endif %} {% endunless %}
+
   <div class="article-post">{{content}}</div>
 </section>
 

@@ -41,7 +41,7 @@ permalink: /blog/
   <div class="row listrecent">
     {% for post in site.posts %} {% if post.hidden != true %}
     <div
-      class="postbox-container"
+      class="postbox-container animate-post"
       data-categories="{% for category in post.categories %}{{ category | downcase }} {% endfor %}"
       data-tags="{% for tag in post.tags %}{{ tag | downcase }} {% endfor %}"
     >
@@ -50,6 +50,36 @@ permalink: /blog/
     {% endif %} {% endfor %}
   </div>
 </section>
+
+<style>
+  .animate-post {
+    transition: all 0.5s ease-out;
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .animate-post.hide {
+    opacity: 0;
+    transform: translateX(50px);
+    display: none !important;
+  }
+
+  .animate-post.show {
+    animation: slideInRight 0.5s forwards;
+    display: block;
+  }
+
+  @keyframes slideInRight {
+    from {
+      opacity: 0;
+      transform: translateX(50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+</style>
 
 <script>
   document.querySelectorAll(".filter-btn").forEach((button) => {
@@ -62,15 +92,43 @@ permalink: /blog/
         .forEach((btn) => btn.classList.remove("active"));
       button.classList.add("active");
 
-      // 投稿の表示/非表示を切り替え
+      // すべての投稿を一度リセット
       document.querySelectorAll(".postbox-container").forEach((post) => {
-        const showPost =
-          filter === "all" ||
-          post.dataset.categories.includes(filter.replace("category-", "")) ||
-          post.dataset.tags.includes(filter.replace("tag-", ""));
-
-        post.style.display = showPost ? "block" : "none";
+        post.classList.add("hide");
+        post.classList.remove("show");
+        post.style.display = ""; // スタイルをリセット
       });
+
+      // 少し遅延させて表示するポストを処理
+      setTimeout(() => {
+        document.querySelectorAll(".postbox-container").forEach((post) => {
+          const showPost =
+            filter === "all" ||
+            post.dataset.categories.includes(filter.replace("category-", "")) ||
+            post.dataset.tags.includes(filter.replace("tag-", ""));
+
+          if (showPost) {
+            post.style.display = "block"; // 表示するポストは明示的にblockに
+            post.classList.remove("hide");
+            post.classList.add("show");
+          } else {
+            post.classList.add("hide");
+            // display:noneはクラスで制御するので直接スタイルを設定しない
+          }
+        });
+      }, 300);
+    });
+  });
+
+  // ページ読み込み時にも全ての投稿をアニメーションで表示
+  window.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll(".postbox-container").forEach((post, index) => {
+      post.classList.add("hide");
+      post.style.display = "block"; // 明示的にdisplayを設定
+      setTimeout(() => {
+        post.classList.remove("hide");
+        post.classList.add("show");
+      }, index * 100); // 投稿ごとに少しずつ遅延して表示
     });
   });
 </script>

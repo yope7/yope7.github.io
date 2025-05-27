@@ -32,13 +32,15 @@ post_class: post-template
             </div>
             {% endif %}
 
+            {% unless page.hide_toc %}
             {% assign words = content | number_of_words %}
-            {% if words > 360 %}
+            {% if words > 50 %}
             <div class="toc-container">
                 <div class="toc-header">目次</div>
                 {% include toc.html html=content h_min=2 h_max=3 %}
             </div>
             {% endif %}
+            {% endunless %}
 
             <!-- Adsense if enabled from _config.yml (change your pub id and slot) -->
             {% if site.adsense == "enabled" %}
