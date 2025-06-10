@@ -191,3 +191,688 @@
 .listfeaturedtag .post-read-more a {
   pointer-events: auto;
 }
+
+/* ダークモード用のスタイル */
+[data-theme="dark"] {
+  background-color: #1e1e2e; /* より柔らかいダークブルーグレー */
+  color: #cdd6f4; /* より柔らかいオフホワイト */
+
+  .navbar {
+    background: rgba(30, 30, 46, 0.97) !important;
+    box-shadow: 0 2px 2px -2px rgba(255, 255, 255, 0.1);
+  }
+
+  .navbar-brand,
+  .nav-link {
+    color: #cdd6f4 !important;
+  }
+
+  .article-post {
+    color: #cdd6f4;
+  }
+
+  .posttitle {
+    color: #cdd6f4;
+  }
+
+  .sitetitle {
+    color: #cdd6f4;
+  }
+
+  .lead {
+    color: #a6adc8; /* より柔らかいグレー */
+  }
+
+  .footer {
+    background: #1e1e2e;
+    color: #a6adc8;
+    border-top: 1px solid #313244 !important;
+  }
+
+  .toc-container {
+    background: #313244; /* より柔らかいダークグレー */
+    border-left: 3px solid #89b4fa; /* より柔らかいブルー */
+  }
+
+  .toc-container a {
+    color: #a6adc8;
+  }
+
+  .toc-container a:hover {
+    color: #89b4fa;
+  }
+
+  blockquote {
+    border-left: 4px solid #89b4fa;
+    color: #a6adc8;
+  }
+
+  .card {
+    background: #313244;
+    border: 1px solid #45475a;
+  }
+
+  .card-title a {
+    color: #cdd6f4;
+  }
+
+  .card-text {
+    color: #a6adc8;
+  }
+
+  .post-top-meta span {
+    color: #a6adc8;
+  }
+
+  .reading-time {
+    background-color: #313244;
+    color: #a6adc8;
+  }
+
+  /* ブログ一覧のスタイル */
+  .listfeaturedtag {
+    background: #313244;
+    border: 1px solid #45475a;
+  }
+
+  .listfeaturedtag .card {
+    background: #313244;
+  }
+
+  .listfeaturedtag .card-title a {
+    color: #cdd6f4 !important;
+    font-weight: 600;
+  }
+
+  .listfeaturedtag .card-text {
+    color: #a6adc8;
+  }
+
+  .listfeaturedtag .post-top-meta span {
+    color: #a6adc8 !important;
+  }
+
+  .post-top-meta a {
+    color: #89b4fa !important;
+  }
+
+  .post-top-meta a:hover {
+    color: #b4befe !important;
+  }
+
+  .post-date {
+    color: #a6adc8 !important;
+  }
+
+  .post-date:before {
+    opacity: 0.5;
+  }
+
+  .post-date a {
+    color: #89b4fa !important;
+  }
+
+  .post-date a:hover {
+    color: #b4befe !important;
+  }
+
+  .post-date i {
+    color: #89b4fa !important;
+  }
+
+  .post-date .post-date-label {
+    color: #7f849c !important;
+  }
+
+  .post-date .post-date-value {
+    color: #a6adc8 !important;
+  }
+
+  .post-date .post-date-value a {
+    color: #89b4fa !important;
+  }
+
+  .post-date .post-date-value a:hover {
+    color: #b4befe !important;
+  }
+
+  .post-date .post-date-value i {
+    color: #89b4fa !important;
+  }
+
+  /* スリムカードのスタイル */
+  .slim-card {
+    background: #313244;
+    border-bottom: 1px solid #45475a;
+  }
+
+  .slim-card:hover {
+    background-color: rgba(137, 180, 250, 0.1);
+  }
+
+  .slim-card-title a {
+    color: #cdd6f4;
+  }
+
+  .slim-card-text {
+    color: #a6adc8;
+  }
+
+  .slim-card-meta {
+    color: #7f849c;
+  }
+
+  /* カテゴリータグのスタイル */
+  .category-tag {
+    background-color: #45475a;
+    color: #cdd6f4;
+  }
+
+  .category-tag:hover {
+    background-color: #585b70;
+  }
+
+  /* 検索ボックスのスタイル */
+  .search-container {
+    background: #313244;
+  }
+
+  .search-container input {
+    background: #45475a;
+    color: #cdd6f4;
+    border: 1px solid #585b70;
+  }
+
+  .search-container input::placeholder {
+    color: #7f849c;
+  }
+
+  /* ページネーションのスタイル */
+  .pagination {
+    background: #313244;
+  }
+
+  .pagination .page-link {
+    background: #313244;
+    color: #cdd6f4;
+    border-color: #45475a;
+  }
+
+  .pagination .page-link:hover {
+    background: #45475a;
+    color: #89b4fa;
+  }
+
+  .pagination .active .page-link {
+    background: #89b4fa;
+    border-color: #89b4fa;
+  }
+
+  /* サイトコンテンツ全体のスタイル */
+  .site-content {
+    background: #1e1e2e;
+  }
+
+  .mainheading {
+    background: #1e1e2e;
+  }
+
+  .main-content {
+    background: #1e1e2e;
+  }
+
+  /* リンクのスタイル */
+  a {
+    color: #89b4fa;
+  }
+
+  a:hover {
+    color: #b4befe;
+  }
+
+  /* コードブロックのスタイル */
+  pre {
+    background: #313244;
+    border: 1px solid #45475a;
+  }
+
+  code {
+    background: #313244;
+    color: #cdd6f4;
+  }
+
+  /* Featuredのスタイル */
+  .listfeaturedtag {
+    background: #313244;
+    border: 1px solid #45475a;
+  }
+
+  .listfeaturedtag .card {
+    background: #313244;
+  }
+
+  .listfeaturedtag .card-title a {
+    color: #cdd6f4 !important;
+    font-weight: 600;
+  }
+
+  .listfeaturedtag .card-text {
+    color: #a6adc8;
+  }
+
+  .listfeaturedtag .post-top-meta span {
+    color: #a6adc8 !important;
+  }
+
+  /* Author部分のスタイル */
+  .authorpage-meta {
+    background: #313244;
+    border: 1px solid #45475a;
+  }
+
+  .authorpage-meta .authorpage-title {
+    color: #cdd6f4;
+  }
+
+  .authorpage-meta .authorpage-description {
+    color: #a6adc8;
+  }
+
+  .authorpage-meta .authorpage-image {
+    border: 3px solid #45475a;
+  }
+
+  .authorpage-meta .authorpage-meta {
+    color: #a6adc8;
+  }
+
+  .authorpage-meta .authorpage-meta a {
+    color: #89b4fa;
+  }
+
+  .authorpage-meta .authorpage-meta a:hover {
+    color: #b4befe;
+  }
+
+  .authorpage-meta .authorpage-meta i {
+    color: #89b4fa;
+  }
+
+  .authorpage-meta .authorpage-meta .authorpage-meta-item {
+    color: #a6adc8;
+  }
+
+  .authorpage-meta .authorpage-meta .authorpage-meta-item i {
+    color: #89b4fa;
+  }
+
+  .authorpage-meta .authorpage-meta .authorpage-meta-item a {
+    color: #89b4fa;
+  }
+
+  .authorpage-meta .authorpage-meta .authorpage-meta-item a:hover {
+    color: #b4befe;
+  }
+
+  .authorpage-meta
+    .authorpage-meta
+    .authorpage-meta-item
+    .authorpage-meta-item-label {
+    color: #7f849c;
+  }
+
+  .authorpage-meta
+    .authorpage-meta
+    .authorpage-meta-item
+    .authorpage-meta-item-value {
+    color: #cdd6f4;
+  }
+
+  .authorpage-meta
+    .authorpage-meta
+    .authorpage-meta-item
+    .authorpage-meta-item-value
+    a {
+    color: #89b4fa;
+  }
+
+  .authorpage-meta
+    .authorpage-meta
+    .authorpage-meta-item
+    .authorpage-meta-item-value
+    a:hover {
+    color: #b4befe;
+  }
+
+  .authorpage-meta
+    .authorpage-meta
+    .authorpage-meta-item
+    .authorpage-meta-item-value
+    i {
+    color: #89b4fa;
+  }
+
+  .authorpage-meta
+    .authorpage-meta
+    .authorpage-meta-item
+    .authorpage-meta-item-value
+    .authorpage-meta-item-value-label {
+    color: #7f849c;
+  }
+
+  .authorpage-meta
+    .authorpage-meta
+    .authorpage-meta-item
+    .authorpage-meta-item-value
+    .authorpage-meta-item-value-value {
+    color: #cdd6f4;
+  }
+
+  .authorpage-meta
+    .authorpage-meta
+    .authorpage-meta-item
+    .authorpage-meta-item-value
+    .authorpage-meta-item-value-value
+    a {
+    color: #89b4fa;
+  }
+
+  .authorpage-meta
+    .authorpage-meta
+    .authorpage-meta-item
+    .authorpage-meta-item-value
+    .authorpage-meta-item-value-value
+    a:hover {
+    color: #b4befe;
+  }
+
+  .authorpage-meta
+    .authorpage-meta
+    .authorpage-meta-item
+    .authorpage-meta-item-value
+    .authorpage-meta-item-value-value
+    i {
+    color: #89b4fa;
+  }
+
+  .authorpage-meta
+    .authorpage-meta
+    .authorpage-meta-item
+    .authorpage-meta-item-value
+    .authorpage-meta-item-value-value
+    .authorpage-meta-item-value-value-label {
+    color: #7f849c;
+  }
+
+  .authorpage-meta
+    .authorpage-meta
+    .authorpage-meta-item
+    .authorpage-meta-item-value
+    .authorpage-meta-item-value-value
+    .authorpage-meta-item-value-value-value {
+    color: #cdd6f4;
+  }
+
+  .authorpage-meta
+    .authorpage-meta
+    .authorpage-meta-item
+    .authorpage-meta-item-value
+    .authorpage-meta-item-value-value
+    .authorpage-meta-item-value-value-value
+    a {
+    color: #89b4fa;
+  }
+
+  .authorpage-meta
+    .authorpage-meta
+    .authorpage-meta-item
+    .authorpage-meta-item-value
+    .authorpage-meta-item-value-value
+    .authorpage-meta-item-value-value-value
+    a:hover {
+    color: #b4befe;
+  }
+
+  .authorpage-meta
+    .authorpage-meta
+    .authorpage-meta-item
+    .authorpage-meta-item-value
+    .authorpage-meta-item-value-value
+    .authorpage-meta-item-value-value-value
+    i {
+    color: #89b4fa;
+  }
+
+  /* Card Bodyのスタイル */
+  .card-body {
+    background: #313244;
+    color: #cdd6f4;
+  }
+
+  .card-body h1,
+  .card-body h2,
+  .card-body h3,
+  .card-body h4,
+  .card-body h5,
+  .card-body h6 {
+    color: #cdd6f4;
+  }
+
+  .card-body p {
+    color: #a6adc8;
+  }
+
+  .card-body a {
+    color: #89b4fa;
+  }
+
+  .card-body a:hover {
+    color: #b4befe;
+  }
+
+  .card-body .card-title {
+    color: #cdd6f4;
+  }
+
+  .card-body .card-text {
+    color: #a6adc8;
+  }
+
+  .card-body .card-meta {
+    color: #7f849c;
+  }
+
+  .card-body .card-meta a {
+    color: #89b4fa;
+  }
+
+  .card-body .card-meta a:hover {
+    color: #b4befe;
+  }
+
+  .card-body .card-meta i {
+    color: #89b4fa;
+  }
+
+  .card-body .card-meta .card-meta-item {
+    color: #a6adc8;
+  }
+
+  .card-body .card-meta .card-meta-item i {
+    color: #89b4fa;
+  }
+
+  .card-body .card-meta .card-meta-item a {
+    color: #89b4fa;
+  }
+
+  .card-body .card-meta .card-meta-item a:hover {
+    color: #b4befe;
+  }
+
+  .card-body .card-meta .card-meta-item .card-meta-item-label {
+    color: #7f849c;
+  }
+
+  .card-body .card-meta .card-meta-item .card-meta-item-value {
+    color: #cdd6f4;
+  }
+
+  .card-body .card-meta .card-meta-item .card-meta-item-value a {
+    color: #89b4fa;
+  }
+
+  .card-body .card-meta .card-meta-item .card-meta-item-value a:hover {
+    color: #b4befe;
+  }
+
+  .card-body .card-meta .card-meta-item .card-meta-item-value i {
+    color: #89b4fa;
+  }
+
+  /* Card Footerのスタイル */
+  .card-footer {
+    background: #313244 !important;
+    border-top: 1px solid #45475a !important;
+    color: #a6adc8;
+  }
+
+  .card-footer.b-0 {
+    border: none !important;
+  }
+
+  .card-footer.bg-white {
+    background: #313244 !important;
+  }
+
+  .card-footer.mt-auto {
+    margin-top: auto;
+  }
+
+  .card-footer a {
+    color: #89b4fa;
+  }
+
+  .card-footer a:hover {
+    color: #b4befe;
+  }
+
+  .card-footer .card-meta {
+    color: #7f849c;
+  }
+
+  .card-footer .card-meta a {
+    color: #89b4fa;
+  }
+
+  .card-footer .card-meta a:hover {
+    color: #b4befe;
+  }
+
+  .card-footer .card-meta i {
+    color: #89b4fa;
+  }
+
+  .card-footer .card-meta .card-meta-item {
+    color: #a6adc8;
+  }
+
+  .card-footer .card-meta .card-meta-item i {
+    color: #89b4fa;
+  }
+
+  .card-footer .card-meta .card-meta-item a {
+    color: #89b4fa;
+  }
+
+  .card-footer .card-meta .card-meta-item a:hover {
+    color: #b4befe;
+  }
+
+  .card-footer .card-meta .card-meta-item .card-meta-item-label {
+    color: #7f849c;
+  }
+
+  .card-footer .card-meta .card-meta-item .card-meta-item-value {
+    color: #cdd6f4;
+  }
+
+  .card-footer .card-meta .card-meta-item .card-meta-item-value a {
+    color: #89b4fa;
+  }
+
+  .card-footer .card-meta .card-meta-item .card-meta-item-value a:hover {
+    color: #b4befe;
+  }
+
+  .card-footer .card-meta .card-meta-item .card-meta-item-value i {
+    color: #89b4fa;
+  }
+}
+
+/* テーマ切り替えボタン */
+.theme-switch-wrapper {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+.theme-switch {
+  display: inline-block;
+  height: 34px;
+  position: relative;
+  width: 60px;
+}
+
+.theme-switch input {
+  display: none;
+}
+
+.slider {
+  background-color: #ccc;
+  bottom: 0;
+  cursor: pointer;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: 0.4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  background-color: #fff;
+  bottom: 4px;
+  content: "";
+  height: 26px;
+  left: 4px;
+  position: absolute;
+  transition: 0.4s;
+  width: 26px;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #00ab6b;
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+.slider .fas {
+  color: #fff;
+  font-size: 16px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.slider .fa-sun {
+  left: 8px;
+}
+
+.slider .fa-moon {
+  right: 8px;
+}
