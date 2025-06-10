@@ -1,4 +1,4 @@
-// テーマ切り替え機能
+// ダークモード切り替え
 document.addEventListener("DOMContentLoaded", function () {
   const toggleSwitch = document.querySelector(
     '.theme-switch input[type="checkbox"]'
@@ -22,5 +22,28 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-  toggleSwitch.addEventListener("change", switchTheme, false);
+  toggleSwitch.addEventListener("change", switchTheme);
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  const checkbox = document.getElementById("checkbox");
+  const sunIcon = document.querySelector(".theme-switch .icon.sun");
+  const glassIcon = document.querySelector(".theme-switch .icon.glass");
+
+  function updateIcons() {
+    if (checkbox && sunIcon && glassIcon) {
+      if (checkbox.checked) {
+        sunIcon.style.display = "none";
+        glassIcon.style.display = "inline-block";
+      } else {
+        sunIcon.style.display = "inline-block";
+        glassIcon.style.display = "none";
+      }
+    }
+  }
+
+  if (checkbox && sunIcon && glassIcon) {
+    checkbox.addEventListener("change", updateIcons);
+    updateIcons(); // 初期状態
+  }
 });

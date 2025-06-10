@@ -31,7 +31,6 @@
   border-bottom: 1px solid rgba(0, 0, 0, 0.07);
   padding: 16px 0 16px 12px;
   margin-bottom: 0;
-  transition: all 0.3s ease;
   position: relative;
   cursor: pointer;
 }
@@ -39,7 +38,6 @@
 .slim-card:hover {
   border-left-color: #00ab6b;
   background-color: rgba(0, 171, 107, 0.03);
-  transform: translateX(3px);
 }
 
 .slim-card-title {
@@ -52,7 +50,6 @@
 .slim-card-title a {
   color: #333;
   text-decoration: none;
-  transition: color 0.2s ease;
   pointer-events: none;
 }
 
@@ -84,7 +81,6 @@
   position: absolute;
   left: 0;
   top: 50%;
-  transform: translateY(-50%);
   width: 12px;
   height: 12px;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23999'%3E%3Cpath d='M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M16.2,16.2L11,13V7H12.5V12.2L17,14.9L16.2,16.2Z' /%3E%3C/svg%3E");
@@ -98,7 +94,6 @@
   border-radius: 4px;
   margin-left: 12px;
   font-size: 0.75rem;
-  transition: all 0.2s ease;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
 }
 
@@ -172,7 +167,6 @@
 .toc-container a {
   color: #555;
   text-decoration: none;
-  transition: all 0.2s;
 }
 
 .toc-container a:hover {
@@ -194,8 +188,8 @@
 
 /* ダークモード用のスタイル */
 [data-theme="dark"] {
-  background-color: #1e1e2e; /* より柔らかいダークブルーグレー */
-  color: #cdd6f4; /* より柔らかいオフホワイト */
+  background-color: #1e1e2e;
+  color: #cdd6f4;
 
   .navbar {
     background: rgba(30, 30, 46, 0.97) !important;
@@ -220,7 +214,7 @@
   }
 
   .lead {
-    color: #a6adc8; /* より柔らかいグレー */
+    color: #a6adc8;
   }
 
   .footer {
@@ -230,8 +224,8 @@
   }
 
   .toc-container {
-    background: #313244; /* より柔らかいダークグレー */
-    border-left: 3px solid #89b4fa; /* より柔らかいブルー */
+    background: #313244;
+    border-left: 3px solid #89b4fa;
   }
 
   .toc-container a {
@@ -552,97 +546,6 @@
     color: #89b4fa;
   }
 
-  .authorpage-meta
-    .authorpage-meta
-    .authorpage-meta-item
-    .authorpage-meta-item-value
-    .authorpage-meta-item-value-label {
-    color: #7f849c;
-  }
-
-  .authorpage-meta
-    .authorpage-meta
-    .authorpage-meta-item
-    .authorpage-meta-item-value
-    .authorpage-meta-item-value-value {
-    color: #cdd6f4;
-  }
-
-  .authorpage-meta
-    .authorpage-meta
-    .authorpage-meta-item
-    .authorpage-meta-item-value
-    .authorpage-meta-item-value-value
-    a {
-    color: #89b4fa;
-  }
-
-  .authorpage-meta
-    .authorpage-meta
-    .authorpage-meta-item
-    .authorpage-meta-item-value
-    .authorpage-meta-item-value-value
-    a:hover {
-    color: #b4befe;
-  }
-
-  .authorpage-meta
-    .authorpage-meta
-    .authorpage-meta-item
-    .authorpage-meta-item-value
-    .authorpage-meta-item-value-value
-    i {
-    color: #89b4fa;
-  }
-
-  .authorpage-meta
-    .authorpage-meta
-    .authorpage-meta-item
-    .authorpage-meta-item-value
-    .authorpage-meta-item-value-value
-    .authorpage-meta-item-value-value-label {
-    color: #7f849c;
-  }
-
-  .authorpage-meta
-    .authorpage-meta
-    .authorpage-meta-item
-    .authorpage-meta-item-value
-    .authorpage-meta-item-value-value
-    .authorpage-meta-item-value-value-value {
-    color: #cdd6f4;
-  }
-
-  .authorpage-meta
-    .authorpage-meta
-    .authorpage-meta-item
-    .authorpage-meta-item-value
-    .authorpage-meta-item-value-value
-    .authorpage-meta-item-value-value-value
-    a {
-    color: #89b4fa;
-  }
-
-  .authorpage-meta
-    .authorpage-meta
-    .authorpage-meta-item
-    .authorpage-meta-item-value
-    .authorpage-meta-item-value-value
-    .authorpage-meta-item-value-value-value
-    a:hover {
-    color: #b4befe;
-  }
-
-  .authorpage-meta
-    .authorpage-meta
-    .authorpage-meta-item
-    .authorpage-meta-item-value
-    .authorpage-meta-item-value-value
-    .authorpage-meta-item-value-value-value
-    i {
-    color: #89b4fa;
-  }
-
   /* Card Bodyのスタイル */
   .card-body {
     background: #313244;
@@ -810,69 +713,232 @@
   }
 }
 
-/* テーマ切り替えボタン */
+/* テーマ切り替えスイッチ */
 .theme-switch-wrapper {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  z-index: 1000;
+  z-index: 9999;
 }
 
 .theme-switch {
-  display: inline-block;
-  height: 34px;
   position: relative;
-  width: 60px;
+  display: inline-block;
+  width: 32px;
+  height: 32px;
 }
 
 .theme-switch input {
-  display: none;
+  opacity: 0;
+  width: 0;
+  height: 0;
 }
 
 .slider {
-  background-color: #ccc;
-  bottom: 0;
+  position: absolute;
   cursor: pointer;
-  left: 0;
-  position: absolute;
-  right: 0;
   top: 0;
-  transition: 0.4s;
-  border-radius: 34px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #cccccc;
+  border-radius: 40px;
+  transition: background 0.3s;
 }
 
-.slider:before {
-  background-color: #fff;
-  bottom: 4px;
+.slider::before,
+.slider::after {
   content: "";
-  height: 26px;
-  left: 4px;
-  position: absolute;
-  transition: 0.4s;
-  width: 26px;
-  border-radius: 50%;
-}
-
-input:checked + .slider {
-  background-color: #00ab6b;
-}
-
-input:checked + .slider:before {
-  transform: translateX(26px);
-}
-
-.slider .fas {
-  color: #fff;
-  font-size: 16px;
   position: absolute;
   top: 50%;
-  transform: translateY(-50%);
-}
-
-.slider .fa-sun {
   left: 8px;
+  width: 16px;
+  height: 16px;
+  transform: translateY(-50%);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: 2;
+  transition: opacity 0.2s;
+  opacity: 0;
+  pointer-events: none;
+}
+.slider::before {
+  background-image: url("/assets/images/icons/glass.svg");
+  opacity: 1;
+}
+.slider::after {
+  background-image: url("/assets/images/icons/sun.svg");
+  right: 0;
+}
+input:checked + .slider {
+  background-color: #ff7a41;
+}
+input:checked + .slider::before {
+  opacity: 0;
+}
+input:checked + .slider::after {
+  opacity: 1;
 }
 
-.slider .fa-moon {
-  right: 8px;
+/* Featured画像のスタイル */
+.listfeaturedtag .card-img-top {
+  height: 200px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.listfeaturedtag .wrapthumbnail {
+  min-width: 200px;
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+}
+
+@media (max-width: 767px) {
+  .listfeaturedtag .card-img-top {
+    height: 250px;
+    min-height: 250px;
+    max-height: 250px;
+  }
+
+  .listfeaturedtag .wrapthumbnail {
+    min-width: 100%;
+    width: 100%;
+    height: 250px;
+    aspect-ratio: 16/9;
+  }
+
+  .listfeaturedtag .card {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .listfeaturedtag .card-body {
+    flex: 1;
+  }
+
+  .listfeaturedtag .card-img-top {
+    width: 100%;
+    aspect-ratio: 16/9;
+  }
+}
+
+/* Featured投稿のスタイル */
+.listfeaturedtag {
+  background: #fff;
+  border: 1px solid #e9ecef;
+  margin-bottom: 20px;
+  padding: 1.5rem;
+  border-radius: 8px;
+}
+
+.listfeaturedtag:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.listfeaturedtag .card {
+  background: transparent;
+  border: none;
+}
+
+.listfeaturedtag .card-body {
+  padding: 0;
+}
+
+.listfeaturedtag .card-title {
+  margin-bottom: 1rem;
+}
+
+.listfeaturedtag .card-title a {
+  color: #333 !important;
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.listfeaturedtag .card-title a:hover {
+  color: #00ab6b !important;
+}
+
+.listfeaturedtag .card-text {
+  color: #666;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.listfeaturedtag .post-top-meta {
+  margin-bottom: 0.5rem;
+}
+
+.listfeaturedtag .post-top-meta span {
+  color: #666 !important;
+  font-size: 0.9rem;
+}
+
+.listfeaturedtag .post-top-meta a {
+  color: #00ab6b !important;
+}
+
+.listfeaturedtag .post-top-meta a:hover {
+  color: #008055 !important;
+}
+
+/* ダークモード用のスタイル */
+[data-theme="dark"] .listfeaturedtag {
+  background: #313244 !important;
+  border-color: #45475a !important;
+}
+
+[data-theme="dark"] .listfeaturedtag:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+[data-theme="dark"] .listfeaturedtag .card-title a {
+  color: #cdd6f4 !important;
+}
+
+[data-theme="dark"] .listfeaturedtag .card-title a:hover {
+  color: #89b4fa !important;
+}
+
+[data-theme="dark"] .listfeaturedtag .card-text {
+  color: #a6adc8 !important;
+}
+
+[data-theme="dark"] .listfeaturedtag .post-top-meta span {
+  color: #a6adc8 !important;
+}
+
+[data-theme="dark"] .listfeaturedtag .post-top-meta a {
+  color: #89b4fa !important;
+}
+
+[data-theme="dark"] .listfeaturedtag .post-top-meta a:hover {
+  color: #b4befe !important;
+}
+
+.theme-switch .icon {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+  margin: 0 6px 0 2px;
+}
+.theme-switch .icon img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.theme-switch .icon.glass {
+  display: none;
+}
+.theme-switch input:checked ~ .icon.sun {
+  display: none;
+}
+.theme-switch input:checked ~ .icon.glass {
+  display: inline-block;
+}
+.theme-switch .icon.sun {
+  display: inline-block;
 }

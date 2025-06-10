@@ -189,41 +189,8 @@
     ></script>
     {% endif %}
 
-    <script>
-      // スクロールアニメーション
-      document.addEventListener("DOMContentLoaded", function () {
-        const observer = new IntersectionObserver(
-          (entries) => {
-            entries.forEach((entry) => {
-              if (entry.isIntersecting) {
-                entry.target.classList.add("visible");
-              }
-            });
-          },
-          {
-            threshold: 0.1,
-          }
-        );
-
-        // アニメーションを適用する要素
-        document
-          .querySelectorAll(".project-card, .timeline-item, h2, .publications")
-          .forEach((elem) => {
-            elem.classList.add("animate-on-scroll");
-            observer.observe(elem);
-          });
-      });
-    </script>
     <script src="{{ site.baseurl }}/assets/js/copy-button.js"></script>
     <script src="{{ site.baseurl }}/assets/js/main.js"></script>
-    <div class="theme-switch-wrapper">
-      <label class="theme-switch" for="checkbox">
-        <input type="checkbox" id="checkbox" />
-        <div class="slider">
-          <i class="fas fa-sun"></i>
-          <i class="fas fa-moon"></i>
-        </div>
-      </label>
-    </div>
+    {% include theme-switch.html %}
   </body>
 </html>

@@ -42,7 +42,7 @@ hide_toc: true
   <div class="row listrecent">
     {% for post in site.posts %} {% if post.hidden != true %}
     <div
-      class="postbox-container animate-post"
+      class="postbox-container"
       data-categories="{% for category in post.categories %}{{ category | downcase }} {% endfor %}"
       data-tags="{% for tag in post.tags %}{{ tag | downcase }} {% endfor %}"
     >
@@ -95,41 +95,22 @@ hide_toc: true
 
       // すべての投稿を一度リセット
       document.querySelectorAll(".postbox-container").forEach((post) => {
-        post.classList.add("hide");
-        post.classList.remove("show");
         post.style.display = ""; // スタイルをリセット
       });
 
-      // 少し遅延させて表示するポストを処理
-      setTimeout(() => {
-        document.querySelectorAll(".postbox-container").forEach((post) => {
-          const showPost =
-            filter === "all" ||
-            post.dataset.categories.includes(filter.replace("category-", "")) ||
-            post.dataset.tags.includes(filter.replace("tag-", ""));
+      // 表示するポストを処理
+      document.querySelectorAll(".postbox-container").forEach((post) => {
+        const showPost =
+          filter === "all" ||
+          post.dataset.categories.includes(filter.replace("category-", "")) ||
+          post.dataset.tags.includes(filter.replace("tag-", ""));
 
-          if (showPost) {
-            post.style.display = "block"; // 表示するポストは明示的にblockに
-            post.classList.remove("hide");
-            post.classList.add("show");
-          } else {
-            post.classList.add("hide");
-            // display:noneはクラスで制御するので直接スタイルを設定しない
-          }
-        });
-      }, 300);
-    });
-  });
-
-  // ページ読み込み時にも全ての投稿をアニメーションで表示
-  window.addEventListener("DOMContentLoaded", () => {
-    document.querySelectorAll(".postbox-container").forEach((post, index) => {
-      post.classList.add("hide");
-      post.style.display = "block"; // 明示的にdisplayを設定
-      setTimeout(() => {
-        post.classList.remove("hide");
-        post.classList.add("show");
-      }, index * 100); // 投稿ごとに少しずつ遅延して表示
+        if (showPost) {
+          post.style.display = "block";
+        } else {
+          post.style.display = "none";
+        }
+      });
     });
   });
 </script>
