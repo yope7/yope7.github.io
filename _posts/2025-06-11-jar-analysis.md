@@ -2,7 +2,7 @@
 layout: post
 title: "jar-analysis"
 author: Yoshiki
-categories: [other]
+categories: [Tech]
 image: assets/images/10.jpg
 featured: false
 hidden: false
