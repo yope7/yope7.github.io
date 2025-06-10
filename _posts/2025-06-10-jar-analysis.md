@@ -9,7 +9,7 @@ hidden: false
 wip: false
 ---
 
-# .Jar ファイル(マインクラフト MOD)の解析をしてみた
+# Jar ファイル(マインクラフト MOD)の解析をしてみた
 
 ## 背景
 
