@@ -40,7 +40,7 @@ hide_toc: true
                 <h4>論文</h4>
                 <ul class="list-unstyled">
                     <li class="mb-3">
-                        <strong>Coming soon</strong><br>
+                        <strong>ユーザ利⽤機会公平性を考慮するクラウドバースティング環境向けスケジューリング⼿法の提案,2024年2月</strong><br>
                     </li>
                     <!-- 他の論文を追加 -->
                 </ul>
@@ -94,12 +94,12 @@ hide_toc: true
 
             </div>
 
-            <h2 class="mb-4">成果物</h2>
+            <h2 class="mb-4">成果物(開発したもの)</h2>
             <div class="projects-grid">
                 <div class="project-card">
                     <img src="{{site.baseurl}}/assets/images/project1.jpg" alt="プロジェクト1" />
-                    <h4>プロジェクト1</h4>
-                    <p>Coming soon</p>
+                    <h4>Lab-Muscle-Club</h4>
+                    <p>友人と筋トレの記録を共有するアプリ</p>
                     <a href="#" class="btn btn-primary">詳細を見る</a>
                 </div>
                 <!-- 他のプロジェクトを追加 -->
@@ -111,7 +111,7 @@ hide_toc: true
                 <h5>連絡先</h5>
                 <p>
                     <i class="fas fa-envelope"></i> メール: yoshiki.noguchi0920!gmail.com<br>
-                    <i class="fab fa-github"></i> GitHub: <a href="">整備中</a><br>
+                    <i class="fab fa-github"></i> GitHub: <a href="https://github.com/yope7">yope7</a><br>
                 </p>
             </div>
         </div>
@@ -213,7 +213,7 @@ hide_toc: true
                 <h5>Contact</h5>
                 <p>
                     <i class="fas fa-envelope"></i> Email: yoshiki.noguchi0920!gmail.com<br>
-                    <i class="fab fa-github"></i> GitHub: <a href="">整備中</a><br>
+                    <i class="fab fa-github"></i> GitHub: <a href="https://github.com/yope7">yope7</a><br>
                 </p>
             </div>
         </div>
