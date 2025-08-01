@@ -22,7 +22,7 @@ hide_toc: true
             <h2 class="mb-4">自己紹介</h2>
             <p>
                 こんにちは！大阪大学大学院情報科学研究科 野口祥生です。
-                M2の学生です
+                M2の学生です．
             </p>
 
             <img class="shadow-lg rounded mb-5" src="{{site.baseurl}}/assets/images/cycling.jpeg" alt="プロフィール写真" />
@@ -33,6 +33,22 @@ hide_toc: true
                 <li>ジョブスケジューリング</li>
                 <li>強化学習</li>
                 <li>多目的最適化</li>
+            </ul>
+
+            <h2 class="mb-4">今どんな研究をしているか？</h2>
+            <p>
+                ハイパフォーマンスコンピューティング（HPC）におけるジョブスケジューリングの最適化について研究しています．<br>
+                ジョブスケジューリングとは，ユーザの計算資源要求に対して，どのように計算資源を割り当てるかを決定する問題です．<br>
+                また，HPCジョブスケジューラでは最適化したい目標が複数存在する場合があります．<br>
+                強化学習を用いて，これらの目標を同時に最適化する手法を提案しています．(多目的最適化)<br>
+                具体的にはジョブスケジューラのシミュレータ作成，最適化アルゴリズムの適用および改良，実験評価を行なっています．
+            </p>
+
+            <h2 class="mb-4">興味</h2>
+            <ul>
+                <li>AI(特に強化学習)</li>
+                <li>クラウドコンピューティング</li>
+                <li>ジョブスケジューリング</li>
             </ul>
 
             <h2 class="mb-4">研究実績</h2>
@@ -53,6 +69,7 @@ hide_toc: true
                         <div class="activity-card">
                             <div class="activity-date">2024/10/12</div>
                             <h4>PRAGMA40</h4>
+                            <span class="conference-subtitle">The 40th meeting of the Pacific Rim Applications and Grid Middleware Assembly</span>
                             <ul class="activity-details">
                                 <li>Student Committeeを務める</li>
                                 <li>ポスタープレゼンテーション：「Proposal for a Scheduling Method in Cloud Bursting (CB) Environments Considering User Opportunity Fairness」</li>
@@ -63,6 +80,7 @@ hide_toc: true
                         <div class="activity-card">
                             <div class="activity-date">2024/11/23</div>
                             <h4>SC24</h4>
+                            <span class="conference-subtitle">SuperComputing</span>
                             <ul class="activity-details">
                                 <li>大学の展示ブースにて、組織および自分の研究活動についてのポスター展示を行う</li>
                             </ul>
@@ -155,6 +173,7 @@ hide_toc: true
                         <div class="activity-card">
                             <div class="activity-date">October 12, 2024</div>
                             <h4>PRAGMA40</h4>
+                            <span class="conference-subtitle">The 40th meeting of the Pacific Rim Applications and Grid Middleware Assembly</span>
                             <ul class="activity-details">
                                 <li>Served as a Student Committee member</li>
                                 <li>Poster Presentation: "Proposal for a Scheduling Method in Cloud Bursting (CB) Environments Considering User Opportunity Fairness"</li>
@@ -165,6 +184,7 @@ hide_toc: true
                         <div class="activity-card">
                             <div class="activity-date">November 23, 2024</div>
                             <h4>SC24</h4>
+                            <span class="conference-subtitle">SuperComputing</span>
                             <ul class="activity-details">
                                 <li>Presented research activities at the university exhibition booth with poster presentations about organizational and personal research</li>
                             </ul>
@@ -263,12 +283,18 @@ hide_toc: true
     position: relative;
     padding-left: 2rem;
     margin-bottom: 2rem;
-    border-left: 2px solid #00ab6b;
+    border-left: 3px solid #00ab6b;
+    background: linear-gradient(90deg, rgba(0,171,107,0.05) 0%, transparent 100%);
+    padding: 1rem 1rem 1rem 2rem;
+    border-radius: 0 8px 8px 0;
+    margin-left: 1rem;
 }
 
 .timeline-date {
-    color: #666;
+    color: #00ab6b;
     font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
 }
 
 .projects-grid {
@@ -300,50 +326,74 @@ hide_toc: true
 /* 研究活動カードのスタイル */
 .activity-card {
     border: 1px solid #e0e0e0;
-    border-radius: 8px;
-    padding: 1.25rem;
+    border-radius: 12px;
+    padding: 1.5rem;
+    min-height: 280px;
     height: 100%;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
     transition: all 0.3s ease;
     position: relative;
-    background: #fff;
+    background: linear-gradient(135deg, #fff 0%, #fafafa 100%);
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
 }
 
 .activity-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transform: translateY(-8px);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.15);
     border-color: #00ab6b;
+    background: linear-gradient(135deg, #fff 0%, #f8fff8 100%);
 }
 
 .activity-date {
     position: absolute;
     top: 0;
     right: 0;
-    background: #00ab6b;
+    background: linear-gradient(135deg, #00ab6b 0%, #00995a 100%);
     color: white;
-    padding: 0.3rem 0.75rem;
+    padding: 0.4rem 0.9rem;
     font-size: 0.8rem;
     font-weight: 600;
-    border-bottom-left-radius: 8px;
+    border-bottom-left-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,171,107,0.3);
 }
 
 .activity-card h4 {
     margin-top: 0.5rem;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
     color: #333;
     font-weight: 600;
+    font-size: 1.1rem;
+    min-height: 1.5rem;
+    display: flex;
+    align-items: center;
+}
+
+.activity-card .conference-subtitle {
+    display: block;
+    font-size: 0.8rem;
+    color: #666;
+    font-style: italic;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #f0f0f0;
+    min-height: 2.5rem;
+    line-height: 1.3;
 }
 
 .activity-details {
     padding-left: 1.25rem;
     margin-bottom: 0;
+    min-height: 4rem;
+    flex-grow: 1;
 }
 
 .activity-details li {
     margin-bottom: 0.5rem;
     font-size: 0.95rem;
     color: #555;
+    line-height: 1.4;
 }
 
 @media (max-width: 768px) {
@@ -353,6 +403,19 @@ hide_toc: true
     
     .timeline-item {
         padding-left: 1rem;
+    }
+    
+    .activity-card {
+        min-height: auto;
+        margin-bottom: 1.5rem;
+    }
+    
+    .activity-card .conference-subtitle {
+        min-height: auto;
+    }
+    
+    .activity-details {
+        min-height: auto;
     }
 }
 </style>

@@ -9,7 +9,7 @@ hidden: false
 wip: true
 ---
 
-# タイトル
+# GitLab を Docker で動かす
 
 ## サブタイトル
 
