@@ -6,9 +6,13 @@ comments: false
 hide_toc: true
 ---
 
-<div class="text-center mb-4">
-    <a href="{{ site.baseurl }}/blog" class="btn btn-lg btn-outline-primary">ブログ一覧を見る</a>
-</div>
+<section class="about-hero">
+    <div class="about-hero__content text-center">
+        <h1 class="about-hero__title">About me</h1>
+        <!-- <a href="{{ site.baseurl }}/blog" class="btn btn-lg btn-outline-primary about-hero__cta">ブログ一覧を見る</a> -->
+    </div>
+
+</section>
 
 <div class="language-switch text-right mb-4">
     <button id="jp-btn" class="btn btn-sm btn-outline-primary active">日本語</button>
@@ -25,8 +29,6 @@ hide_toc: true
                 M2の学生です．
             </p>
 
-            <img class="shadow-lg rounded mb-5" src="{{site.baseurl}}/assets/images/cycling.jpeg" alt="プロフィール写真" />
-
             <h2 class="mb-4">研究分野</h2>
             <ul>
                 <li>高性能計算（HPC）</li>
@@ -35,7 +37,7 @@ hide_toc: true
                 <li>多目的最適化</li>
             </ul>
 
-            <h2 class="mb-4">今どんな研究をしているか？</h2>
+            <h2 class="mb-4">研究概要</h2>
             <p>
                 ハイパフォーマンスコンピューティング（HPC）におけるジョブスケジューリングの最適化について研究しています．<br>
                 ジョブスケジューリングとは，ユーザの計算資源要求に対して，どのように計算資源を割り当てるかを決定する問題です．<br>
@@ -44,19 +46,14 @@ hide_toc: true
                 具体的にはジョブスケジューラのシミュレータ作成，最適化アルゴリズムの適用および改良，実験評価を行なっています．
             </p>
 
-            <h2 class="mb-4">興味</h2>
-            <ul>
-                <li>AI(特に強化学習)</li>
-                <li>クラウドコンピューティング</li>
-                <li>ジョブスケジューリング</li>
-            </ul>
-
             <h2 class="mb-4">研究実績</h2>
             <div class="publications mb-5">
                 <h4>論文</h4>
                 <ul class="list-unstyled">
                     <li class="mb-3">
-                        <strong>ユーザ利⽤機会公平性を考慮するクラウドバースティング環境向けスケジューリング⼿法の提案,2024年2月</strong><br>
+                        <strong>ユーザ利⽤機会公平性を考慮するクラウドバースティング環境向けスケジューリング⼿法の提案</strong>,2024年2月 卒業論文<br>
+                        <strong>Exploring Diverse Cloud Bursting Policies Using Pareto Conditioned Networks</strong>,2025年11月 CANDAR 2025 <br>
+
                     </li>
                     <!-- 他の論文を追加 -->
                 </ul>
@@ -67,8 +64,28 @@ hide_toc: true
                 <div class="row">
                     <div class="col-md-6 mb-4">
                         <div class="activity-card">
+                            <div class="activity-date">2025/11/25-28</div>
+                            <h4>CANDAR 2025@山形, Japan</h4>
+                            <span class="conference-subtitle">The Thirteenth International Symposium on Computing and Networking</span>
+                            <ul class="activity-details">
+                                <li>口頭発表：「Exploring Diverse Cloud Bursting Policies Using Pareto Conditioned Networks」</li>
+                            </ul>
+                        </div>
+                    </div>
+                        <div class="col-md-6 mb-4">
+                        <div class="activity-card">
                             <div class="activity-date">2024/10/12</div>
-                            <h4>PRAGMA40</h4>
+                            <h4>SC25@St.louis, USA</h4>
+                            <span class="conference-subtitle">SuperComputing 2025</span>
+                            <ul class="activity-details">
+                                <li>大学の展示ブースにて、組織および自分の研究活動についてのポスター展示を行う</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                        <div class="activity-card">
+                            <div class="activity-date">2024/11/23</div>
+                            <h4>PRAGMA40@penang, Malaysia</h4>
                             <span class="conference-subtitle">The 40th meeting of the Pacific Rim Applications and Grid Middleware Assembly</span>
                             <ul class="activity-details">
                                 <li>Student Committeeを務める</li>
@@ -79,8 +96,8 @@ hide_toc: true
                     <div class="col-md-6 mb-4">
                         <div class="activity-card">
                             <div class="activity-date">2024/11/23</div>
-                            <h4>SC24</h4>
-                            <span class="conference-subtitle">SuperComputing</span>
+                            <h4>SC24@atlanta, USA</h4>
+                            <span class="conference-subtitle">SuperComputing 2024</span>
                             <ul class="activity-details">
                                 <li>大学の展示ブースにて、組織および自分の研究活動についてのポスター展示を行う</li>
                             </ul>
@@ -112,13 +129,14 @@ hide_toc: true
 
             </div>
 
-            <h2 class="mb-4">成果物(開発したもの)</h2>
+            <h2 class="mb-4">成果物</h2>
             <div class="projects-grid">
                 <div class="project-card">
-                    <img src="{{site.baseurl}}/assets/images/project1.jpg" alt="プロジェクト1" />
+                    <img src="{{site.baseurl}}/assets/images/date-muscle.png" alt="プロジェクト1" />
                     <h4>Lab-Muscle-Club</h4>
                     <p>友人と筋トレの記録を共有するアプリ</p>
-                    <a href="#" class="btn btn-primary">詳細を見る</a>
+                    <a href="https://yope7.github.io/muscle-club-webapp/" class="btn btn-primary">詳細</a>
+                    <a href="https://date-muscle-club.web.app/" class="btn btn-primary">使ってみる</a>
                 </div>
                 <!-- 他のプロジェクトを追加 -->
             </div>
@@ -147,13 +165,12 @@ hide_toc: true
                 Hello! I'm Yoshiki Noguchi, a Master's student at the Graduate School of Information Science and Technology, Osaka University.
             </p>
 
-            <img class="shadow-lg rounded mb-5" src="{{site.baseurl}}/assets/images/cycling.jpeg" alt="Profile Photo" />
-
             <h2 class="mb-4">Research Fields</h2>
             <ul>
                 <li>High-Performance Computing (HPC)</li>
-                <li>Parallel and Distributed Processing</li>
-                <li>Cloud Computing</li>
+                <li>Job Scheduling</li>
+                <li>Reinforcement Learning</li>
+                <li>Multi-objective Optimization</li>
             </ul>
 
             <h2 class="mb-4">Research Achievements</h2>
@@ -161,7 +178,8 @@ hide_toc: true
                 <h4>Papers</h4>
                 <ul class="list-unstyled">
                     <li class="mb-3">
-                        <strong>Coming soon</strong><br>
+                        <strong>Proposal for a Scheduling Method in Cloud Bursting (CB) Environments Considering User Opportunity Fairness</strong>, February 2024 (Bachelor Thesis)<br>
+                        <strong>Exploring Diverse Cloud Bursting Policies Using Pareto Conditioned Networks</strong>, November 2025 (CANDAR 2025)<br>
                     </li>
                 </ul>
             </div>
@@ -171,8 +189,28 @@ hide_toc: true
                 <div class="row">
                     <div class="col-md-6 mb-4">
                         <div class="activity-card">
+                            <div class="activity-date">November 25-28, 2025</div>
+                            <h4>CANDAR 2025 @ Yamagata, Japan</h4>
+                            <span class="conference-subtitle">The Thirteenth International Symposium on Computing and Networking</span>
+                            <ul class="activity-details">
+                                <li>Oral Presentation: "Exploring Diverse Cloud Bursting Policies Using Pareto Conditioned Networks"</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                        <div class="activity-card">
                             <div class="activity-date">October 12, 2024</div>
-                            <h4>PRAGMA40</h4>
+                            <h4>SC25 @ St. Louis, USA</h4>
+                            <span class="conference-subtitle">SuperComputing 2025</span>
+                            <ul class="activity-details">
+                                <li>Presented posters about organizational and personal research at the university exhibition booth</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                        <div class="activity-card">
+                            <div class="activity-date">November 23, 2024</div>
+                            <h4>PRAGMA40 @ Penang, Malaysia</h4>
                             <span class="conference-subtitle">The 40th meeting of the Pacific Rim Applications and Grid Middleware Assembly</span>
                             <ul class="activity-details">
                                 <li>Served as a Student Committee member</li>
@@ -183,8 +221,8 @@ hide_toc: true
                     <div class="col-md-6 mb-4">
                         <div class="activity-card">
                             <div class="activity-date">November 23, 2024</div>
-                            <h4>SC24</h4>
-                            <span class="conference-subtitle">SuperComputing</span>
+                            <h4>SC24 @ Atlanta, USA</h4>
+                            <span class="conference-subtitle">SuperComputing 2024</span>
                             <ul class="activity-details">
                                 <li>Presented research activities at the university exhibition booth with poster presentations about organizational and personal research</li>
                             </ul>
@@ -323,6 +361,83 @@ hide_toc: true
     margin-bottom: 1rem;
 }
 
+.about-hero {
+    position: relative;
+    margin-bottom: 2.5rem;
+    padding: 4.5rem 1.5rem;
+    border-radius: 16px;
+    overflow: hidden;
+    background: linear-gradient(180deg, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.7) 100%), url('{{site.baseurl}}/assets/images/cycling.jpeg') center/cover no-repeat;
+    color: #f8f9fa;
+    box-shadow: 0 10px 35px rgba(0,0,0,0.35);
+}
+
+.about-hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 20% 20%, rgba(255,255,255,0.08), transparent 35%),
+                radial-gradient(circle at 80% 10%, rgba(255,255,255,0.06), transparent 30%);
+    pointer-events: none;
+}
+
+.about-hero__content {
+    position: relative;
+    max-width: 820px;
+    margin: 0 auto;
+    z-index: 1;
+}
+
+.about-hero__eyebrow {
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #d4f7e6;
+    margin-bottom: 0.6rem;
+    font-size: 0.9rem;
+}
+
+.about-hero__badge {
+    display: inline-block;
+    padding: 0.55rem 1.25rem;
+    background: rgba(255,255,255,0.96);
+    color: #0b2e1f;
+    border-radius: 12px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    box-shadow: 0 10px 28px rgba(0,0,0,0.25);
+    margin-bottom: 0.9rem;
+}
+
+.about-hero__title {
+    font-size: clamp(2rem, 4vw, 2.6rem);
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+}
+
+.about-hero__subtitle {
+    font-size: 1.05rem;
+    margin-bottom: 0.6rem;
+    color: #f2f6f4;
+}
+
+.about-hero__cta {
+    color: #f8f9fa;
+    border-color: rgba(255,255,255,0.7);
+}
+
+.about-hero__cta:hover,
+.about-hero__cta:focus {
+    color: #0b2e1f;
+    background-color: #d4f7e6;
+    border-color: #d4f7e6;
+}
+
+.section-title {
+    display: none;
+    margin: 0;
+}
+
 /* 研究活動カードのスタイル */
 .activity-card {
     border: 1px solid #e0e0e0;
@@ -399,6 +514,10 @@ hide_toc: true
 @media (max-width: 768px) {
     .projects-grid {
         grid-template-columns: 1fr;
+    }
+    
+    .about-hero {
+        padding: 3.5rem 1.25rem;
     }
     
     .timeline-item {
