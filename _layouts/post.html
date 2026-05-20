@@ -60,6 +60,14 @@ post_class: post-template
             {% endif %}
             <!-- End Featured Image -->
 
+            {% if page.username_replaceable %}
+            <div id="username-replace-box" style="margin-bottom: 20px; padding: 15px; background: #f8f9fa; border-radius: 8px; border: 1px solid #e9ecef;">
+                <label for="username-input" style="font-weight: 600; margin-right: 10px;">ユーザー名を入力:</label>
+                <input type="text" id="username-input" placeholder="{{ page.replace_target | default: 'testuser' }}" value="" style="padding: 8px 12px; border: 1px solid #ced4da; border-radius: 4px; min-width: 150px;">
+                <span style="font-size: 0.9em; color: #6c757d; margin-left: 10px;">← 記事内の「{{ page.replace_target | default: 'testuser' }}」が置き換わります</span>
+            </div>
+            {% endif %}
+
             <!-- Post Content -->
             <div class="article-post">
                 {% if page.protected %}
@@ -69,7 +77,11 @@ post_class: post-template
                     <button onclick="checkPassword()" style="display: block; margin: 0 auto;">閲覧する</button>
                 </div>
                 <div id="protected-content" style="display: none;">
+                    {% if page.username_replaceable %}
+                    <div id="username-replaceable-content" data-placeholder="{{ page.replace_target | default: 'testuser' }}">{{ content }}</div>
+                    {% else %}
                     {{ content }}
+                    {% endif %}
                 </div>
                 <script>
                     function checkPassword() {
@@ -107,9 +119,42 @@ post_class: post-template
                     }
                 </script>
                 {% else %}
+                {% if page.username_replaceable %}
+                <div id="username-replaceable-content" data-placeholder="{{ page.replace_target | default: 'testuser' }}">{{ content }}</div>
+                {% else %}
                 {{ content }}
                 {% endif %}
+                {% endif %}
             </div>
+
+            {% if page.username_replaceable %}
+            <script>
+            (function() {
+                var contentEl = document.getElementById('username-replaceable-content');
+                var inputEl = document.getElementById('username-input');
+                var placeholder = contentEl ? contentEl.getAttribute('data-placeholder') || 'testuser' : 'testuser';
+                var originalContent = '';
+
+                function initReplaceable() {
+                    if (!contentEl || !inputEl) return;
+                    originalContent = contentEl.innerHTML;
+                    inputEl.placeholder = placeholder;
+
+                    inputEl.addEventListener('input', function() {
+                        var value = this.value.trim();
+                        var search = new RegExp(placeholder.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'g');
+                        contentEl.innerHTML = value ? originalContent.replace(search, value) : originalContent;
+                    });
+                }
+
+                if (document.readyState === 'loading') {
+                    document.addEventListener('DOMContentLoaded', initReplaceable);
+                } else {
+                    initReplaceable();
+                }
+            })();
+            </script>
+            {% endif %}
 
             <!-- Rating -->
             {% if page.rating %}

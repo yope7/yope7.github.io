@@ -7,6 +7,8 @@ image: assets/images/10.jpg
 featured: false
 hidden: false
 wip: false
+username_replaceable: true
+replace_target: testuser
 ---
 
 鍵渡すから Linux ユーザ作っといて〜への対応方法のまとめ
