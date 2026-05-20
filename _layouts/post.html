@@ -68,8 +68,8 @@ post_class: post-template
             </div>
             {% endif %}
 
-            <!-- Post Content -->
-            <div class="article-post">
+            <!-- Post Content（speaker_face: 画像番号 assets/faces/{n}.png、false で従来の引用のみ） -->
+            <div class="article-post{% if page.speaker_face == false %} article-post--plain-quotes{% endif %}"{% if page.speaker_face != false %} data-speaker-face-base="{{ site.baseurl }}/assets/faces/" style="--speaker-face: url('{{ site.baseurl }}/assets/faces/{{ page.speaker_face | default: 1 }}.png');"{% endif %}>
                 {% if page.protected %}
                 <div id="password-protection" style="text-align: center; margin: 20px 0;">
                     <p>このページはパスワードで保護されています</p>

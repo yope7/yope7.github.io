@@ -15,7 +15,7 @@ layout: default
   </div>
   {% endif %} {% endunless %}
 
-  <div class="article-post">{{content}}</div>
+  <div class="article-post{% if page.speaker_face == false %} article-post--plain-quotes{% endif %}"{% if page.speaker_face != false %} data-speaker-face-base="{{ site.baseurl }}/assets/faces/" style="--speaker-face: url('{{ site.baseurl }}/assets/faces/{{ page.speaker_face | default: 1 }}.png');"{% endif %}>{{content}}</div>
 </section>
 
 <script>

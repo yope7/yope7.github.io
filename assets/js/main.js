@@ -47,3 +47,54 @@ document.addEventListener("DOMContentLoaded", function () {
     updateIcons(); // 初期状態
   }
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+  function getFaceBase(article) {
+    return article.dataset.speakerFaceBase || "/assets/faces/";
+  }
+
+  function getFirstTextElement(blockquote) {
+    return blockquote.querySelector("p, li, div") || blockquote;
+  }
+
+  function applySpeakerFaceMarkers(root) {
+    const scope = root || document;
+    const blockquotes = scope.querySelectorAll(
+      ".article-post:not(.article-post--plain-quotes) blockquote:not(.no-speaker-face)"
+    );
+
+    blockquotes.forEach(function (blockquote) {
+      const textElement = getFirstTextElement(blockquote);
+      const firstNode = Array.from(textElement.childNodes).find(function (node) {
+        return node.nodeType === Node.TEXT_NODE && node.textContent.trim() !== "";
+      });
+
+      if (!firstNode) return;
+
+      const match = firstNode.textContent.match(/^(\s*)(\d+)(?:[ \t:：.-]+|(?=\S))/);
+      if (!match) return;
+
+      blockquote.classList.toggle("speaker-face-none", match[2] === "0");
+      firstNode.textContent = firstNode.textContent.slice(match[0].length);
+
+      if (match[2] === "0") return;
+
+      const article = blockquote.closest(".article-post");
+      const faceBase = getFaceBase(article);
+      blockquote.style.setProperty(
+        "--speaker-face",
+        'url("' + faceBase + match[2] + '.png")'
+      );
+    });
+  }
+
+  applySpeakerFaceMarkers(document);
+
+  const usernameInput = document.getElementById("username-input");
+  const replaceableContent = document.getElementById("username-replaceable-content");
+  if (usernameInput && replaceableContent) {
+    usernameInput.addEventListener("input", function () {
+      applySpeakerFaceMarkers(replaceableContent);
+    });
+  }
+});

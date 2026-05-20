@@ -932,3 +932,79 @@ input:checked + .slider::after {
 .theme-switch .icon.sun {
   display: inline-block;
 }
+
+/* 記事内 > 引用 = セリフ（assets/faces のアイコンを行の高さ相当で左に表示） */
+.article-post:not(.article-post--plain-quotes)
+  blockquote:not(.no-speaker-face) {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: 0.55em;
+  row-gap: 0.35em;
+  align-items: start;
+  border-left: none;
+  padding: 0.55em 0.85em 0.55em 0.65em;
+  margin: 0 0 1.5rem 0;
+  font-style: normal;
+  color: rgba(0, 0, 0, 0.88);
+  background: rgba(0, 0, 0, 0.023);
+  border-radius: 4px 14px 14px 14px;
+}
+
+.article-post:not(.article-post--plain-quotes)
+  blockquote:not(.no-speaker-face)::before {
+  content: "";
+  grid-column: 1;
+  grid-row: 1 / -1;
+  justify-self: start;
+  width: 1.55em;
+  height: 1.55em;
+  margin-top: 0.12em;
+  border-radius: 50%;
+  background: var(--speaker-face, url("/assets/faces/1.png")) center / cover
+    no-repeat;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.85);
+  align-self: start;
+}
+
+.article-post:not(.article-post--plain-quotes)
+  blockquote:not(.no-speaker-face)
+  > * {
+  grid-column: 2;
+}
+
+.article-post:not(.article-post--plain-quotes)
+  blockquote.speaker-face-none:not(.no-speaker-face)::before {
+  display: none;
+}
+
+.article-post:not(.article-post--plain-quotes)
+  blockquote.speaker-face-none:not(.no-speaker-face)
+  > * {
+  grid-column: 1 / -1;
+}
+
+.article-post:not(.article-post--plain-quotes)
+  blockquote:not(.no-speaker-face)
+  p {
+  margin: 0 0 0.5em 0;
+}
+
+.article-post:not(.article-post--plain-quotes)
+  blockquote:not(.no-speaker-face)
+  p:last-child {
+  margin-bottom: 0;
+}
+
+[data-theme="dark"]
+  .article-post:not(.article-post--plain-quotes)
+  blockquote:not(.no-speaker-face) {
+  color: #cdd6f4;
+  background: rgba(255, 255, 255, 0.08);
+  border-left: none;
+}
+
+[data-theme="dark"]
+  .article-post:not(.article-post--plain-quotes)
+  blockquote:not(.no-speaker-face)::before {
+  box-shadow: 0 0 0 2px rgba(30, 30, 46, 0.95);
+}
