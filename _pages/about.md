@@ -113,12 +113,14 @@ projects_jp:
 
 # 成果物データ（英語）
 projects_en:
-  - image: "assets/images/project1.jpg"
-    title: "Coming soon"
-    description: "Coming soon"
+  - image: "assets/images/date-muscle.png"
+    title: "Lab-Muscle-Club"
+    description: "A web app to share workout logs with friends"
     links:
-      - text: "詳細を見る"
-        url: "#"
+      - text: "Details"
+        url: "https://yope7.github.io/muscle-club-webapp/"
+      - text: "Try it"
+        url: "https://date-muscle-club.web.app/"
 
 # 折り畳み設定
 show_initial_count:
@@ -128,893 +130,448 @@ show_initial_count:
   projects: 6
 ---
 
-<section class="about-hero">
-    <div class="about-hero__content text-center">
-        <h1 class="about-hero__title">About me</h1>
-        <!-- <a href="{{ site.baseurl }}/blog" class="btn btn-lg btn-outline-primary about-hero__cta">ブログ一覧を見る</a> -->
+<!-- ============================================================
+     PORTFOLIO — 全幅・大判・非対称のアート・エディトリアル
+     画像差し替え箇所には <!-- 画像差し替え可 --> を記載
+     ============================================================ -->
+<div class="pf" data-lang="jp">
+
+  <!-- ===== Hero (フルブリード) ===== -->
+  <header class="pf-hero" id="hero">
+    <!-- 画像差し替え可 -->
+    <img class="pf-hero__img" src="{{ site.baseurl }}/assets/images/cycling.jpeg" alt="" />
+    <div class="pf-hero__inner">
+      <span class="pf-hero__eyebrow">PORTFOLIO — 2026</span>
+      <h1 class="pf-hero__name">Yoshiki<br>Noguchi</h1>
+      <p class="pf-hero__sub">
+        <span class="lang-jp">大阪大学大学院 情報科学研究科 修士2年 — HPC / ジョブスケジューリング / 強化学習</span>
+        <span class="lang-en">M2, Graduate School of Information Science and Technology, Osaka University — HPC / Scheduling / RL</span>
+      </p>
     </div>
+    <a class="pf-hero__scroll" href="#about" aria-label="Scroll"><i class="fas fa-arrow-down"></i></a>
+  </header>
 
-</section>
-
-<div class="language-switch text-right mb-4">
-    <button id="jp-btn" class="btn btn-sm btn-outline-primary active">日本語</button>
-    <button id="en-btn" class="btn btn-sm btn-outline-primary">English</button>
-</div>
-
-<!-- 日本語コンテンツ -->
-<div id="jp-content" class="language-content active">
-    <div class="row justify-content-between">
-        <div class="col-md-8 pr-5">
-            <h2 class="mb-4">自己紹介</h2>
-            <p>
-                こんにちは！大阪大学大学院情報科学研究科 野口祥生です。
-                M2の学生です．
-            </p>
-
-            <h2 class="mb-4">研究分野</h2>
-            <ul>
-                <li>高性能計算（HPC）</li>
-                <li>ジョブスケジューリング</li>
-                <li>強化学習</li>
-                <li>多目的最適化</li>
-            </ul>
-
-            <h2 class="mb-4">研究概要</h2>
-            <p>
-                ハイパフォーマンスコンピューティング（HPC）におけるジョブスケジューリングの最適化について研究しています．<br>
-                ジョブスケジューリングとは，ユーザの計算資源要求に対して，どのように計算資源を割り当てるかを決定する問題です．<br>
-                また，HPCジョブスケジューラでは最適化したい目標が複数存在する場合があります．<br>
-                強化学習を用いて，これらの目標を同時に最適化する手法を提案しています．(多目的最適化)<br>
-                具体的にはジョブスケジューラのシミュレータ作成，最適化アルゴリズムの適用および改良，実験評価を行なっています．
-            </p>
-
-            <h2 class="mb-4">研究実績</h2>
-            <div class="publications mb-5">
-                <h4>論文</h4>
-                <ul class="list-unstyled" id="publications-jp-list">
-                    {% for pub in page.publications_jp limit: page.show_initial_count.publications %}
-                    <li class="mb-3 publication-item">
-                        <strong>{{ pub.title }}</strong>, {{ pub.date }} {{ pub.type }}
-                    </li>
-                    {% endfor %}
-                    {% assign remaining_pubs = page.publications_jp.size | minus: page.show_initial_count.publications %}
-                    {% if remaining_pubs > 0 %}
-                    <div class="publications-hidden hidden">
-                        {% for pub in page.publications_jp offset: page.show_initial_count.publications %}
-                        <li class="mb-3 publication-item">
-                            <strong>{{ pub.title }}</strong>, {{ pub.date }} {{ pub.type }}
-                        </li>
-                        {% endfor %}
-                    </div>
-                    <button class="btn btn-sm btn-outline-primary see-more-btn" data-target="publications-jp" data-lang="jp">
-                        <span class="see-more-text">もっと見る ({{ remaining_pubs }})</span>
-                        <span class="see-less-text" style="display: none;">折りたたむ</span>
-                    </button>
-                    {% endif %}
-                </ul>
-            </div>
-
-            <h2 class="mb-4">主な受賞履歴</h2>
-            <div class="awards mb-2">
-                <ul class="list-unstyled" id="awards-jp-list">
-                    <li class="mb-3 award-item">
-                        <div class="award-card">
-                            <div class="award-icon" aria-hidden="true"><i class="fas fa-trophy"></i></div>
-                            <div class="award-content">
-                                <div class="award-title">APAC HPC-AI Competition</div>
-                                <div class="award-subtitle">Excellent HPC Performance賞</div>
-                                <div class="award-links">
-                                    <a class="btn btn-sm btn-outline-primary" href="https://www.ais.cmc.osaka-u.ac.jp/date/2025-apachpcai-award/" target="_blank" rel="noopener noreferrer">研究室ブログ</a>
-                                </div>
-                            </div>
-                            <div class="award-date">2025/12/09</div>
-                        </div>
-                    </li>
-                    <li class="mb-3 award-item">
-                        <div class="award-card">
-                            <div class="award-icon" aria-hidden="true"><i class="fas fa-trophy"></i></div>
-                            <div class="award-content">
-                                <div class="award-title">CENTRA9</div>
-                                <div class="award-subtitle">Best Poster Award</div>
-                                <div class="award-links">
-                                    <a class="btn btn-sm btn-outline-primary" href="https://www.globalcentra.org/centra9/" target="_blank" rel="noopener noreferrer">学会サイト</a>
-                                </div>
-                            </div>
-                            <div class="award-date">2026/01/11-13</div>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-
-            <h2 class="mb-4">研究活動実績</h2>
-            <div class="activities mb-2">
-                <div class="row" id="activities-jp-list">
-                    {% for activity in page.activities_jp limit: page.show_initial_count.activities %}
-                    <div class="col-12 mb-4 activity-item">
-                        <div class="activity-card">
-                            <div class="activity-date">{{ activity.date }}</div>
-                            <h4>{{ activity.title }}</h4>
-                            <span class="conference-subtitle">{{ activity.subtitle }}</span>
-                            <ul class="activity-details">
-                                {% for detail in activity.details %}
-                                <li>{{ detail }}</li>
-                                {% endfor %}
-                            </ul>
-                        </div>
-                    </div>
-                    {% endfor %}
-                    {% assign remaining_activities = page.activities_jp.size | minus: page.show_initial_count.activities %}
-                    {% if remaining_activities > 0 %}
-                    <div class="activities-hidden hidden">
-                        {% for activity in page.activities_jp offset: page.show_initial_count.activities %}
-                        <div class="col-12 mb-4 activity-item">
-                            <div class="activity-card">
-                                <div class="activity-date">{{ activity.date }}</div>
-                                <h4>{{ activity.title }}</h4>
-                                <span class="conference-subtitle">{{ activity.subtitle }}</span>
-                                <ul class="activity-details">
-                                    {% for detail in activity.details %}
-                                    <li>{{ detail }}</li>
-                                    {% endfor %}
-                                </ul>
-                            </div>
-                        </div>
-                        {% endfor %}
-                    </div>
-                    <div class="col-12 text-center mt-3">
-                        <button class="btn btn-sm btn-outline-primary see-more-btn" data-target="activities-jp" data-lang="jp">
-                            <span class="see-more-text">もっと見る ({{ remaining_activities }})</span>
-                            <span class="see-less-text" style="display: none;">折りたたむ</span>
-                        </button>
-                    </div>
-                    {% endif %}
-                </div>
-            </div>
-
-            <h2 class="mb-4">経歴</h2>
-            <div class="timeline mb-5" id="timeline-jp-list">
-                {% for item in page.timeline_jp limit: page.show_initial_count.timeline %}
-                <div class="timeline-item timeline-item-visible">
-                    <div class="timeline-date">{{ item.date }}</div>
-                    <div class="timeline-content">
-                        <h4>{{ item.title }}</h4>
-                    </div>
-                </div>
-                {% endfor %}
-                {% assign remaining_timeline = page.timeline_jp.size | minus: page.show_initial_count.timeline %}
-                {% if remaining_timeline > 0 %}
-                <div class="timeline-hidden hidden">
-                    {% for item in page.timeline_jp offset: page.show_initial_count.timeline %}
-                    <div class="timeline-item">
-                        <div class="timeline-date">{{ item.date }}</div>
-                        <div class="timeline-content">
-                            <h4>{{ item.title }}</h4>
-                        </div>
-                    </div>
-                    {% endfor %}
-                </div>
-                <div class="text-center mt-3">
-                    <button class="btn btn-sm btn-outline-primary see-more-btn" data-target="timeline-jp" data-lang="jp">
-                        <span class="see-more-text">もっと見る ({{ remaining_timeline }})</span>
-                        <span class="see-less-text" style="display: none;">折りたたむ</span>
-                    </button>
-                </div>
-                {% endif %}
-            </div>
-
-            <h2 class="mb-4">成果物</h2>
-            <div class="projects-grid" id="projects-jp-list">
-                {% for project in page.projects_jp limit: page.show_initial_count.projects %}
-                <div class="project-card project-item">
-                    <img src="{{site.baseurl}}/{{ project.image }}" alt="{{ project.title }}" />
-                    <h4>{{ project.title }}</h4>
-                    <p>{{ project.description }}</p>
-                    {% for link in project.links %}
-                    <a href="{{ link.url }}" class="btn btn-primary">{{ link.text }}</a>
-                    {% endfor %}
-                </div>
-                {% endfor %}
-                {% assign remaining_projects = page.projects_jp.size | minus: page.show_initial_count.projects %}
-                {% if remaining_projects > 0 %}
-                <div class="projects-hidden hidden">
-                    {% for project in page.projects_jp offset: page.show_initial_count.projects %}
-                    <div class="project-card project-item">
-                        <img src="{{site.baseurl}}/{{ project.image }}" alt="{{ project.title }}" />
-                        <h4>{{ project.title }}</h4>
-                        <p>{{ project.description }}</p>
-                        {% for link in project.links %}
-                        <a href="{{ link.url }}" class="btn btn-primary">{{ link.text }}</a>
-                        {% endfor %}
-                    </div>
-                    {% endfor %}
-                </div>
-                <div class="col-12 text-center mt-3" style="grid-column: 1 / -1;">
-                    <button class="btn btn-sm btn-outline-primary see-more-btn" data-target="projects-jp" data-lang="jp">
-                        <span class="see-more-text">もっと見る ({{ remaining_projects }})</span>
-                        <span class="see-less-text" style="display: none;">折りたたむ</span>
-                    </button>
-                </div>
-                {% endif %}
-            </div>
-        </div>
-
-        <div class="col-md-4">
-            <div class="sticky-top sticky-top-80">
-                <h5>連絡先</h5>
-                <p>
-                    <i class="fas fa-envelope"></i> メール: yoshiki.noguchi0920!gmail.com<br>
-                    <i class="fab fa-github"></i> GitHub: <a href="https://github.com/yope7">yope7</a><br>
-                </p>
-            </div>
-        </div>
-
+  <!-- ===== Sticky subnav ===== -->
+  <nav class="pf-subnav" aria-label="Sections">
+    <a class="pf-subnav__home" href="#hero">Y·N</a>
+    <div class="pf-subnav__links">
+      <a class="pf-subnav__link" data-section="about" href="#about"><span class="lang-jp">はじめに</span><span class="lang-en">About</span></a>
+      <a class="pf-subnav__link" data-section="research" href="#research"><span class="lang-jp">研究</span><span class="lang-en">Research</span></a>
+      <a class="pf-subnav__link" data-section="publications" href="#publications"><span class="lang-jp">論文</span><span class="lang-en">Papers</span></a>
+      <a class="pf-subnav__link" data-section="awards" href="#awards"><span class="lang-jp">受賞</span><span class="lang-en">Awards</span></a>
+      <a class="pf-subnav__link" data-section="activities" href="#activities"><span class="lang-jp">活動</span><span class="lang-en">Activities</span></a>
+      <a class="pf-subnav__link" data-section="experience" href="#experience"><span class="lang-jp">経歴</span><span class="lang-en">Path</span></a>
+      <a class="pf-subnav__link" data-section="projects" href="#projects"><span class="lang-jp">成果物</span><span class="lang-en">Work</span></a>
+      <a class="pf-subnav__link" data-section="gallery" href="#gallery"><span class="lang-jp">写真</span><span class="lang-en">Gallery</span></a>
     </div>
-
-</div>
-
-<!-- 英語コンテンツ -->
-<div id="en-content" class="language-content">
-    <div class="row justify-content-between">
-        <div class="col-md-8 pr-5">
-            <h2 class="mb-4">Introduction</h2>
-            <p>
-                Hello! I'm Yoshiki Noguchi, a Master's student at the Graduate School of Information Science and Technology, Osaka University.
-            </p>
-
-            <h2 class="mb-4">Research Fields</h2>
-            <ul>
-                <li>High-Performance Computing (HPC)</li>
-                <li>Job Scheduling</li>
-                <li>Reinforcement Learning</li>
-                <li>Multi-objective Optimization</li>
-            </ul>
-
-            <h2 class="mb-4">Research Achievements</h2>
-            <div class="publications mb-5">
-                <h4>Papers</h4>
-                <ul class="list-unstyled" id="publications-en-list">
-                    {% for pub in page.publications_en limit: page.show_initial_count.publications %}
-                    <li class="mb-3 publication-item">
-                        <strong>{{ pub.title }}</strong>, {{ pub.date }} ({{ pub.type }})
-                    </li>
-                    {% endfor %}
-                    {% assign remaining_pubs = page.publications_en.size | minus: page.show_initial_count.publications %}
-                    {% if remaining_pubs > 0 %}
-                    <div class="publications-hidden hidden">
-                        {% for pub in page.publications_en offset: page.show_initial_count.publications %}
-                        <li class="mb-3 publication-item">
-                            <strong>{{ pub.title }}</strong>, {{ pub.date }} ({{ pub.type }})
-                        </li>
-                        {% endfor %}
-                    </div>
-                    <button class="btn btn-sm btn-outline-primary see-more-btn" data-target="publications-en" data-lang="en">
-                        <span class="see-more-text">See more ({{ remaining_pubs }})</span>
-                        <span class="see-less-text" style="display: none;">Show less</span>
-                    </button>
-                    {% endif %}
-                </ul>
-            </div>
-
-            <h2 class="mb-4">Awards</h2>
-            <div class="awards mb-2">
-                <ul class="list-unstyled" id="awards-en-list">
-                    <li class="mb-3 award-item">
-                        <div class="award-card">
-                            <div class="award-icon" aria-hidden="true"><i class="fas fa-trophy"></i></div>
-                            <div class="award-content">
-                                <div class="award-title">APAC HPC-AI Competition</div>
-                                <div class="award-subtitle">Excellent HPC Performance Award</div>
-                                <div class="award-links">
-                                    <a class="btn btn-sm btn-outline-primary" href="https://www.ais.cmc.osaka-u.ac.jp/date/2025-apachpcai-award/" target="_blank" rel="noopener noreferrer">Press release</a>
-                                </div>
-                            </div>
-                            <div class="award-date">December 9, 2025</div>
-                        </div>
-                    </li>
-                    <li class="mb-3 award-item">
-                        <div class="award-card">
-                            <div class="award-icon" aria-hidden="true"><i class="fas fa-trophy"></i></div>
-                            <div class="award-content">
-                                <div class="award-title">CENTRA9</div>
-                                <div class="award-subtitle">Best Poster Award</div>
-                                <div class="award-links">
-                                    <a class="btn btn-sm btn-outline-primary" href="https://www.globalcentra.org/centra9/" target="_blank" rel="noopener noreferrer">Conference site</a>
-                                </div>
-                            </div>
-                            <div class="award-date">January 11-13, 2026</div>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-
-            <h2 class="mb-4">Research Activities</h2>
-            <div class="activities mb-5">
-                <div class="row" id="activities-en-list">
-                    {% for activity in page.activities_en limit: page.show_initial_count.activities %}
-                    <div class="col-12 mb-4 activity-item">
-                        <div class="activity-card">
-                            <div class="activity-date">{{ activity.date }}</div>
-                            <h4>{{ activity.title }}</h4>
-                            <span class="conference-subtitle">{{ activity.subtitle }}</span>
-                            <ul class="activity-details">
-                                {% for detail in activity.details %}
-                                <li>{{ detail }}</li>
-                                {% endfor %}
-                            </ul>
-                        </div>
-                    </div>
-                    {% endfor %}
-                    {% assign remaining_activities = page.activities_en.size | minus: page.show_initial_count.activities %}
-                    {% if remaining_activities > 0 %}
-                    <div class="activities-hidden hidden">
-                        {% for activity in page.activities_en offset: page.show_initial_count.activities %}
-                        <div class="col-12 mb-4 activity-item">
-                            <div class="activity-card">
-                                <div class="activity-date">{{ activity.date }}</div>
-                                <h4>{{ activity.title }}</h4>
-                                <span class="conference-subtitle">{{ activity.subtitle }}</span>
-                                <ul class="activity-details">
-                                    {% for detail in activity.details %}
-                                    <li>{{ detail }}</li>
-                                    {% endfor %}
-                                </ul>
-                            </div>
-                        </div>
-                        {% endfor %}
-                    </div>
-                    <div class="col-12 text-center mt-3">
-                        <button class="btn btn-sm btn-outline-primary see-more-btn" data-target="activities-en" data-lang="en">
-                            <span class="see-more-text">See more ({{ remaining_activities }})</span>
-                            <span class="see-less-text" style="display: none;">Show less</span>
-                        </button>
-                    </div>
-                    {% endif %}
-                </div>
-            </div>
-
-            <h2 class="mb-4">Experience</h2>
-            <div class="timeline mb-5" id="timeline-en-list">
-                {% for item in page.timeline_en limit: page.show_initial_count.timeline %}
-                <div class="timeline-item timeline-item-visible">
-                    <div class="timeline-date">{{ item.date }}</div>
-                    <div class="timeline-content">
-                        <h4>{{ item.title }}</h4>
-                    </div>
-                </div>
-                {% endfor %}
-                {% assign remaining_timeline = page.timeline_en.size | minus: page.show_initial_count.timeline %}
-                {% if remaining_timeline > 0 %}
-                <div class="timeline-hidden hidden">
-                    {% for item in page.timeline_en offset: page.show_initial_count.timeline %}
-                    <div class="timeline-item">
-                        <div class="timeline-date">{{ item.date }}</div>
-                        <div class="timeline-content">
-                            <h4>{{ item.title }}</h4>
-                        </div>
-                    </div>
-                    {% endfor %}
-                </div>
-                <div class="text-center mt-3">
-                    <button class="btn btn-sm btn-outline-primary see-more-btn" data-target="timeline-en" data-lang="en">
-                        <span class="see-more-text">See more ({{ remaining_timeline }})</span>
-                        <span class="see-less-text" style="display: none;">Show less</span>
-                    </button>
-                </div>
-                {% endif %}
-            </div>
-
-            <h2 class="mb-4">Projects</h2>
-            <div class="projects-grid" id="projects-en-list">
-                {% for project in page.projects_en limit: page.show_initial_count.projects %}
-                <div class="project-card project-item">
-                    <img src="{{site.baseurl}}/{{ project.image }}" alt="{{ project.title }}" />
-                    <h4>{{ project.title }}</h4>
-                    <p>{{ project.description }}</p>
-                    {% for link in project.links %}
-                    <a href="{{ link.url }}" class="btn btn-primary">{{ link.text }}</a>
-                    {% endfor %}
-                </div>
-                {% endfor %}
-                {% assign remaining_projects = page.projects_en.size | minus: page.show_initial_count.projects %}
-                {% if remaining_projects > 0 %}
-                <div class="projects-hidden hidden">
-                    {% for project in page.projects_en offset: page.show_initial_count.projects %}
-                    <div class="project-card project-item">
-                        <img src="{{site.baseurl}}/{{ project.image }}" alt="{{ project.title }}" />
-                        <h4>{{ project.title }}</h4>
-                        <p>{{ project.description }}</p>
-                        {% for link in project.links %}
-                        <a href="{{ link.url }}" class="btn btn-primary">{{ link.text }}</a>
-                        {% endfor %}
-                    </div>
-                    {% endfor %}
-                </div>
-                <div class="col-12 text-center mt-3" style="grid-column: 1 / -1;">
-                    <button class="btn btn-sm btn-outline-primary see-more-btn" data-target="projects-en" data-lang="en">
-                        <span class="see-more-text">See more ({{ remaining_projects }})</span>
-                        <span class="see-less-text" style="display: none;">Show less</span>
-                    </button>
-                </div>
-                {% endif %}
-            </div>
-        </div>
-
-        <div class="col-md-4">
-            <div class="sticky-top sticky-top-80">
-                <h5>Contact</h5>
-                <p>
-                    <i class="fas fa-envelope"></i> Email: yoshiki.noguchi0920!gmail.com<br>
-                    <i class="fab fa-github"></i> GitHub: <a href="https://github.com/yope7">yope7</a><br>
-                </p>
-            </div>
-        </div>
+    <div class="pf-lang">
+      <button id="jp-btn" type="button" class="pf-lang__btn is-active">JP</button>
+      <button id="en-btn" type="button" class="pf-lang__btn">EN</button>
     </div>
+  </nav>
+
+  <!-- ===== 01 About (非対称・大判) ===== -->
+  <section class="pf-block" id="about">
+    <div class="pf-wrap pf-split pf-split--a">
+      <div class="pf-split__text pf-reveal">
+        <span class="pf-kicker">01 — <span class="lang-jp">はじめに</span><span class="lang-en">About</span></span>
+        <p class="pf-big lang-jp">大阪大学大学院の野口祥生です。<br>HPC のジョブスケジューリング最適化を、<br>強化学習で解いています。</p>
+        <p class="pf-big lang-en">I'm Yoshiki Noguchi at Osaka University,<br>solving HPC job-scheduling optimization<br>with reinforcement learning.</p>
+      </div>
+      <figure class="pf-split__media pf-tall pf-reveal">
+        <!-- 画像差し替え可 -->
+        <img src="{{ site.baseurl }}/assets/images/lab-intro/inside-lab.jpg" alt="" />
+      </figure>
+    </div>
+  </section>
+
+  <!-- ===== Full-bleed feature ===== -->
+  <section class="pf-bleed pf-feature pf-reveal">
+    <!-- 画像差し替え可 -->
+    <img class="pf-feature__img" src="{{ site.baseurl }}/assets/images/lab-intro/presentation.jpg" alt="" />
+    <div class="pf-feature__cap">
+      <span class="lang-jp">研究は、世界の現場で。</span><span class="lang-en">Research, out in the world.</span>
+    </div>
+  </section>
+
+  <!-- ===== 02 Research (逆非対称・大判) ===== -->
+  <section class="pf-block" id="research">
+    <div class="pf-wrap pf-split pf-split--b">
+      <figure class="pf-split__media pf-wide pf-reveal">
+        <!-- 画像差し替え可 -->
+        <img src="{{ site.baseurl }}/assets/images/10.jpg" alt="" />
+      </figure>
+      <div class="pf-split__text pf-reveal">
+        <span class="pf-kicker">02 — <span class="lang-jp">研究</span><span class="lang-en">Research</span></span>
+        <h2 class="pf-h"><span class="lang-jp">計算を、<br>もっと公平に。</span><span class="lang-en">Fairer<br>computing.</span></h2>
+        <ul class="pf-tags">
+          <li>HPC</li>
+          <li><span class="lang-jp">ジョブスケジューリング</span><span class="lang-en">Job Scheduling</span></li>
+          <li><span class="lang-jp">強化学習</span><span class="lang-en">Reinforcement Learning</span></li>
+          <li><span class="lang-jp">多目的最適化</span><span class="lang-en">Multi-objective</span></li>
+        </ul>
+        <p class="lang-jp">HPC のジョブスケジューリングでは最適化したい目標が複数あります。強化学習を用いてそれらを同時に最適化する手法を提案し、シミュレータ作成・アルゴリズム改良・実験評価を行っています。</p>
+        <p class="lang-en">HPC schedulers juggle several objectives at once. I propose reinforcement-learning methods that optimize them simultaneously — building simulators, improving algorithms, and running evaluations.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 03 Publications (大きな文字のリスト) ===== -->
+  <section class="pf-block pf-block--tint" id="publications">
+    <div class="pf-wrap">
+      <span class="pf-kicker pf-reveal">03 — <span class="lang-jp">論文</span><span class="lang-en">Publications</span></span>
+      <div class="lang-jp">
+        {% for pub in page.publications_jp %}
+        <a class="pf-row pf-reveal">
+          <span class="pf-row__title">{{ pub.title }}</span>
+          <span class="pf-row__meta">{{ pub.date }} · {{ pub.type }}</span>
+        </a>
+        {% endfor %}
+      </div>
+      <div class="lang-en">
+        {% for pub in page.publications_en %}
+        <a class="pf-row pf-reveal">
+          <span class="pf-row__title">{{ pub.title }}</span>
+          <span class="pf-row__meta">{{ pub.date }} · {{ pub.type }}</span>
+        </a>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 04 Awards ===== -->
+  <section class="pf-block" id="awards">
+    <div class="pf-wrap">
+      <span class="pf-kicker pf-reveal">04 — <span class="lang-jp">受賞</span><span class="lang-en">Awards</span></span>
+      <div class="pf-row pf-reveal">
+        <span class="pf-row__title">APAC HPC-AI Competition — <span class="lang-jp">Excellent HPC Performance賞</span><span class="lang-en">Excellent HPC Performance Award</span></span>
+        <span class="pf-row__meta">2025/12/09 · <a class="pf-link" href="https://www.ais.cmc.osaka-u.ac.jp/date/2025-apachpcai-award/" target="_blank" rel="noopener noreferrer"><span class="lang-jp">研究室ブログ</span><span class="lang-en">Press</span></a></span>
+      </div>
+      <div class="pf-row pf-reveal">
+        <span class="pf-row__title">CENTRA9 — Best Poster Award</span>
+        <span class="pf-row__meta">2026/01/11-13 · <a class="pf-link" href="https://www.globalcentra.org/centra9/" target="_blank" rel="noopener noreferrer"><span class="lang-jp">学会サイト</span><span class="lang-en">Site</span></a></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Full-bleed feature 2 ===== -->
+  <section class="pf-bleed pf-feature pf-feature--tall pf-reveal">
+    <!-- 画像差し替え可 -->
+    <img class="pf-feature__img" src="{{ site.baseurl }}/assets/images/jumbotron.jpg" alt="" />
+    <div class="pf-feature__cap pf-feature__cap--big">
+      <span class="lang-jp">研究も、自転車も、<br>まっすぐ前へ。</span><span class="lang-en">Research and cycling —<br>always forward.</span>
+    </div>
+  </section>
+
+  <!-- ===== 05 Activities (大判の2カラム) ===== -->
+  <section class="pf-block" id="activities">
+    <div class="pf-wrap">
+      <span class="pf-kicker pf-reveal">05 — <span class="lang-jp">研究活動</span><span class="lang-en">Activities</span></span>
+      <div class="pf-acts lang-jp">
+        {% for a in page.activities_jp %}
+        <div class="pf-act pf-reveal">
+          <span class="pf-act__date">{{ a.date }}</span>
+          <h3 class="pf-act__title">{{ a.title }}</h3>
+          <span class="pf-act__sub">{{ a.subtitle }}</span>
+          <ul class="pf-act__list">{% for d in a.details %}<li>{{ d }}</li>{% endfor %}</ul>
+        </div>
+        {% endfor %}
+      </div>
+      <div class="pf-acts lang-en">
+        {% for a in page.activities_en %}
+        <div class="pf-act pf-reveal">
+          <span class="pf-act__date">{{ a.date }}</span>
+          <h3 class="pf-act__title">{{ a.title }}</h3>
+          <span class="pf-act__sub">{{ a.subtitle }}</span>
+          <ul class="pf-act__list">{% for d in a.details %}<li>{{ d }}</li>{% endfor %}</ul>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 06 Experience ===== -->
+  <section class="pf-block pf-block--tint" id="experience">
+    <div class="pf-wrap">
+      <span class="pf-kicker pf-reveal">06 — <span class="lang-jp">経歴</span><span class="lang-en">Path</span></span>
+      <div class="lang-jp">
+        {% for item in page.timeline_jp %}
+        <div class="pf-row pf-reveal"><span class="pf-row__title">{{ item.title }}</span><span class="pf-row__meta">{{ item.date }}</span></div>
+        {% endfor %}
+      </div>
+      <div class="lang-en">
+        {% for item in page.timeline_en %}
+        <div class="pf-row pf-reveal"><span class="pf-row__title">{{ item.title }}</span><span class="pf-row__meta">{{ item.date }}</span></div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 07 Projects (非対称・大判) ===== -->
+  <section class="pf-block" id="projects">
+    {% for p in page.projects_jp %}
+    <div class="pf-wrap pf-split pf-split--a lang-jp">
+      <figure class="pf-split__media pf-wide pf-reveal"><img src="{{ site.baseurl }}/{{ p.image }}" alt="{{ p.title }}" /></figure>
+      <div class="pf-split__text pf-reveal">
+        <span class="pf-kicker">07 — <span>成果物</span></span>
+        <h2 class="pf-h">{{ p.title }}</h2>
+        <p>{{ p.description }}</p>
+        <div class="pf-links">{% for l in p.links %}<a class="pf-link" href="{{ l.url }}" target="_blank" rel="noopener noreferrer">{{ l.text }}</a>{% endfor %}</div>
+      </div>
+    </div>
+    {% endfor %}
+    {% for p in page.projects_en %}
+    <div class="pf-wrap pf-split pf-split--a lang-en">
+      <figure class="pf-split__media pf-wide pf-reveal"><img src="{{ site.baseurl }}/{{ p.image }}" alt="{{ p.title }}" /></figure>
+      <div class="pf-split__text pf-reveal">
+        <span class="pf-kicker">07 — <span>Work</span></span>
+        <h2 class="pf-h">{{ p.title }}</h2>
+        <p>{{ p.description }}</p>
+        <div class="pf-links">{% for l in p.links %}<a class="pf-link" href="{{ l.url }}" target="_blank" rel="noopener noreferrer">{{ l.text }}</a>{% endfor %}</div>
+      </div>
+    </div>
+    {% endfor %}
+  </section>
+
+  <!-- ===== 08 Gallery (大判・不規則) ===== -->
+  <section class="pf-block" id="gallery">
+    <div class="pf-wrap">
+      <span class="pf-kicker pf-reveal">08 — <span class="lang-jp">写真</span><span class="lang-en">Gallery</span></span>
+    </div>
+    <!-- 画像差し替え可: 各タイル -->
+    <div class="pf-gallery">
+      <figure class="pf-g pf-g--hero pf-reveal"><img src="{{ site.baseurl }}/assets/images/Yokohama.JPG" alt="" /></figure>
+      <figure class="pf-g pf-reveal"><img src="{{ site.baseurl }}/assets/images/4.jpg" alt="" /></figure>
+      <figure class="pf-g pf-reveal"><img src="{{ site.baseurl }}/assets/images/8.jpg" alt="" /></figure>
+      <figure class="pf-g pf-g--wide pf-reveal"><img src="{{ site.baseurl }}/assets/images/5.jpg" alt="" /></figure>
+      <figure class="pf-g pf-reveal"><img src="{{ site.baseurl }}/assets/images/13.jpg" alt="" /></figure>
+      <figure class="pf-g pf-reveal"><img src="{{ site.baseurl }}/assets/images/1.jpg" alt="" /></figure>
+    </div>
+  </section>
+
+  <!-- ===== 09 Contact ===== -->
+  <section class="pf-block pf-contact" id="contact">
+    <div class="pf-wrap pf-reveal">
+      <span class="pf-kicker">09 — <span class="lang-jp">連絡先</span><span class="lang-en">Contact</span></span>
+      <h2 class="pf-h pf-h--xl"><span class="lang-jp">話しましょう。</span><span class="lang-en">Let's talk.</span></h2>
+      <p class="pf-contact__line">yoshiki.noguchi0920 [at] gmail.com</p>
+      <a class="pf-cta" href="https://github.com/yope7" target="_blank" rel="noopener noreferrer"><span class="lang-jp">GitHub を見る</span><span class="lang-en">View GitHub</span> <span class="pf-cta__arrow">↗</span></a>
+    </div>
+  </section>
 
 </div>
 
 <style>
-.language-switch {
-    margin-bottom: 2rem;
+/* ====================== Palette / base ====================== */
+.pf {
+  --ink: #1b1914;
+  --muted: #8f897d;
+  --line: #ddd8cc;
+  --paper: #f4f1ea;
+  --tint: #eae5da;
+  --accent: #4f5a3f;
+}
+.pf * { box-sizing: border-box; }
+
+body.portfolio-page { overflow-x: clip; }
+html:not([data-theme="dark"]) body.portfolio-page {
+  background-color: #f4f1ea;
+  background-image: url('{{ site.baseurl }}/assets/images/portfolio/pattern-dots.png');
+}
+html[data-theme="dark"] body.portfolio-page { background-color: #161510; }
+body.portfolio-page .mainheading { display: none; }
+body.portfolio-page .site-content { padding-top: 0; }
+body.portfolio-page .site-content,
+body.portfolio-page .main-content { background: transparent; }
+/* main-content は全幅に */
+body.portfolio-page .main-content > .pf { }
+html.pf-smooth { scroll-behavior: smooth; scroll-padding-top: 64px; }
+
+/* ====================== Hero ====================== */
+.pf-hero {
+  position: relative;
+  width: 100vw; margin-left: calc(50% - 50vw);
+  height: calc(100vh - 57px); min-height: 520px;
+  overflow: hidden; display: flex; align-items: flex-end;
+}
+.pf-hero__img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.pf-hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,.1), rgba(0,0,0,.15) 40%, rgba(0,0,0,.72)); }
+.pf-hero__inner { position: relative; z-index: 1; padding: clamp(2rem, 6vw, 5.5rem); color: #fff; max-width: 1100px; }
+.pf-hero__eyebrow { display: block; letter-spacing: .4em; font-size: .68rem; font-weight: 600; opacity: .9; margin-bottom: 1.1rem; }
+.pf-hero__name { font-size: clamp(3rem, 11vw, 8rem); line-height: .92; font-weight: 800; margin: 0 0 1rem; letter-spacing: -0.01em; color: #fff; }
+.pf-hero__sub { font-size: clamp(.9rem, 1.6vw, 1.1rem); margin: 0; color: #eee; max-width: 60ch; letter-spacing: .02em; }
+.pf-hero__scroll {
+  position: absolute; right: clamp(1.5rem, 5vw, 4rem); bottom: clamp(1.5rem, 5vw, 4rem); z-index: 1;
+  width: 3rem; height: 3rem; border-radius: 999px; background: rgba(255,255,255,.92); color: #111;
+  display: flex; align-items: center; justify-content: center; animation: pf-bounce 1.8s ease-in-out infinite;
+}
+@keyframes pf-bounce { 0%,100%{transform:translateY(0)} 50%{transform:translateY(7px)} }
+
+/* ====================== Sticky subnav ====================== */
+.pf-subnav {
+  position: sticky; top: 57px; z-index: 30;
+  display: flex; align-items: center; gap: 1.5rem;
+  width: 100vw; margin-left: calc(50% - 50vw);
+  padding: .7rem clamp(1.2rem, 4vw, 3rem);
+  background: rgba(244,241,234,.86); backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line);
+}
+[data-theme="dark"] .pf-subnav { background: rgba(22,21,16,.86); }
+.pf-subnav__home { font-weight: 800; letter-spacing: .1em; color: var(--ink); flex: 0 0 auto; }
+.pf-subnav__links { display: flex; gap: 1.2rem; overflow-x: auto; flex: 1; scrollbar-width: none; }
+.pf-subnav__links::-webkit-scrollbar { display: none; }
+.pf-subnav__link { white-space: nowrap; font-size: .82rem; font-weight: 600; letter-spacing: .04em; color: var(--muted); padding: .2rem 0; border-bottom: 2px solid transparent; }
+.pf-subnav__link:hover { color: var(--ink); }
+.pf-subnav__link.is-active { color: var(--ink); border-bottom-color: var(--accent); }
+.pf-lang { display: inline-flex; gap: .5rem; flex: 0 0 auto; }
+.pf-lang__btn { border: 0; background: none; color: var(--muted); font-size: .72rem; font-weight: 700; letter-spacing: .12em; cursor: pointer; }
+.pf-lang__btn.is-active { color: var(--ink); text-decoration: underline; text-underline-offset: 4px; }
+
+/* ====================== Blocks / wrap ====================== */
+.pf-block { padding: clamp(4rem, 9vw, 9rem) 0; }
+.pf-block--tint { background: var(--tint); width: 100vw; margin-left: calc(50% - 50vw); }
+[data-theme="dark"] .pf-block--tint { background: #1f1d16; }
+.pf-wrap { max-width: min(1180px, 90vw); margin: 0 auto; }
+.pf-kicker { display: block; font-size: .74rem; font-weight: 700; letter-spacing: .25em; color: var(--accent); margin-bottom: 1.4rem; }
+.pf-h { font-size: clamp(2.2rem, 6vw, 4.4rem); line-height: 1.05; font-weight: 800; letter-spacing: -0.01em; margin: 0 0 1.4rem; color: var(--ink); }
+.pf-h--xl { font-size: clamp(2.6rem, 9vw, 6rem); }
+.pf-big { font-size: clamp(1.5rem, 3.4vw, 2.6rem); line-height: 1.5; font-weight: 600; letter-spacing: .01em; margin: 0; color: var(--ink); }
+.pf-block p { font-size: clamp(1rem, 1.5vw, 1.15rem); line-height: 1.95; color: var(--ink); max-width: 56ch; }
+
+/* 非対称スプリット */
+.pf-split { display: grid; grid-template-columns: repeat(12, 1fr); gap: clamp(1.6rem, 4vw, 4.5rem); align-items: center; }
+.pf-split--a .pf-split__text { grid-column: 1 / span 5; }
+.pf-split--a .pf-split__media { grid-column: 6 / span 7; }
+.pf-split--b .pf-split__media { grid-column: 1 / span 7; }
+.pf-split--b .pf-split__text { grid-column: 8 / span 5; }
+.pf-split__media { overflow: hidden; margin: 0; }
+.pf-split__media img { width: 100%; height: 100%; object-fit: cover; display: block; filter: saturate(.9) contrast(1.03); transition: transform 1.1s cubic-bezier(.2,.7,.2,1); }
+.pf-split__media:hover img { transform: scale(1.04); }
+.pf-tall img { aspect-ratio: 4 / 5; }
+.pf-wide img { aspect-ratio: 4 / 3; }
+
+/* Full-bleed feature */
+.pf-feature { position: relative; width: 100vw; margin-left: calc(50% - 50vw); height: clamp(360px, 58vh, 600px); overflow: hidden; display: flex; align-items: flex-end; }
+.pf-feature--tall { height: clamp(420px, 72vh, 760px); }
+.pf-feature__img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transform: scale(1.08); transition: transform 1.6s cubic-bezier(.2,.7,.2,1); }
+.pf-feature.is-visible .pf-feature__img { transform: scale(1); }
+.pf-feature::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, transparent, rgba(0,0,0,.55)); }
+.pf-feature__cap { position: relative; z-index: 1; color: #fff; padding: clamp(2rem, 6vw, 5rem); font-size: clamp(1.4rem, 3.2vw, 2.4rem); font-weight: 700; line-height: 1.3; }
+.pf-feature__cap--big { font-size: clamp(1.8rem, 5vw, 3.6rem); }
+
+/* 大きな行（論文・受賞・経歴） */
+.pf-row { display: flex; justify-content: space-between; align-items: baseline; gap: 1.5rem; padding: clamp(1.1rem, 2.5vw, 1.8rem) 0; border-top: 1px solid var(--line); }
+.pf-row:last-child { border-bottom: 1px solid var(--line); }
+.pf-row__title { font-size: clamp(1.1rem, 2.2vw, 1.6rem); font-weight: 600; color: var(--ink); line-height: 1.4; flex: 1; transition: transform .25s ease; }
+.pf-row:hover .pf-row__title { transform: translateX(.5rem); }
+.pf-row__meta { flex: 0 0 auto; text-align: right; font-size: .85rem; color: var(--muted); white-space: nowrap; }
+
+/* タグ */
+.pf-tags { list-style: none; margin: 0 0 1.6rem; padding: 0; display: flex; flex-wrap: wrap; gap: .5rem 1.4rem; }
+.pf-tags li { font-size: .95rem; font-weight: 600; color: var(--ink); display: inline-flex; align-items: center; gap: .55rem; }
+.pf-tags li::before { content: ""; width: .9rem; height: 1px; background: var(--accent); }
+
+/* Activities 大判2カラム */
+.pf-acts { display: grid; grid-template-columns: repeat(auto-fit, minmax(330px, 1fr)); gap: clamp(1.6rem, 3vw, 3rem); }
+.pf-act { border-top: 2px solid var(--ink); padding-top: 1.2rem; }
+.pf-act__date { font-size: .8rem; font-weight: 700; letter-spacing: .08em; color: var(--accent); }
+.pf-act__title { font-size: clamp(1.2rem, 2vw, 1.5rem); font-weight: 700; margin: .4rem 0 .3rem; color: var(--ink); line-height: 1.3; }
+.pf-act__sub { display: block; font-size: .85rem; color: var(--muted); margin-bottom: .8rem; line-height: 1.5; }
+.pf-act__list { margin: 0; padding-left: 1.1rem; }
+.pf-act__list li { font-size: .95rem; color: var(--ink); line-height: 1.7; margin-bottom: .4rem; }
+
+/* Gallery 大判・不規則 */
+.pf-gallery { width: 100vw; margin-left: calc(50% - 50vw); margin-top: clamp(1.5rem, 3vw, 2.5rem); display: grid; grid-template-columns: repeat(12, 1fr); grid-auto-rows: clamp(170px, 19vw, 300px); gap: 10px; padding: 0 10px; }
+.pf-g { position: relative; overflow: hidden; margin: 0; grid-column: span 4; }
+.pf-g img { width: 100%; height: 100%; object-fit: cover; transition: transform 1s cubic-bezier(.2,.7,.2,1), filter .5s ease; filter: saturate(.88) contrast(1.04) brightness(.98); }
+.pf-g:hover img { transform: scale(1.05); filter: none; }
+.pf-g--hero { grid-column: span 7; grid-row: span 2; }
+.pf-g--wide { grid-column: span 5; }
+
+/* Links / CTA */
+.pf-links { display: flex; flex-wrap: wrap; gap: 1.4rem; margin-top: 1.4rem; }
+.pf-link { display: inline-flex; align-items: center; gap: .35rem; color: var(--ink); font-weight: 600; font-size: .9rem; border-bottom: 1px solid var(--ink); padding-bottom: 1px; }
+.pf-link::after { content: "↗"; }
+.pf-link:hover { color: var(--accent); border-color: var(--accent); }
+.pf-contact { text-align: left; }
+.pf-contact__line { font-size: clamp(1.1rem, 2vw, 1.5rem) !important; color: var(--ink); margin: 0 0 1.8rem; }
+.pf-cta { display: inline-flex; align-items: center; gap: .8rem; padding: 1.1rem 2rem; background: var(--ink); color: var(--paper); border-radius: 999px; font-size: 1rem; font-weight: 600; transition: transform .25s ease, background .25s ease, gap .25s ease; }
+.pf-cta:hover { transform: translateY(-3px); background: var(--accent); color: #fff; gap: 1.1rem; }
+[data-theme="dark"] .pf-cta { background: var(--ink); color: #161510; }
+
+/* 言語切替 */
+.pf[data-lang="jp"] .lang-en { display: none; }
+.pf[data-lang="en"] .lang-jp { display: none; }
+
+/* Reveal */
+@media (prefers-reduced-motion: no-preference) {
+  .pf-reveal { opacity: 0; transform: translateY(26px); transition: opacity .9s ease, transform .9s cubic-bezier(.2,.7,.2,1); }
+  .pf-reveal.is-visible { opacity: 1; transform: none; }
 }
 
-.language-content {
-    display: none;
-}
+/* ====================== Dark mode ====================== */
+[data-theme="dark"] .pf { --ink: #ece7da; --muted: #8f897d; --line: #34322a; --paper: #161510; --tint: #1f1d16; --accent: #aab48d; }
 
-.language-content.active {
-    display: block;
-}
-
-.btn-outline-primary {
-    color: #00ab6b;
-    border-color: #00ab6b;
-}
-
-.btn-outline-primary:hover,
-.btn-outline-primary.active {
-    background-color: #00ab6b;
-    border-color: #00ab6b;
-    color: white;
-}
-
-.skill-item {
-    margin-bottom: 1rem;
-}
-
-.progress {
-    height: 0.5rem;
-    background-color: #e9ecef;
-}
-
-.progress-bar {
-    background-color: #00ab6b;
-}
-
-.timeline-item {
-    position: relative;
-    padding-left: 2rem;
-    margin-bottom: 2rem;
-    border-left: 3px solid #00ab6b;
-    background: linear-gradient(90deg, rgba(0,171,107,0.05) 0%, transparent 100%);
-    padding: 1rem 1rem 1rem 2rem;
-    border-radius: 0 8px 8px 0;
-    margin-left: 1rem;
-}
-
-.timeline-date {
-    color: #00ab6b;
-    font-size: 0.9rem;
-    font-weight: 600;
-    margin-bottom: 0.5rem;
-}
-
-.projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 1.5rem;
-    margin-top: 1rem;
-}
-
-.project-card {
-    border: 1px solid #eee;
-    border-radius: 8px;
-    padding: 1rem;
-    transition: transform 0.2s;
-}
-
-.project-card:hover {
-    transform: translateY(-5px);
-}
-
-.project-card img {
-    width: 100%;
-    height: 150px;
-    object-fit: cover;
-    border-radius: 4px;
-    margin-bottom: 1rem;
-}
-
-.about-hero {
-    position: relative;
-    margin-bottom: 2.5rem;
-    padding: 4.5rem 1.5rem;
-    border-radius: 16px;
-    overflow: hidden;
-    background: linear-gradient(180deg, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.7) 100%), url('{{site.baseurl}}/assets/images/cycling.jpeg') center/cover no-repeat;
-    color: #f8f9fa;
-    box-shadow: 0 10px 35px rgba(0,0,0,0.35);
-}
-
-.about-hero::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(circle at 20% 20%, rgba(255,255,255,0.08), transparent 35%),
-                radial-gradient(circle at 80% 10%, rgba(255,255,255,0.06), transparent 30%);
-    pointer-events: none;
-}
-
-.about-hero__content {
-    position: relative;
-    max-width: 820px;
-    margin: 0 auto;
-    z-index: 1;
-}
-
-.about-hero__eyebrow {
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    font-weight: 700;
-    color: #d4f7e6;
-    margin-bottom: 0.6rem;
-    font-size: 0.9rem;
-}
-
-.about-hero__badge {
-    display: inline-block;
-    padding: 0.55rem 1.25rem;
-    background: rgba(255,255,255,0.96);
-    color: #0b2e1f;
-    border-radius: 12px;
-    font-weight: 700;
-    letter-spacing: 0.04em;
-    box-shadow: 0 10px 28px rgba(0,0,0,0.25);
-    margin-bottom: 0.9rem;
-}
-
-.about-hero__title {
-    font-size: clamp(2rem, 4vw, 2.6rem);
-    font-weight: 800;
-    margin-bottom: 0.5rem;
-}
-
-.about-hero__subtitle {
-    font-size: 1.05rem;
-    margin-bottom: 0.6rem;
-    color: #f2f6f4;
-}
-
-.about-hero__cta {
-    color: #f8f9fa;
-    border-color: rgba(255,255,255,0.7);
-}
-
-.about-hero__cta:hover,
-.about-hero__cta:focus {
-    color: #0b2e1f;
-    background-color: #d4f7e6;
-    border-color: #d4f7e6;
-}
-
-.section-title {
-    display: none;
-    margin: 0;
-}
-
-/* 研究活動カードのスタイル */
-.activity-card {
-    border: 1px solid #e0e0e0;
-    border-radius: 12px;
-    padding: 1.5rem;
-    min-height: 100px;
-    height: auto;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-    transition: all 0.3s ease;
-    position: relative;
-    background: linear-gradient(135deg, #fff 0%, #fafafa 100%);
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-}
-
-.activity-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 8px 30px rgba(0,0,0,0.15);
-    border-color: #00ab6b;
-    background: linear-gradient(135deg, #fff 0%, #f8fff8 100%);
-}
-
-.activity-date {
-    position: absolute;
-    top: 0;
-    right: 0;
-    background: linear-gradient(135deg, #00ab6b 0%, #00995a 100%);
-    color: white;
-    padding: 0.4rem 0.9rem;
-    font-size: 0.8rem;
-    font-weight: 600;
-    border-bottom-left-radius: 12px;
-    box-shadow: 0 2px 8px rgba(0,171,107,0.3);
-}
-
-.activity-card h4 {
-    margin-top: 0.5rem;
-    margin-bottom: 0.5rem;
-    color: #333;
-    font-weight: 600;
-    font-size: 1.1rem;
-    min-height: 1.5rem;
-    display: flex;
-    align-items: center;
-}
-
-.activity-card .conference-subtitle {
-    display: block;
-    font-size: 0.8rem;
-    color: #666;
-    font-style: italic;
-    margin-bottom: 1rem;
-    padding-bottom: 0.5rem;
-    border-bottom: 1px solid #f0f0f0;
-    min-height: 2.5rem;
-    line-height: 1.3;
-}
-
-.activity-details {
-    padding-left: 1.25rem;
-    margin-bottom: 0;
-    min-height: 4rem;
-    flex-grow: 1;
-}
-
-.activity-details li {
-    margin-bottom: 0.5rem;
-    font-size: 0.95rem;
-    color: #555;
-    line-height: 1.4;
-}
-
-/* 折り畳み機能のスタイル */
-.publications-hidden,
-.timeline-hidden {
-    display: block;
-}
-
-.publications-hidden.hidden,
-.timeline-hidden.hidden {
-    display: none;
-}
-
-.publications-hidden.show,
-.timeline-hidden.show {
-    display: block;
-}
-
-.activities-hidden,
-.projects-hidden {
-    display: contents;
-}
-
-.activities-hidden.hidden,
-.projects-hidden.hidden {
-    display: none;
-}
-
-.activities-hidden.show,
-.projects-hidden.show {
-    display: contents;
-}
-
-.see-more-btn {
-    margin-top: 1rem;
-    transition: all 0.3s ease;
-}
-
-.see-more-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0,171,107,0.2);
-}
-
-.publication-item,
-.activity-item,
-.timeline-item,
-.project-item {
-    transition: opacity 0.3s ease, transform 0.3s ease;
-}
-
-.award-card {
-    border: 1px solid #e0e0e0;
-    border-radius: 12px;
-    padding: 1.1rem 1.25rem;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.06);
-    transition: all 0.3s ease;
-    position: relative;
-    background: linear-gradient(135deg, #fff 0%, #fafafa 100%);
-    display: flex;
-    gap: 1rem;
-    align-items: flex-start;
-    overflow: hidden;
-}
-
-.award-card::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    width: 4px;
-    background: linear-gradient(180deg, #00ab6b 0%, #00995a 100%);
-}
-
-.award-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
-    border-color: #00ab6b;
-    background: linear-gradient(135deg, #fff 0%, #f8fff8 100%);
-}
-
-.award-date {
-    flex: 0 0 auto;
-    font-size: 0.85rem;
-    font-weight: 700;
-    color: #0b2e1f;
-    background: rgba(0,171,107,0.12);
-    border: 1px solid rgba(0,171,107,0.25);
-    border-radius: 999px;
-    padding: 0.25rem 0.75rem;
-    margin-left: auto; /* keep dates aligned on the right */
-    white-space: nowrap;
-}
-
-.award-icon {
-    flex: 0 0 2.25rem; /* fixed width -> aligned icons */
-    width: 2.25rem;
-    height: 2.25rem;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 999px;
-    background: rgba(0,171,107,0.12);
-    border: 1px solid rgba(0,171,107,0.25);
-    color: #00ab6b;
-}
-
-.award-content {
-    min-width: 0;
-}
-
-.award-title {
-    font-weight: 700;
-    color: #333;
-    font-size: 1.05rem;
-    margin-bottom: 0.25rem;
-}
-
-.award-subtitle {
-    font-size: 0.95rem;
-    color: #666;
-}
-
-.award-links {
-    margin-top: 0.6rem;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-}
-
-.award-links .btn {
-    padding: 0.25rem 0.65rem;
-    line-height: 1.2;
-}
-
-@media (max-width: 768px) {
-    .projects-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .about-hero {
-        padding: 3.5rem 1.25rem;
-    }
-    
-    .timeline-item {
-        padding-left: 1rem;
-    }
-    
-    .activity-card {
-        min-height: auto;
-        margin-bottom: 1.5rem;
-    }
-    
-    .activity-card .conference-subtitle {
-        min-height: auto;
-    }
-    
-    .activity-details {
-        min-height: auto;
-    }
-
-    .award-card {
-        flex-wrap: wrap;
-        gap: 0.75rem;
-    }
-
-    .award-date {
-        margin-left: 0;
-        flex-basis: 100%;
-        width: fit-content;
-        white-space: normal;
-    }
+/* ====================== Responsive ====================== */
+@media (max-width: 800px) {
+  .pf-split { grid-template-columns: 1fr; gap: 1.6rem; }
+  .pf-split--a .pf-split__text, .pf-split--a .pf-split__media,
+  .pf-split--b .pf-split__text, .pf-split--b .pf-split__media { grid-column: 1 / -1; }
+  .pf-split--b .pf-split__media { order: -1; }
+  .pf-tall img, .pf-wide img { aspect-ratio: 16 / 10; }
+  .pf-row { flex-direction: column; gap: .3rem; }
+  .pf-row__meta { text-align: left; }
+  .pf-gallery { grid-template-columns: repeat(6, 1fr); grid-auto-rows: 30vw; }
+  .pf-g, .pf-g--hero, .pf-g--wide { grid-column: span 3; grid-row: span 1; }
+  .pf-g--hero { grid-column: span 6; grid-row: span 1; }
 }
 </style>
 
 <script>
-// 言語切り替え
-document.getElementById('jp-btn').addEventListener('click', function() {
-    document.getElementById('jp-content').classList.add('active');
-    document.getElementById('en-content').classList.remove('active');
-    this.classList.add('active');
-    document.getElementById('en-btn').classList.remove('active');
-});
+(function () {
+  document.documentElement.classList.add('pf-smooth');
+  document.body.classList.add('portfolio-page');
 
-document.getElementById('en-btn').addEventListener('click', function() {
-    document.getElementById('en-content').classList.add('active');
-    document.getElementById('jp-content').classList.remove('active');
-    this.classList.add('active');
-    document.getElementById('jp-btn').classList.remove('active');
-});
+  document.addEventListener('DOMContentLoaded', function () {
+    var root = document.querySelector('.pf');
 
-// 折り畳み機能
-document.addEventListener('DOMContentLoaded', function() {
-    const seeMoreButtons = document.querySelectorAll('.see-more-btn');
-    
-    seeMoreButtons.forEach(function(button) {
-        button.addEventListener('click', function() {
-            const target = this.getAttribute('data-target');
-            const seeMoreText = this.querySelector('.see-more-text');
-            const seeLessText = this.querySelector('.see-less-text');
-            
-            // 対象となる隠し要素を取得
-            let hiddenContainer;
-            if (target.startsWith('publications')) {
-                hiddenContainer = document.querySelector(`#${target}-list .publications-hidden`);
-            } else if (target.startsWith('activities')) {
-                hiddenContainer = document.querySelector(`#${target}-list .activities-hidden`);
-            } else if (target.startsWith('timeline')) {
-                hiddenContainer = document.querySelector(`#${target}-list .timeline-hidden`);
-            } else if (target.startsWith('projects')) {
-                hiddenContainer = document.querySelector(`#${target}-list .projects-hidden`);
-            }
-            
-            if (hiddenContainer) {
-                const isHidden = hiddenContainer.classList.contains('hidden');
-                
-                if (isHidden) {
-                    // 表示する
-                    hiddenContainer.classList.remove('hidden');
-                    hiddenContainer.classList.add('show');
-                    
-                    seeMoreText.style.display = 'none';
-                    seeLessText.style.display = 'inline';
-                } else {
-                    // 折りたたむ
-                    hiddenContainer.classList.add('hidden');
-                    hiddenContainer.classList.remove('show');
-                    
-                    seeMoreText.style.display = 'inline';
-                    seeLessText.style.display = 'none';
-                }
-            }
+    // 言語切替
+    var jp = document.getElementById('jp-btn'), en = document.getElementById('en-btn');
+    function setLang(l) {
+      root.setAttribute('data-lang', l);
+      jp.classList.toggle('is-active', l === 'jp');
+      en.classList.toggle('is-active', l === 'en');
+      document.querySelectorAll('.pf-reveal').forEach(function (e) { e.classList.add('is-visible'); });
+    }
+    if (jp && en) { jp.addEventListener('click', function(){setLang('jp');}); en.addEventListener('click', function(){setLang('en');}); }
+
+    // scroll-spy
+    var links = Array.prototype.slice.call(document.querySelectorAll('.pf-subnav__link'));
+    var map = {}; links.forEach(function (l) { map[l.getAttribute('data-section')] = l; });
+    var blocks = Array.prototype.slice.call(document.querySelectorAll('.pf-block[id]'));
+    if ('IntersectionObserver' in window) {
+      var spy = new IntersectionObserver(function (es) {
+        es.forEach(function (e) {
+          if (!e.isIntersecting) return;
+          var l = map[e.target.id]; if (!l) return;
+          links.forEach(function (x){ x.classList.remove('is-active'); });
+          l.classList.add('is-active');
         });
-    });
-});
+      }, { rootMargin: '-45% 0px -45% 0px' });
+      blocks.forEach(function (b) { spy.observe(b); });
+    }
+
+    // reveal
+    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (!reduce && 'IntersectionObserver' in window) {
+      var rev = new IntersectionObserver(function (es, ob) {
+        es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('is-visible'); ob.unobserve(e.target); } });
+      }, { rootMargin: '0px 0px -8% 0px', threshold: .06 });
+      document.querySelectorAll('.pf-reveal').forEach(function (e) { rev.observe(e); });
+      document.querySelectorAll('.pf-feature').forEach(function (e) { rev.observe(e); });
+    } else {
+      document.querySelectorAll('.pf-feature').forEach(function (e) { e.classList.add('is-visible'); });
+    }
+  });
+})();
 </script>
