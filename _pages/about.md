@@ -144,8 +144,8 @@ show_initial_count:
       <span class="pf-hero__eyebrow">PORTFOLIO — 2026</span>
       <h1 class="pf-hero__name">Yoshiki<br>Noguchi</h1>
       <p class="pf-hero__sub">
-        <span class="lang-jp">大阪大学大学院 情報科学研究科 修士2年 — HPC / ジョブスケジューリング / 強化学習</span>
-        <span class="lang-en">M2, Graduate School of Information Science and Technology, Osaka University — HPC / Scheduling / RL</span>
+        <span class="lang-jp">大阪大学大学院 情報科学研究科 博士後期課程1年（D1） — 高性能計算 / 強化学習</span>
+        <span class="lang-en">D1, Graduate School of Information Science and Technology, Osaka University — HPC / Reinforcement Learning</span>
       </p>
     </div>
     <a class="pf-hero__scroll" href="#about" aria-label="Scroll"><i class="fas fa-arrow-down"></i></a>
@@ -175,8 +175,8 @@ show_initial_count:
     <div class="pf-wrap pf-split pf-split--a">
       <div class="pf-split__text pf-reveal">
         <span class="pf-kicker">01 — <span class="lang-jp">はじめに</span><span class="lang-en">About</span></span>
-        <p class="pf-big lang-jp">大阪大学大学院の野口祥生です。<br>HPC のジョブスケジューリング最適化を、<br>強化学習で解いています。</p>
-        <p class="pf-big lang-en">I'm Yoshiki Noguchi at Osaka University,<br>solving HPC job-scheduling optimization<br>with reinforcement learning.</p>
+        <p class="pf-big lang-jp">大阪大学大学院 情報科学研究科 D1 の野口祥生です。<br>多目的強化学習などを用いて、高性能計算（HPC）の<br>運用最適化を研究しています。<br>趣味は水泳と工作。</p>
+        <p class="pf-big lang-en">I'm Yoshiki Noguchi, a D1 at Osaka University.<br>I study the operational optimization of high-performance<br>computing (HPC) with multi-objective reinforcement learning.<br>Off-hours: swimming and making things.</p>
       </div>
       <figure class="pf-split__media pf-tall pf-reveal">
         <!-- 画像差し替え可 -->
@@ -190,7 +190,7 @@ show_initial_count:
     <!-- 画像差し替え可 -->
     <img class="pf-feature__img" src="{{ site.baseurl }}/assets/images/lab-intro/presentation.jpg" alt="" />
     <div class="pf-feature__cap">
-      <span class="lang-jp">研究は、世界の現場で。</span><span class="lang-en">Research, out in the world.</span>
+      <span class="lang-jp">国際学会にて。</span><span class="lang-en">At an international conference.</span>
     </div>
   </section>
 
@@ -203,15 +203,15 @@ show_initial_count:
       </figure>
       <div class="pf-split__text pf-reveal">
         <span class="pf-kicker">02 — <span class="lang-jp">研究</span><span class="lang-en">Research</span></span>
-        <h2 class="pf-h"><span class="lang-jp">計算を、<br>もっと公平に。</span><span class="lang-en">Fairer<br>computing.</span></h2>
+        <h2 class="pf-h"><span class="lang-jp">AIで、<br>HPCを最適化。</span><span class="lang-en">Optimizing<br>HPC with AI.</span></h2>
         <ul class="pf-tags">
           <li>HPC</li>
           <li><span class="lang-jp">ジョブスケジューリング</span><span class="lang-en">Job Scheduling</span></li>
           <li><span class="lang-jp">強化学習</span><span class="lang-en">Reinforcement Learning</span></li>
           <li><span class="lang-jp">多目的最適化</span><span class="lang-en">Multi-objective</span></li>
         </ul>
-        <p class="lang-jp">HPC のジョブスケジューリングでは最適化したい目標が複数あります。強化学習を用いてそれらを同時に最適化する手法を提案し、シミュレータ作成・アルゴリズム改良・実験評価を行っています。</p>
-        <p class="lang-en">HPC schedulers juggle several objectives at once. I propose reinforcement-learning methods that optimize them simultaneously — building simulators, improving algorithms, and running evaluations.</p>
+        <p class="lang-jp">高性能計算（HPC）の運用最適化、特にジョブスケジューリングを研究しています。最適化したい目標が複数あるため、多目的強化学習を用いてそれらを同時に最適化する手法を提案し、シミュレータ作成・アルゴリズム改良・実験評価を行っています。</p>
+        <p class="lang-en">I research the operational optimization of HPC — especially job scheduling. Because several objectives matter at once, I propose multi-objective reinforcement-learning methods to optimize them simultaneously, building simulators, improving algorithms, and running evaluations.</p>
       </div>
     </div>
   </section>
