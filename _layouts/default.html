@@ -121,7 +121,10 @@
     <!-- End Navigation
 ================================================== -->
 
-    <div class="site-content">
+    <div class="site-content{% if page.full_bleed %} site-content--bleed{% endif %}">
+      {% if page.full_bleed %}
+      <div class="main-content">{{ content }}</div>
+      {% else %}
       <div class="container">
         <!-- Site Title
 ================================================== -->
@@ -134,6 +137,7 @@
 ================================================== -->
         <div class="main-content">{{ content }}</div>
       </div>
+      {% endif %}
 
       <!-- Begin Footer
 ================================================== -->

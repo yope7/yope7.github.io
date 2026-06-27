@@ -3,7 +3,7 @@ layout: post
 title: "[対処法]virsh console したままターミナルを閉じた！"
 author: Yoshiki
 categories: [Tech]
-image: assets/images/10.jpg
+image: assets/images/IMG_0277.JPG
 featured: false
 hidden: false
 ---

@@ -4,7 +4,7 @@ title: "B4 Training Overview"
 author: Yoshiki
 categories: [Tech]
 tags: [Tech]
-image: assets/images/11.jpg
+image: assets/images/IMG_0863.JPG
 description: "B4 Training Overview"
 featured: false
 hidden: false

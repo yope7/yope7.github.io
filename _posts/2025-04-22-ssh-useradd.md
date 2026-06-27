@@ -3,7 +3,7 @@ layout: post
 title: "[基礎のメモ]公開鍵と一緒にsshユーザ作っといてと言われたら"
 author: Yoshiki
 categories: [Tech]
-image: assets/images/10.jpg
+image: assets/images/IMG_0863.JPG
 featured: false
 hidden: false
 wip: false

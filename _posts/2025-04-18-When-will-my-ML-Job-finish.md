@@ -3,7 +3,7 @@ layout: post
 title: "When will my ML Job finish? Toward providing Completion Time Estimates through Predictability-Centric Scheduling"
 author: Yoshiki
 categories: [Research]
-image: assets/images/10.jpg
+image: assets/images/IMG_0863.JPG
 featured: false
 hidden: false
 wip: false

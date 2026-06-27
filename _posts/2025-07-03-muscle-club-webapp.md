@@ -3,7 +3,7 @@ layout: post
 title: "muscle-club-webapp"
 author: Yoshiki
 categories: [other]
-image: assets/images/10.jpg
+image: assets/images/IMG_0209.JPG
 featured: false
 hidden: false
 wip: true

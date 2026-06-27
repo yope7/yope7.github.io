@@ -3,7 +3,7 @@ layout: post
 title: "Multi-objective optimization of production scheduling with evolutionary computation: A review"
 author: Yoshiki
 categories: [Research]
-image: assets/images/10.jpg
+image: assets/images/IMG_0209.JPG
 featured: false
 hidden: false
 ---

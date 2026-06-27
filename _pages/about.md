@@ -4,6 +4,7 @@ title: About Me
 permalink: /about
 comments: false
 hide_toc: true
+full_bleed: true
 # 論文データ（日本語）
 publications_jp:
   - title: "ユーザ利用機会公平性を考慮するクラウドバースティング環境向けスケジューリング手法の提案"
@@ -130,10 +131,13 @@ show_initial_count:
   projects: 6
 ---
 
-<!-- ============================================================
-     PORTFOLIO — 全幅・大判・非対称のアート・エディトリアル
-     画像差し替え箇所には <!-- 画像差し替え可 --> を記載
-     ============================================================ -->
+{% comment %}
+============================================================
+PORTFOLIO — 全幅・大判・非対称のアート・エディトリアル
+画像差し替え箇所には <!-- 画像差し替え可 --> を記載
+============================================================
+{% endcomment %}
+
 <div class="pf" data-lang="jp">
 
   <!-- ===== Hero (フルブリード) ===== -->
@@ -162,7 +166,6 @@ show_initial_count:
       <a class="pf-subnav__link" data-section="activities" href="#activities"><span class="lang-jp">活動</span><span class="lang-en">Activities</span></a>
       <a class="pf-subnav__link" data-section="experience" href="#experience"><span class="lang-jp">経歴</span><span class="lang-en">Path</span></a>
       <a class="pf-subnav__link" data-section="projects" href="#projects"><span class="lang-jp">成果物</span><span class="lang-en">Work</span></a>
-      <a class="pf-subnav__link" data-section="gallery" href="#gallery"><span class="lang-jp">写真</span><span class="lang-en">Gallery</span></a>
     </div>
     <div class="pf-lang">
       <button id="jp-btn" type="button" class="pf-lang__btn is-active">JP</button>
@@ -180,41 +183,38 @@ show_initial_count:
       </div>
       <figure class="pf-split__media pf-tall pf-reveal">
         <!-- 画像差し替え可 -->
-        <img src="{{ site.baseurl }}/assets/images/lab-intro/inside-lab.jpg" alt="" />
+        <img src="{{ site.baseurl }}/assets/images/IMG_8481.jpg" alt="野口祥生" />
       </figure>
     </div>
   </section>
 
-  <!-- ===== Full-bleed feature ===== -->
-  <section class="pf-bleed pf-feature pf-reveal">
-    <!-- 画像差し替え可 -->
-    <img class="pf-feature__img" src="{{ site.baseurl }}/assets/images/lab-intro/presentation.jpg" alt="" />
-    <div class="pf-feature__cap">
-      <span class="lang-jp">国際学会にて。</span><span class="lang-en">At an international conference.</span>
+  <!-- ===== 02 Research (画像が背景) ===== -->
+  <section class="pf-block pf-block--bg" id="research">
+    <img class="pf-bg__img" src="{{ site.baseurl }}/assets/images/IMG_0204.JPG" alt="" />
+    <div class="pf-wrap pf-bg__inner pf-reveal">
+      <span class="pf-kicker">02 — <span class="lang-jp">研究</span><span class="lang-en">Research</span></span>
+      <h2 class="pf-h pf-h--fit"><span class="lang-jp">AIで、HPCを最適化。</span><span class="lang-en">Optimizing HPC with AI.</span></h2>
+      <ul class="pf-tags">
+        <li>HPC</li>
+        <li><span class="lang-jp">ジョブスケジューリング</span><span class="lang-en">Job Scheduling</span></li>
+        <li><span class="lang-jp">強化学習</span><span class="lang-en">Reinforcement Learning</span></li>
+        <li><span class="lang-jp">多目的最適化</span><span class="lang-en">Multi-objective</span></li>
+      </ul>
+      <p class="lang-jp">高性能計算（HPC）の運用最適化、特にジョブスケジューリングを研究しています。最適化したい目標が複数あるため、多目的強化学習を用いてそれらを同時に最適化する手法を提案し、シミュレータ作成・アルゴリズム改良・実験評価を行っています。</p>
+      <p class="lang-en">I research the operational optimization of HPC — especially job scheduling. Because several objectives matter at once, I propose multi-objective reinforcement-learning methods to optimize them simultaneously, building simulators, improving algorithms, and running evaluations.</p>
     </div>
   </section>
 
-  <!-- ===== 02 Research (逆非対称・大判) ===== -->
-  <section class="pf-block" id="research">
-    <div class="pf-wrap pf-split pf-split--b">
-      <figure class="pf-split__media pf-wide pf-reveal">
-        <!-- 画像差し替え可 -->
-        <img src="{{ site.baseurl }}/assets/images/10.jpg" alt="" />
-      </figure>
-      <div class="pf-split__text pf-reveal">
-        <span class="pf-kicker">02 — <span class="lang-jp">研究</span><span class="lang-en">Research</span></span>
-        <h2 class="pf-h"><span class="lang-jp">AIで、<br>HPCを最適化。</span><span class="lang-en">Optimizing<br>HPC with AI.</span></h2>
-        <ul class="pf-tags">
-          <li>HPC</li>
-          <li><span class="lang-jp">ジョブスケジューリング</span><span class="lang-en">Job Scheduling</span></li>
-          <li><span class="lang-jp">強化学習</span><span class="lang-en">Reinforcement Learning</span></li>
-          <li><span class="lang-jp">多目的最適化</span><span class="lang-en">Multi-objective</span></li>
-        </ul>
-        <p class="lang-jp">高性能計算（HPC）の運用最適化、特にジョブスケジューリングを研究しています。最適化したい目標が複数あるため、多目的強化学習を用いてそれらを同時に最適化する手法を提案し、シミュレータ作成・アルゴリズム改良・実験評価を行っています。</p>
-        <p class="lang-en">I research the operational optimization of HPC — especially job scheduling. Because several objectives matter at once, I propose multi-objective reinforcement-learning methods to optimize them simultaneously, building simulators, improving algorithms, and running evaluations.</p>
+  <!-- ===== Photo interlude: asymmetric triptych (左大判 + 右2枚スタック) ===== -->
+  <div class="pf-interlude pf-interlude--wide">
+    <div class="pf-trip">
+      <figure class="pf-ph pf-trip__big pf-reveal pf-reveal--left"><img src="{{ site.baseurl }}/assets/images/IMG_0277.JPG" alt="" loading="lazy" /></figure>
+      <div class="pf-trip__stack">
+        <figure class="pf-ph pf-reveal pf-reveal--right"><img src="{{ site.baseurl }}/assets/images/IMG_0717.JPG" alt="" loading="lazy" /></figure>
+        <figure class="pf-ph pf-reveal pf-reveal--right pf-d1"><img src="{{ site.baseurl }}/assets/images/IMG_0863.JPG" alt="" loading="lazy" /></figure>
       </div>
     </div>
-  </section>
+  </div>
 
   <!-- ===== 03 Publications (大きな文字のリスト) ===== -->
   <section class="pf-block pf-block--tint" id="publications">
@@ -254,15 +254,6 @@ show_initial_count:
     </div>
   </section>
 
-  <!-- ===== Full-bleed feature 2 ===== -->
-  <section class="pf-bleed pf-feature pf-feature--tall pf-reveal">
-    <!-- 画像差し替え可 -->
-    <img class="pf-feature__img" src="{{ site.baseurl }}/assets/images/jumbotron.jpg" alt="" />
-    <div class="pf-feature__cap pf-feature__cap--big">
-      <span class="lang-jp">研究も、自転車も、<br>まっすぐ前へ。</span><span class="lang-en">Research and cycling —<br>always forward.</span>
-    </div>
-  </section>
-
   <!-- ===== 05 Activities (大判の2カラム) ===== -->
   <section class="pf-block" id="activities">
     <div class="pf-wrap">
@@ -290,6 +281,14 @@ show_initial_count:
     </div>
   </section>
 
+  <!-- ===== Photo interlude: duo (左右スライド) ===== -->
+  <div class="pf-interlude pf-interlude--wide">
+    <div class="pf-duo">
+      <figure class="pf-ph pf-reveal pf-reveal--left"><img src="{{ site.baseurl }}/assets/images/IMG_0847.JPG" alt="" loading="lazy" /></figure>
+      <figure class="pf-ph pf-reveal pf-reveal--right"><img src="{{ site.baseurl }}/assets/images/IMG_0332.JPG" alt="" loading="lazy" /></figure>
+    </div>
+  </div>
+
   <!-- ===== 06 Experience ===== -->
   <section class="pf-block pf-block--tint" id="experience">
     <div class="pf-wrap">
@@ -307,53 +306,54 @@ show_initial_count:
     </div>
   </section>
 
-  <!-- ===== 07 Projects (非対称・大判) ===== -->
+  <!-- ===== Photo interlude: trio strip (ズーム＋スタッガー) ===== -->
+  <div class="pf-interlude pf-interlude--wide">
+    <div class="pf-strip">
+      <figure class="pf-ph pf-reveal pf-reveal--zoom"><img src="{{ site.baseurl }}/assets/images/Yokohama.JPG" alt="Yokohama" loading="lazy" /></figure>
+      <figure class="pf-ph pf-reveal pf-reveal--zoom pf-d1"><img src="{{ site.baseurl }}/assets/images/IMG_8443.jpg" alt="" loading="lazy" /></figure>
+      <figure class="pf-ph pf-reveal pf-reveal--zoom pf-d2"><img src="{{ site.baseurl }}/assets/images/IMG_0620.JPG" alt="" loading="lazy" /></figure>
+    </div>
+  </div>
+
+  <!-- ===== 07 Projects (アプリ・ショーケース) ===== -->
   <section class="pf-block" id="projects">
-    {% for p in page.projects_jp %}
-    <div class="pf-wrap pf-split pf-split--a lang-jp">
-      <figure class="pf-split__media pf-wide pf-reveal"><img src="{{ site.baseurl }}/{{ p.image }}" alt="{{ p.title }}" /></figure>
-      <div class="pf-split__text pf-reveal">
-        <span class="pf-kicker">07 — <span>成果物</span></span>
-        <h2 class="pf-h">{{ p.title }}</h2>
-        <p>{{ p.description }}</p>
-        <div class="pf-links">{% for l in p.links %}<a class="pf-link" href="{{ l.url }}" target="_blank" rel="noopener noreferrer">{{ l.text }}</a>{% endfor %}</div>
-      </div>
-    </div>
-    {% endfor %}
-    {% for p in page.projects_en %}
-    <div class="pf-wrap pf-split pf-split--a lang-en">
-      <figure class="pf-split__media pf-wide pf-reveal"><img src="{{ site.baseurl }}/{{ p.image }}" alt="{{ p.title }}" /></figure>
-      <div class="pf-split__text pf-reveal">
-        <span class="pf-kicker">07 — <span>Work</span></span>
-        <h2 class="pf-h">{{ p.title }}</h2>
-        <p>{{ p.description }}</p>
-        <div class="pf-links">{% for l in p.links %}<a class="pf-link" href="{{ l.url }}" target="_blank" rel="noopener noreferrer">{{ l.text }}</a>{% endfor %}</div>
-      </div>
-    </div>
-    {% endfor %}
-  </section>
-
-  <!-- ===== 08 Gallery (大判・不規則) ===== -->
-  <section class="pf-block" id="gallery">
     <div class="pf-wrap">
-      <span class="pf-kicker pf-reveal">08 — <span class="lang-jp">写真</span><span class="lang-en">Gallery</span></span>
-    </div>
-    <!-- 画像差し替え可: 各タイル -->
-    <div class="pf-gallery">
-      <figure class="pf-g pf-g--hero pf-reveal"><img src="{{ site.baseurl }}/assets/images/Yokohama.JPG" alt="" /></figure>
-      <figure class="pf-g pf-reveal"><img src="{{ site.baseurl }}/assets/images/4.jpg" alt="" /></figure>
-      <figure class="pf-g pf-reveal"><img src="{{ site.baseurl }}/assets/images/8.jpg" alt="" /></figure>
-      <figure class="pf-g pf-g--wide pf-reveal"><img src="{{ site.baseurl }}/assets/images/5.jpg" alt="" /></figure>
-      <figure class="pf-g pf-reveal"><img src="{{ site.baseurl }}/assets/images/13.jpg" alt="" /></figure>
-      <figure class="pf-g pf-reveal"><img src="{{ site.baseurl }}/assets/images/1.jpg" alt="" /></figure>
+      <span class="pf-kicker pf-reveal">07 — <span class="lang-jp">成果物</span><span class="lang-en">Work</span></span>
+      {% for p in page.projects_jp %}
+      <div class="pf-work lang-jp pf-reveal">
+        <div class="pf-work__frame">
+          <div class="pf-work__bar"><span></span><span></span><span></span></div>
+          <div class="pf-work__shot"><img src="{{ site.baseurl }}/{{ p.image }}" alt="{{ p.title }}" loading="lazy" /></div>
+        </div>
+        <div class="pf-work__body">
+          <h2 class="pf-h">{{ p.title }}</h2>
+          <p>{{ p.description }}</p>
+          <div class="pf-links">{% for l in p.links %}<a class="pf-link" href="{{ l.url }}" target="_blank" rel="noopener noreferrer">{{ l.text }}</a>{% endfor %}</div>
+        </div>
+      </div>
+      {% endfor %}
+      {% for p in page.projects_en %}
+      <div class="pf-work lang-en pf-reveal">
+        <div class="pf-work__frame">
+          <div class="pf-work__bar"><span></span><span></span><span></span></div>
+          <div class="pf-work__shot"><img src="{{ site.baseurl }}/{{ p.image }}" alt="{{ p.title }}" loading="lazy" /></div>
+        </div>
+        <div class="pf-work__body">
+          <h2 class="pf-h">{{ p.title }}</h2>
+          <p>{{ p.description }}</p>
+          <div class="pf-links">{% for l in p.links %}<a class="pf-link" href="{{ l.url }}" target="_blank" rel="noopener noreferrer">{{ l.text }}</a>{% endfor %}</div>
+        </div>
+      </div>
+      {% endfor %}
     </div>
   </section>
 
-  <!-- ===== 09 Contact ===== -->
-  <section class="pf-block pf-contact" id="contact">
-    <div class="pf-wrap pf-reveal">
-      <span class="pf-kicker">09 — <span class="lang-jp">連絡先</span><span class="lang-en">Contact</span></span>
-      <h2 class="pf-h pf-h--xl"><span class="lang-jp">話しましょう。</span><span class="lang-en">Let's talk.</span></h2>
+  <!-- ===== 08 Contact (画像が背景) ===== -->
+  <section class="pf-block pf-block--bg pf-contact" id="contact">
+    <img class="pf-bg__img" src="{{ site.baseurl }}/assets/images/IMG_9775.jpg" alt="" />
+    <div class="pf-wrap pf-bg__inner pf-reveal">
+      <span class="pf-kicker">08 — <span class="lang-jp">連絡先</span><span class="lang-en">Contact</span></span>
+      <h2 class="pf-h pf-h--xl"><span class="lang-jp">コンタクト</span><span class="lang-en">Let's talk.</span></h2>
       <p class="pf-contact__line">yoshiki.noguchi0920 [at] gmail.com</p>
       <a class="pf-cta" href="https://github.com/yope7" target="_blank" rel="noopener noreferrer"><span class="lang-jp">GitHub を見る</span><span class="lang-en">View GitHub</span> <span class="pf-cta__arrow">↗</span></a>
     </div>
@@ -432,9 +432,10 @@ html.pf-smooth { scroll-behavior: smooth; scroll-padding-top: 64px; }
 .pf-block--tint { background: var(--tint); width: 100vw; margin-left: calc(50% - 50vw); }
 [data-theme="dark"] .pf-block--tint { background: #1f1d16; }
 .pf-wrap { max-width: min(1180px, 90vw); margin: 0 auto; }
-.pf-kicker { display: block; font-size: .74rem; font-weight: 700; letter-spacing: .25em; color: var(--accent); margin-bottom: 1.4rem; }
+.pf-kicker { display: block; font-size: clamp(1.2rem, 2vw, 1.7rem); font-weight: 800; letter-spacing: .18em; color: var(--accent); margin-bottom: 1.5rem; }
 .pf-h { font-size: clamp(2.2rem, 6vw, 4.4rem); line-height: 1.05; font-weight: 800; letter-spacing: -0.01em; margin: 0 0 1.4rem; color: var(--ink); }
 .pf-h--xl { font-size: clamp(2.6rem, 9vw, 6rem); }
+.pf-h--fit { white-space: nowrap; font-size: clamp(1.5rem, 4.5vw, 3.4rem); line-height: 1.12; }
 .pf-big { font-size: clamp(1.5rem, 3.4vw, 2.6rem); line-height: 1.5; font-weight: 600; letter-spacing: .01em; margin: 0; color: var(--ink); }
 .pf-block p { font-size: clamp(1rem, 1.5vw, 1.15rem); line-height: 1.95; color: var(--ink); max-width: 56ch; }
 
@@ -450,14 +451,18 @@ html.pf-smooth { scroll-behavior: smooth; scroll-padding-top: 64px; }
 .pf-tall img { aspect-ratio: 4 / 5; }
 .pf-wide img { aspect-ratio: 4 / 3; }
 
-/* Full-bleed feature */
-.pf-feature { position: relative; width: 100vw; margin-left: calc(50% - 50vw); height: clamp(360px, 58vh, 600px); overflow: hidden; display: flex; align-items: flex-end; }
-.pf-feature--tall { height: clamp(420px, 72vh, 760px); }
-.pf-feature__img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transform: scale(1.08); transition: transform 1.6s cubic-bezier(.2,.7,.2,1); }
-.pf-feature.is-visible .pf-feature__img { transform: scale(1); }
-.pf-feature::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, transparent, rgba(0,0,0,.55)); }
-.pf-feature__cap { position: relative; z-index: 1; color: #fff; padding: clamp(2rem, 6vw, 5rem); font-size: clamp(1.4rem, 3.2vw, 2.4rem); font-weight: 700; line-height: 1.3; }
-.pf-feature__cap--big { font-size: clamp(1.8rem, 5vw, 3.6rem); }
+/* Full-bleed 画像背景セクション（テキストを画像の上に重ねる） */
+.pf-block--bg { position: relative; width: 100vw; margin-left: calc(50% - 50vw); overflow: hidden; padding: clamp(5rem, 12vw, 11rem) 0; }
+.pf-bg__img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; }
+.pf-block--bg::after { content: ""; position: absolute; inset: 0; z-index: 1; background: linear-gradient(90deg, rgba(12,14,9,.86), rgba(12,14,9,.55) 52%, rgba(12,14,9,.3)); }
+.pf-bg__inner { position: relative; z-index: 2; }
+.pf-bg__inner .pf-kicker { color: rgba(255,255,255,.82); }
+.pf-bg__inner .pf-h { color: #fff; text-shadow: 0 2px 30px rgba(0,0,0,.4); }
+.pf-bg__inner p, .pf-bg__inner .pf-contact__line { color: rgba(255,255,255,.92) !important; }
+.pf-bg__inner .pf-tags li { color: #fff; }
+.pf-bg__inner .pf-tags li::before { background: rgba(255,255,255,.7); }
+.pf-bg__inner .pf-cta { background: #fff; color: var(--ink); }
+.pf-bg__inner .pf-cta:hover { background: var(--accent); color: #fff; }
 
 /* 大きな行（論文・受賞・経歴） */
 .pf-row { display: flex; justify-content: space-between; align-items: baseline; gap: 1.5rem; padding: clamp(1.1rem, 2.5vw, 1.8rem) 0; border-top: 1px solid var(--line); }
@@ -480,13 +485,26 @@ html.pf-smooth { scroll-behavior: smooth; scroll-padding-top: 64px; }
 .pf-act__list { margin: 0; padding-left: 1.1rem; }
 .pf-act__list li { font-size: .95rem; color: var(--ink); line-height: 1.7; margin-bottom: .4rem; }
 
-/* Gallery 大判・不規則 */
-.pf-gallery { width: 100vw; margin-left: calc(50% - 50vw); margin-top: clamp(1.5rem, 3vw, 2.5rem); display: grid; grid-template-columns: repeat(12, 1fr); grid-auto-rows: clamp(170px, 19vw, 300px); gap: 10px; padding: 0 10px; }
-.pf-g { position: relative; overflow: hidden; margin: 0; grid-column: span 4; }
-.pf-g img { width: 100%; height: 100%; object-fit: cover; transition: transform 1s cubic-bezier(.2,.7,.2,1), filter .5s ease; filter: saturate(.88) contrast(1.04) brightness(.98); }
-.pf-g:hover img { transform: scale(1.05); filter: none; }
-.pf-g--hero { grid-column: span 7; grid-row: span 2; }
-.pf-g--wide { grid-column: span 5; }
+/* ====================== Photo interludes (各節に分散) ====================== */
+.pf-interlude { width: min(1180px, 90vw); margin: 0 auto; padding: clamp(2rem, 5vw, 4.5rem) 0; }
+.pf-interlude--wide { width: min(1320px, 92vw); }
+
+.pf-ph { position: relative; overflow: hidden; margin: 0; background: var(--tint); min-height: 0; }
+.pf-ph img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 1.4s cubic-bezier(.2,.7,.2,1); filter: saturate(.92) contrast(1.03); }
+.pf-ph:hover img { transform: scale(1.06); }
+
+/* 非対称トリプティク：左大判 + 右に2枚スタック */
+.pf-trip { display: grid; grid-template-columns: 1.5fr 1fr; gap: clamp(.55rem, 1.2vw, 1rem); align-items: stretch; }
+.pf-trip__big { aspect-ratio: 4 / 3; }
+.pf-trip__stack { display: grid; grid-template-rows: 1fr 1fr; gap: clamp(.55rem, 1.2vw, 1rem); }
+
+/* デュオ：左右2枚 */
+.pf-duo { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(.55rem, 1.4vw, 1.1rem); }
+.pf-duo .pf-ph { aspect-ratio: 3 / 2; }
+
+/* トリオ・ストリップ：縦長カード3枚 */
+.pf-strip { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(.55rem, 1.2vw, 1rem); }
+.pf-strip .pf-ph { aspect-ratio: 4 / 5; }
 
 /* Links / CTA */
 .pf-links { display: flex; flex-wrap: wrap; gap: 1.4rem; margin-top: 1.4rem; }
@@ -499,14 +517,31 @@ html.pf-smooth { scroll-behavior: smooth; scroll-padding-top: 64px; }
 .pf-cta:hover { transform: translateY(-3px); background: var(--accent); color: #fff; gap: 1.1rem; }
 [data-theme="dark"] .pf-cta { background: var(--ink); color: #161510; }
 
+/* 成果物：ブラウザ風フレームのショーケース */
+.pf-work { display: grid; grid-template-columns: 1.25fr 1fr; gap: clamp(1.6rem, 4vw, 4rem); align-items: center; margin-top: clamp(1.5rem, 3vw, 2.5rem); }
+.pf-work__frame { border-radius: 14px; overflow: hidden; background: #fff; border: 1px solid var(--line); box-shadow: 0 40px 70px -34px rgba(0,0,0,.45); }
+.pf-work__bar { display: flex; gap: .5rem; padding: .75rem 1rem; background: var(--tint); border-bottom: 1px solid var(--line); }
+.pf-work__bar span { width: .72rem; height: .72rem; border-radius: 999px; background: #cdc8bb; }
+.pf-work__shot { background: #fff; }
+.pf-work__shot img { display: block; width: 100%; height: auto; }
+.pf-work__body .pf-h { font-size: clamp(1.8rem, 3.6vw, 2.8rem); margin-bottom: 1rem; }
+[data-theme="dark"] .pf-work__frame { background: #14130e; }
+[data-theme="dark"] .pf-work__bar { background: #2a2820; }
+
 /* 言語切替 */
 .pf[data-lang="jp"] .lang-en { display: none; }
 .pf[data-lang="en"] .lang-jp { display: none; }
 
-/* Reveal */
+/* Reveal + 左右スライド / ズーム の派生 */
 @media (prefers-reduced-motion: no-preference) {
-  .pf-reveal { opacity: 0; transform: translateY(26px); transition: opacity .9s ease, transform .9s cubic-bezier(.2,.7,.2,1); }
+  .pf-reveal { opacity: 0; transform: translateY(26px); transition: opacity .9s ease, transform 1s cubic-bezier(.2,.7,.2,1); will-change: opacity, transform; }
   .pf-reveal.is-visible { opacity: 1; transform: none; }
+  .pf-reveal--left  { transform: translateX(-70px); }
+  .pf-reveal--right { transform: translateX(70px); }
+  .pf-reveal--zoom  { transform: scale(.93); }
+  .pf-d1 { transition-delay: .12s; }
+  .pf-d2 { transition-delay: .24s; }
+  .pf-d3 { transition-delay: .36s; }
 }
 
 /* ====================== Dark mode ====================== */
@@ -518,12 +553,19 @@ html.pf-smooth { scroll-behavior: smooth; scroll-padding-top: 64px; }
   .pf-split--a .pf-split__text, .pf-split--a .pf-split__media,
   .pf-split--b .pf-split__text, .pf-split--b .pf-split__media { grid-column: 1 / -1; }
   .pf-split--b .pf-split__media { order: -1; }
-  .pf-tall img, .pf-wide img { aspect-ratio: 16 / 10; }
+  .pf-wide img { aspect-ratio: 16 / 10; }
+  .pf-tall img { aspect-ratio: 4 / 5; }
   .pf-row { flex-direction: column; gap: .3rem; }
   .pf-row__meta { text-align: left; }
-  .pf-gallery { grid-template-columns: repeat(6, 1fr); grid-auto-rows: 30vw; }
-  .pf-g, .pf-g--hero, .pf-g--wide { grid-column: span 3; grid-row: span 1; }
-  .pf-g--hero { grid-column: span 6; grid-row: span 1; }
+  .pf-trip { grid-template-columns: 1fr; }
+  .pf-trip__big { aspect-ratio: 3 / 2; }
+  .pf-trip__stack { grid-template-rows: none; grid-template-columns: 1fr 1fr; }
+  .pf-trip__stack .pf-ph { aspect-ratio: 3 / 2; }
+  .pf-duo, .pf-strip { grid-template-columns: 1fr; }
+  .pf-duo .pf-ph, .pf-strip .pf-ph { aspect-ratio: 3 / 2; }
+  .pf-reveal--left, .pf-reveal--right { transform: translateY(26px); }
+  .pf-work { grid-template-columns: 1fr; gap: 1.4rem; }
+  .pf-block--bg::after { background: linear-gradient(180deg, rgba(12,14,9,.72), rgba(12,14,9,.6)); }
 }
 </style>
 
@@ -568,9 +610,6 @@ html.pf-smooth { scroll-behavior: smooth; scroll-padding-top: 64px; }
         es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('is-visible'); ob.unobserve(e.target); } });
       }, { rootMargin: '0px 0px -8% 0px', threshold: .06 });
       document.querySelectorAll('.pf-reveal').forEach(function (e) { rev.observe(e); });
-      document.querySelectorAll('.pf-feature').forEach(function (e) { rev.observe(e); });
-    } else {
-      document.querySelectorAll('.pf-feature').forEach(function (e) { e.classList.add('is-visible'); });
     }
   });
 })();

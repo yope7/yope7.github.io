@@ -3,7 +3,7 @@ layout: post
 title: "Tripport 予約自動転記システム 機能説明"
 author: Yoshiki
 categories: [Tech]
-image: assets/images/10.jpg
+image: assets/images/IMG_0863.JPG
 featured: false
 hidden: true
 wip: false

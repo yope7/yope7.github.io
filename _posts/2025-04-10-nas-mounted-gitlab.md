@@ -4,7 +4,7 @@ title: "NAS を使用した GitLab 永続化構築レポート"
 author: Yoshiki
 categories: [Tech]
 tags: [Tech]
-image: assets/images/1.jpg
+image: assets/images/IMG_0204.JPG
 description: "NAS を使用した GitLab 永続化構築レポート"
 featured: false
 hidden: false

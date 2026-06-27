@@ -3,7 +3,7 @@ layout: post
 title: "A novel algorithm for fast representation of a Pareto front with adaptive resolution: application to multi-objective optimization of a chemical reactor"
 author: Yoshiki
 categories: [Research]
-image: assets/images/10.jpg
+image: assets/images/IMG_0277.JPG
 featured: false
 hidden: false
 wip: false

@@ -69,6 +69,11 @@ pre {
   margin-top: 57px;
 }
 
+.site-content--bleed {
+  padding-top: 0;
+}
+.site-content--bleed > .main-content { padding: 0; }
+
 section {
   margin-bottom: 20px;
 }
@@ -835,7 +840,7 @@ iframe {
     padding: 0;
     height: 350px;
     border-radius: 0;
-    background-image: url(../images/jumbotron.jpg);
+    background-image: url(../images/IMG_0204.JPG);
     background-size: cover;
   }
 
@@ -849,7 +854,7 @@ iframe {
   margin-top: 3rem;
   padding: 0;
   border-radius: 0;
-  background-image: url(../images/jumbotron.jpg);
+  background-image: url(../images/IMG_0204.JPG);
   background-size: cover;
 }
 

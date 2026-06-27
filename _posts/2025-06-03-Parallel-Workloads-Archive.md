@@ -3,7 +3,7 @@ layout: post
 title: "Parallel Workloads Archive"
 author: Yoshiki
 categories: [other]
-image: assets/images/10.jpg
+image: assets/images/IMG_0204.JPG
 featured: false
 hidden: false
 wip: false

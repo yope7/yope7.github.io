@@ -2,6 +2,9 @@
 layout: default
 ---
 
+{% if page.full_bleed %}
+{{ content }}
+{% else %}
 <section>
   <div class="section-title">
     <h2><span>{{ page.title }}</span></h2>
@@ -17,6 +20,7 @@ layout: default
 
   <div class="article-post{% if page.speaker_face == false %} article-post--plain-quotes{% endif %}"{% if page.speaker_face != false %} data-speaker-face-base="{{ site.baseurl }}/assets/faces/" style="--speaker-face: url('{{ site.baseurl }}/assets/faces/{{ page.speaker_face | default: 1 }}.png');"{% endif %}>{{content}}</div>
 </section>
+{% endif %}
 
 <script>
   document.addEventListener("DOMContentLoaded", function () {

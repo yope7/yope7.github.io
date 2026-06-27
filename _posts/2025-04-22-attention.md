@@ -3,7 +3,7 @@ layout: post
 title: "Attention is All You Need"
 author: Yoshiki
 categories: [Research]
-image: assets/images/10.jpg
+image: assets/images/IMG_0209.JPG
 featured: false
 hidden: true
 wip: true

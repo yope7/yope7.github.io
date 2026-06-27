@@ -3,7 +3,7 @@ layout: post
 title: "A HPC Co-Scheduler with Reinforcement Learning"
 author: Yoshiki
 categories: [Research]
-image: assets/images/10.jpg
+image: assets/images/IMG_0847.JPG
 featured: false
 hidden: false
 wip: true

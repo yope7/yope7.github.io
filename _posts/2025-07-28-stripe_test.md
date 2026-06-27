@@ -3,7 +3,7 @@ layout: post
 title: "stripe_test"
 author: Yoshiki
 categories: [other]
-image: assets/images/10.jpg
+image: assets/images/IMG_0863.JPG
 featured: false
 hidden: true
 wip: true
