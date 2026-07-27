@@ -85,8 +85,10 @@ activities_en:
 
 # 経歴データ（日本語）
 timeline_jp:
-  - date: "2024年4月 - 現在"
-    title: "大阪大学　大学院情報科学研究科　卒業見込み"
+  - date: "2026年4月 - 現在"
+    title: "大阪大学　大学院情報科学研究科　博士後期課程"
+  - date: "2024年4月 - 2026年3月"
+    title: "大阪大学　大学院情報科学研究科　博士前期課程"
   - date: "2020年4月 - 2024年3月"
     title: "大阪大学　工学部電子情報工学科"
   - date: "2017年4月 - 2020年3月"
@@ -94,10 +96,12 @@ timeline_jp:
 
 # 経歴データ（英語）
 timeline_en:
-  - date: "April 2024 - Present"
-    title: "Graduate School of Information Science and Technology, Osaka University"
+  - date: "April 2026 - Present"
+    title: "Ph.D. Student, Graduate School of Information Science and Technology, Osaka University"
+  - date: "April 2024 - March 2026"
+    title: "Master's Student, Graduate School of Information Science and Technology, Osaka University"
   - date: "April 2020 - March 2024"
-    title: "Osaka University"
+    title: "Department of Electronic and Information Engineering, School of Engineering, Osaka University"
   - date: "April 2017 - March 2020"
     title: "Suma Gakuen High School"
 
@@ -131,8 +135,8 @@ show_initial_count:
   projects: 6
 ---
 
-{% comment %}
-============================================================
+# {% comment %}
+
 PORTFOLIO — 全幅・大判・非対称のアート・エディトリアル
 画像差し替え箇所には <!-- 画像差し替え可 --> を記載
 ============================================================
@@ -145,18 +149,19 @@ PORTFOLIO — 全幅・大判・非対称のアート・エディトリアル
     <!-- 画像差し替え可 -->
     <img class="pf-hero__img" src="{{ site.baseurl }}/assets/images/cycling.jpeg" alt="" />
     <div class="pf-hero__inner">
-      <span class="pf-hero__eyebrow">PORTFOLIO — 2026</span>
+      <span class="pf-hero__eyebrow">PORTFOLIO</span>
       <h1 class="pf-hero__name">Yoshiki<br>Noguchi</h1>
       <p class="pf-hero__sub">
         <span class="lang-jp">大阪大学大学院 情報科学研究科 博士後期課程1年（D1） — 高性能計算 / 強化学習</span>
-        <span class="lang-en">D1, Graduate School of Information Science and Technology, Osaka University — HPC / Reinforcement Learning</span>
+        <span class="lang-en">a D1 student, Graduate School of Information Science and Technology, Osaka University — HPC / Reinforcement Learning</span>
       </p>
     </div>
     <a class="pf-hero__scroll" href="#about" aria-label="Scroll"><i class="fas fa-arrow-down"></i></a>
   </header>
 
   <!-- ===== Sticky subnav ===== -->
-  <nav class="pf-subnav" aria-label="Sections">
+  <!-- テーマの mediumish.js が $('nav') に top を書き込むため、あえて div にする -->
+  <div class="pf-subnav" role="navigation" aria-label="Sections">
     <a class="pf-subnav__home" href="#hero">Y·N</a>
     <div class="pf-subnav__links">
       <a class="pf-subnav__link" data-section="about" href="#about"><span class="lang-jp">はじめに</span><span class="lang-en">About</span></a>
@@ -167,19 +172,21 @@ PORTFOLIO — 全幅・大判・非対称のアート・エディトリアル
       <a class="pf-subnav__link" data-section="experience" href="#experience"><span class="lang-jp">経歴</span><span class="lang-en">Path</span></a>
       <a class="pf-subnav__link" data-section="projects" href="#projects"><span class="lang-jp">成果物</span><span class="lang-en">Work</span></a>
     </div>
+    <a class="pf-subnav__blog" href="{{ site.baseurl }}/blog"><span class="lang-jp">ブログ</span><span class="lang-en">Blog</span></a>
     <div class="pf-lang">
       <button id="jp-btn" type="button" class="pf-lang__btn is-active">JP</button>
       <button id="en-btn" type="button" class="pf-lang__btn">EN</button>
     </div>
-  </nav>
+  </div>
+  <div class="pf-subnav-spacer" aria-hidden="true"></div>
 
   <!-- ===== 01 About (非対称・大判) ===== -->
   <section class="pf-block" id="about">
     <div class="pf-wrap pf-split pf-split--a">
       <div class="pf-split__text pf-reveal">
         <span class="pf-kicker">01 — <span class="lang-jp">はじめに</span><span class="lang-en">About</span></span>
-        <p class="pf-big lang-jp">大阪大学大学院 情報科学研究科 D1 の野口祥生です。<br>多目的強化学習などを用いて、高性能計算（HPC）の<br>運用最適化を研究しています。<br>趣味は水泳と工作。</p>
-        <p class="pf-big lang-en">I'm Yoshiki Noguchi, a D1 at Osaka University.<br>I study the operational optimization of high-performance<br>computing (HPC) with multi-objective reinforcement learning.<br>Off-hours: swimming and making things.</p>
+        <p class="pf-big lang-jp">大阪大学大学院 情報科学研究科 D1 の野口祥生です。<br>多目的強化学習などを用いて、高性能計算（HPC）の<br>運用最適化を研究しています。<br>趣味は水泳とスキー。</p>
+        <p class="pf-big lang-en">I'm Yoshiki Noguchi, a D1 student at Osaka University.<br>I study the operational optimization of high-performance<br>computing (HPC) with multi-objective reinforcement learning.<br>Off-hours: swimming and skiing.</p>
       </div>
       <figure class="pf-split__media pf-tall pf-reveal">
         <!-- 画像差し替え可 -->
@@ -193,7 +200,7 @@ PORTFOLIO — 全幅・大判・非対称のアート・エディトリアル
     <img class="pf-bg__img" src="{{ site.baseurl }}/assets/images/IMG_0204.JPG" alt="" />
     <div class="pf-wrap pf-bg__inner pf-reveal">
       <span class="pf-kicker">02 — <span class="lang-jp">研究</span><span class="lang-en">Research</span></span>
-      <h2 class="pf-h pf-h--fit"><span class="lang-jp">AIで、HPCを最適化。</span><span class="lang-en">Optimizing HPC with AI.</span></h2>
+      <h2 class="pf-h pf-h--fit"><span class="lang-jp">AIによるHPC運用最適化</span><span class="lang-en">Optimizing HPC Operation with AI.</span></h2>
       <ul class="pf-tags">
         <li>HPC</li>
         <li><span class="lang-jp">ジョブスケジューリング</span><span class="lang-en">Job Scheduling</span></li>
@@ -309,16 +316,16 @@ PORTFOLIO — 全幅・大判・非対称のアート・エディトリアル
   <!-- ===== Photo interlude: trio strip (ズーム＋スタッガー) ===== -->
   <div class="pf-interlude pf-interlude--wide">
     <div class="pf-strip">
-      <figure class="pf-ph pf-reveal pf-reveal--zoom"><img src="{{ site.baseurl }}/assets/images/Yokohama.JPG" alt="Yokohama" loading="lazy" /></figure>
-      <figure class="pf-ph pf-reveal pf-reveal--zoom pf-d1"><img src="{{ site.baseurl }}/assets/images/IMG_8443.jpg" alt="" loading="lazy" /></figure>
-      <figure class="pf-ph pf-reveal pf-reveal--zoom pf-d2"><img src="{{ site.baseurl }}/assets/images/IMG_0620.JPG" alt="" loading="lazy" /></figure>
+      <figure class="pf-ph pf-ph--wide pf-reveal pf-reveal--zoom"><img src="{{ site.baseurl }}/assets/images/IMG_8443.jpg" alt="" loading="lazy" /></figure>
+      <figure class="pf-ph pf-ph--tall pf-reveal pf-reveal--zoom pf-d1"><img src="{{ site.baseurl }}/assets/images/Yokohama.JPG" alt="Yokohama" loading="lazy" /></figure>
+      <figure class="pf-ph pf-ph--sub pf-reveal pf-reveal--zoom pf-d2"><img src="{{ site.baseurl }}/assets/images/IMG_0620.JPG" alt="" loading="lazy" /></figure>
     </div>
   </div>
 
   <!-- ===== 07 Projects (アプリ・ショーケース) ===== -->
   <section class="pf-block" id="projects">
     <div class="pf-wrap">
-      <span class="pf-kicker pf-reveal">07 — <span class="lang-jp">成果物</span><span class="lang-en">Work</span></span>
+      <span class="pf-kicker pf-reveal">07 — <span class="lang-jp">開発履歴</span><span class="lang-en">Work</span></span>
       {% for p in page.projects_jp %}
       <div class="pf-work lang-jp pf-reveal">
         <div class="pf-work__frame">
@@ -363,6 +370,10 @@ PORTFOLIO — 全幅・大判・非対称のアート・エディトリアル
 
 <style>
 /* ====================== Palette / base ====================== */
+:root { --pf-header-h: 0px; --pf-subnav-h: 3.4rem; }
+/* ポートフォリオではテーマ既定のヘッダーバナーを隠し、サブナビだけを最上部に置く */
+body.portfolio-page nav.mediumnavigation { display: none !important; }
+body.portfolio-page .site-content { margin-top: 0; }
 .pf {
   --ink: #1b1914;
   --muted: #8f897d;
@@ -385,13 +396,14 @@ body.portfolio-page .site-content,
 body.portfolio-page .main-content { background: transparent; }
 /* main-content は全幅に */
 body.portfolio-page .main-content > .pf { }
-html.pf-smooth { scroll-behavior: smooth; scroll-padding-top: 64px; }
+/* 固定ヘッダー＋固定サブナビ分だけアンカー位置をずらす */
+html.pf-smooth { scroll-behavior: smooth; scroll-padding-top: calc(var(--pf-header-h) + var(--pf-subnav-h) + .5rem); }
 
 /* ====================== Hero ====================== */
 .pf-hero {
   position: relative;
   width: 100vw; margin-left: calc(50% - 50vw);
-  height: calc(100vh - 57px); min-height: 520px;
+  height: calc(100vh - var(--pf-header-h)); min-height: 520px;
   overflow: hidden; display: flex; align-items: flex-end;
 }
 .pf-hero__img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
@@ -409,22 +421,29 @@ html.pf-smooth { scroll-behavior: smooth; scroll-padding-top: 64px; }
 
 /* ====================== Sticky subnav ====================== */
 .pf-subnav {
-  position: sticky; top: 57px; z-index: 30;
+  position: fixed; top: var(--pf-header-h); left: 0; right: 0; z-index: 1020;
+  transition: top .2s ease-in-out;
   display: flex; align-items: center; gap: 1.5rem;
-  width: 100vw; margin-left: calc(50% - 50vw);
-  padding: .7rem clamp(1.2rem, 4vw, 3rem);
-  background: rgba(244,241,234,.86); backdrop-filter: blur(10px);
+  min-height: var(--pf-subnav-h);
+  padding: .55rem clamp(1.2rem, 4vw, 3rem);
+  background: rgba(244,241,234,.92); backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--line);
 }
-[data-theme="dark"] .pf-subnav { background: rgba(22,21,16,.86); }
-.pf-subnav__home { font-weight: 800; letter-spacing: .1em; color: var(--ink); flex: 0 0 auto; }
-.pf-subnav__links { display: flex; gap: 1.2rem; overflow-x: auto; flex: 1; scrollbar-width: none; }
+/* fixed 化で流れから抜けた分の高さを確保（下の要素と被らないように） */
+.pf-subnav-spacer { height: var(--pf-subnav-h); }
+[data-theme="dark"] .pf-subnav { background: rgba(22,21,16,.92); }
+.pf-subnav__home { font-weight: 800; letter-spacing: .1em; font-size: 1.1rem; color: var(--ink); flex: 0 0 auto; }
+.pf-subnav__links { display: flex; gap: clamp(1.2rem, 1.8vw, 1.8rem); overflow-x: auto; flex: 1; scrollbar-width: none; }
 .pf-subnav__links::-webkit-scrollbar { display: none; }
-.pf-subnav__link { white-space: nowrap; font-size: .82rem; font-weight: 600; letter-spacing: .04em; color: var(--muted); padding: .2rem 0; border-bottom: 2px solid transparent; }
+.pf-subnav__link { white-space: nowrap; font-size: .98rem; font-weight: 600; letter-spacing: .04em; color: var(--muted); padding: .25rem 0; border-bottom: 2px solid transparent; }
 .pf-subnav__link:hover { color: var(--ink); }
 .pf-subnav__link.is-active { color: var(--ink); border-bottom-color: var(--accent); }
+/* ブログへの控えめな導線 */
+.pf-subnav__blog { flex: 0 0 auto; font-size: .82rem; font-weight: 600; letter-spacing: .08em; color: var(--muted); white-space: nowrap; opacity: .8; transition: opacity .2s, color .2s; }
+.pf-subnav__blog::after { content: "↗"; font-size: .72em; margin-left: .25em; }
+.pf-subnav__blog:hover { color: var(--ink); opacity: 1; }
 .pf-lang { display: inline-flex; gap: .5rem; flex: 0 0 auto; }
-.pf-lang__btn { border: 0; background: none; color: var(--muted); font-size: .72rem; font-weight: 700; letter-spacing: .12em; cursor: pointer; }
+.pf-lang__btn { border: 0; background: none; color: var(--muted); font-size: .82rem; font-weight: 700; letter-spacing: .12em; cursor: pointer; }
 .pf-lang__btn.is-active { color: var(--ink); text-decoration: underline; text-underline-offset: 4px; }
 
 /* ====================== Blocks / wrap ====================== */
@@ -502,9 +521,20 @@ html.pf-smooth { scroll-behavior: smooth; scroll-padding-top: 64px; }
 .pf-duo { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(.55rem, 1.4vw, 1.1rem); }
 .pf-duo .pf-ph { aspect-ratio: 3 / 2; }
 
-/* トリオ・ストリップ：縦長カード3枚 */
-.pf-strip { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(.55rem, 1.2vw, 1rem); }
-.pf-strip .pf-ph { aspect-ratio: 4 / 5; }
+/* トリオ・モザイク：横長1枚＋縦長1枚＋横長1枚の非対称配置 */
+.pf-strip {
+  display: grid;
+  grid-template-columns: 1.15fr .85fr 1fr;
+  grid-template-rows: clamp(180px, 22vw, 320px) clamp(140px, 17vw, 250px);
+  grid-template-areas:
+    "wide wide tall"
+    "sub  sub  tall";
+  gap: clamp(.55rem, 1.2vw, 1rem);
+}
+.pf-strip .pf-ph { aspect-ratio: auto; height: 100%; }
+.pf-strip .pf-ph--wide { grid-area: wide; }
+.pf-strip .pf-ph--tall { grid-area: tall; }
+.pf-strip .pf-ph--sub  { grid-area: sub; }
 
 /* Links / CTA */
 .pf-links { display: flex; flex-wrap: wrap; gap: 1.4rem; margin-top: 1.4rem; }
@@ -561,11 +591,26 @@ html.pf-smooth { scroll-behavior: smooth; scroll-padding-top: 64px; }
   .pf-trip__big { aspect-ratio: 3 / 2; }
   .pf-trip__stack { grid-template-rows: none; grid-template-columns: 1fr 1fr; }
   .pf-trip__stack .pf-ph { aspect-ratio: 3 / 2; }
-  .pf-duo, .pf-strip { grid-template-columns: 1fr; }
-  .pf-duo .pf-ph, .pf-strip .pf-ph { aspect-ratio: 3 / 2; }
+  .pf-duo { grid-template-columns: 1fr; }
+  .pf-strip {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    grid-template-areas:
+      "wide wide"
+      "tall sub";
+  }
+  .pf-duo .pf-ph { aspect-ratio: 3 / 2; }
+  .pf-strip .pf-ph--wide { aspect-ratio: 3 / 2; height: auto; }
+  .pf-strip .pf-ph--tall { aspect-ratio: 3 / 4; height: auto; }
+  .pf-strip .pf-ph--sub  { aspect-ratio: 3 / 4; height: auto; }
   .pf-reveal--left, .pf-reveal--right { transform: translateY(26px); }
   .pf-work { grid-template-columns: 1fr; gap: 1.4rem; }
   .pf-block--bg::after { background: linear-gradient(180deg, rgba(12,14,9,.72), rgba(12,14,9,.6)); }
+  .pf-subnav { gap: .9rem; padding-left: 1rem; padding-right: 1rem; }
+  .pf-subnav__links { gap: 1.1rem; }
+  .pf-subnav__link { font-size: .92rem; }
+  .pf-subnav__home { font-size: 1rem; }
+  .pf-lang__btn { font-size: .78rem; }
 }
 </style>
 
